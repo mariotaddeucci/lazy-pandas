@@ -1,6 +1,7 @@
 from typing import Any, Callable, Tuple, cast
 
 from duckdb import ConstantExpression, Expression
+from duckdb.typing import DuckDBPyType
 
 __all__ = ["LazyColumn"]
 
@@ -90,3 +91,8 @@ class LazyColumn:
             [_get_expr(c) for c in cols],
         )
         return LazyColumn(self.expr.isin(*cols))
+
+    def astype(self, dtype: str | DuckDBPyType) -> "LazyColumn":
+        if isinstance(dtype, str):
+            dtype = DuckDBPyType(dtype)
+        return LazyColumn(self.expr.cast(dtype))

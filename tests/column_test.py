@@ -43,3 +43,12 @@ def test_addition_constant(df):
     df["c"] = df["a"] + 2
     df = df.collect()
     assert df["c"].tolist() == [3, 5]
+
+
+def test_cast_column(df):
+    df["a"] = df["a"].astype(str)
+    assert df.collect()["a"].tolist() == ["1", "3"]
+    df["a"] = df["a"].astype(int)
+    assert df.collect()["a"].tolist() == [1, 3]
+    df["a"] = df["a"].astype(float)
+    assert df.collect()["a"].tolist() == [1.0, 3.0]
