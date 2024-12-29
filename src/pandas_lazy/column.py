@@ -36,51 +36,11 @@ def _bin_op(
 
 
 class LazyColumn:
+    __div__ = _bin_op("__div__")
+    __rdiv__ = _bin_op("__rdiv__")
+
     def __init__(self, expr: Expression):
         self.expr = expr
-
-    def __neg__(self):
-        return LazyColumn(-self.expr)
-
-    __and__ = _bin_op("__and__")
-    __or__ = _bin_op("__or__")
-    __invert__ = _func_op("__invert__")
-    __rand__ = _bin_op("__rand__")
-    __ror__ = _bin_op("__ror__")
-
-    __add__ = _bin_op("__add__")
-    __sub__ = _bin_op("__sub__")
-    __mul__ = _bin_op("__mul__")
-    __div__ = _bin_op("__div__")
-    __truediv__ = _bin_op("__truediv__")
-    __mod__ = _bin_op("__mod__")
-    __pow__ = _bin_op("__pow__")
-    __radd__ = _bin_op("__radd__")
-    __rsub__ = _bin_op("__rsub__")
-    __rmul__ = _bin_op("__rmul__")
-    __rdiv__ = _bin_op("__rdiv__")
-    __rtruediv__ = _bin_op("__rtruediv__")
-    __rmod__ = _bin_op("__rmod__")
-    __rpow__ = _bin_op("__rpow__")
-    __lt__ = _bin_op("__lt__")
-    __le__ = _bin_op("__le__")
-    __ge__ = _bin_op("__ge__")
-    __gt__ = _bin_op("__gt__")
-
-    # logistic operators
-    def __eq__(  # type: ignore[override]
-        self,
-        other,
-    ) -> "LazyColumn":
-        """binary function"""
-        return LazyColumn(self.expr == (_get_expr(other)))
-
-    def __ne__(  # type: ignore[override]
-        self,
-        other: Any,
-    ) -> "LazyColumn":
-        """binary function"""
-        return LazyColumn(self.expr != (_get_expr(other)))
 
     def isin(self, *cols: Any) -> "LazyColumn":
         if len(cols) == 1 and isinstance(cols[0], (list, set)):
@@ -96,3 +56,43 @@ class LazyColumn:
         if isinstance(dtype, str):
             dtype = DuckDBPyType(dtype)
         return LazyColumn(self.expr.cast(dtype))
+
+    __add__ = _bin_op("__add__")
+    __radd__ = _bin_op("__radd__")
+    __sub__ = _bin_op("__sub__")
+    __rsub__ = _bin_op("__rsub__")
+    __mul__ = _bin_op("__mul__")
+    __rmul__ = _bin_op("__rmul__")
+    __truediv__ = _bin_op("__truediv__")
+    __rtruediv__ = _bin_op("__rtruediv__")
+    __mod__ = _bin_op("__mod__")
+    __rmod__ = _bin_op("__rmod__")
+    __pow__ = _bin_op("__pow__")
+    __rpow__ = _bin_op("__rpow__")
+    __and__ = _bin_op("__and__")
+    __rand__ = _bin_op("__rand__")
+    __or__ = _bin_op("__or__")
+    __ror__ = _bin_op("__ror__")
+
+    def __neg__(self):
+        return LazyColumn(-self.expr)
+
+    __invert__ = _func_op("__invert__")
+    __lt__ = _bin_op("__lt__")
+    __le__ = _bin_op("__le__")
+
+    # logistic operators
+    def __eq__(  # type: ignore[override]
+        self,
+        other,
+    ) -> "LazyColumn":
+        return LazyColumn(self.expr == (_get_expr(other)))
+
+    def __ne__(  # type: ignore[override]
+        self,
+        other: Any,
+    ) -> "LazyColumn":
+        return LazyColumn(self.expr != (_get_expr(other)))
+
+    __gt__ = _bin_op("__gt__")
+    __ge__ = _bin_op("__ge__")
