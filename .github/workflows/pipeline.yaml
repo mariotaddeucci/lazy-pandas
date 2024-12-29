@@ -44,5 +44,8 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Execute pre-commit
-        run: uvx pre-commit run --all-files
+      - name: Execute Ruff Check
+        run: uvx ruff check
+
+      - name: Execute Ruff Format Check
+        run: uvx ruff format --check
