@@ -1,0 +1,5001 @@
+city;temperature
+Tokyo;35.6897
+Jakarta;-6.1750
+Delhi;28.6100
+Guangzhou;23.1300
+Mumbai;19.0761
+Manila;14.5958
+Shanghai;31.1667
+São Paulo;-23.5500
+Seoul;37.5600
+Mexico City;19.4333
+Cairo;30.0444
+New York;40.6943
+Dhaka;23.7639
+Beijing;39.9040
+Kolkāta;22.5675
+Bangkok;13.7525
+Shenzhen;22.5350
+Moscow;55.7558
+Buenos Aires;-34.5997
+Lagos;6.4550
+Istanbul;41.0136
+Karachi;24.8600
+Bangalore;12.9789
+Ho Chi Minh City;10.7756
+Ōsaka;34.6939
+Chengdu;30.6600
+Tehran;35.6892
+Kinshasa;-4.3250
+Rio de Janeiro;-22.9111
+Chennai;13.0825
+Xi’an;34.2667
+Lahore;31.5497
+Chongqing;29.5500
+Los Angeles;34.1141
+Baoding;38.8671
+London;51.5072
+Paris;48.8567
+Linyi;35.1041
+Dongguan;23.0475
+Hyderābād;17.3850
+Tianjin;39.1467
+Lima;-12.0600
+Wuhan;30.5872
+Nanyang;32.9987
+Hangzhou;30.2500
+Foshan;23.0292
+Nagoya;35.1833
+Taipei;25.0375
+Tongshan;34.2610
+Luanda;-8.8383
+Zhoukou;33.6250
+Ganzhou;25.8292
+Kuala Lumpur;3.1478
+Heze;35.2333
+Quanzhou;24.9139
+Chicago;41.8375
+Nanjing;32.0608
+Jining;35.4000
+Hanoi;21.0283
+Pune;18.5203
+Fuyang;32.8986
+Ahmedabad;23.0300
+Johannesburg;-26.2044
+Bogotá;4.7111
+Dar es Salaam;-6.8161
+Shenyang;41.8025
+Khartoum;15.5006
+Shangqiu;34.4259
+Cangzhou;38.3037
+Hong Kong;22.3000
+Shaoyang;27.2418
+Zhanjiang;21.1967
+Yancheng;33.3936
+Hengyang;26.8968
+Riyadh;24.6333
+Zhumadian;32.9773
+Santiago;-33.4372
+Xingtai;37.0659
+Chattogram;22.3350
+Bijie;27.3019
+Shangrao;28.4419
+Zunyi;27.7050
+Sūrat;21.1702
+Surabaya;-7.2458
+Huanggang;30.4500
+Maoming;21.6618
+Nanchong;30.7991
+Xinyang;32.1264
+Madrid;40.4169
+Baghdad;33.3153
+Qujing;25.5102
+Jieyang;23.5533
+Singapore;1.3000
+Prayagraj;25.4358
+Liaocheng;36.4500
+Dalian;38.9000
+Yulin;22.6293
+Changde;29.0397
+Qingdao;36.1167
+Douala;4.0500
+Miami;25.7840
+Nangandao;35.2992
+Pudong;31.2231
+Xiangyang;32.0654
+Dallas;32.7935
+Houston;29.7860
+Zhengzhou;34.7492
+Lu’an;31.7542
+Dezhou;37.4513
+Jinan;36.6667
+Giza;29.9870
+Zhaotong;27.3328
+Yichun;27.8041
+Nairobi;-1.2864
+Guadalajara;20.6767
+Philadelphia;40.0077
+Ankara;39.9300
+Tai’an;36.2001
+Dazhou;31.2152
+Langfang;39.5196
+Yongzhou;26.4515
+Toronto;43.7417
+Suihua;46.6384
+Saint Petersburg;59.9500
+Qiqihar;47.3398
+Suzhou;33.6333
+Monterrey;25.6667
+Belo Horizonte;-19.9167
+Weinan;34.4996
+Rangoon;16.7950
+Zhangzhou;24.5093
+Yuncheng;35.0304
+Xianyang;34.3500
+Guilin;25.2819
+Atlanta;33.7628
+Taizhou;32.4831
+Kāshān;33.9833
+Bozhou;33.8626
+Abidjan;5.3167
+Suqian;33.9331
+Huaihua;27.5494
+Ji’an;27.1172
+Xiaoganzhan;30.9273
+Pingdingshan;33.7350
+Jiujiang;29.7048
+Alexandria;31.1975
+Mianyang;31.4669
+Sydney;-33.8678
+Huanglongsi;34.7950
+Washington;38.9047
+Barcelona;41.3825
+Changsha;28.1987
+Chenzhou;25.7989
+Anqing;30.5000
+Jiangmen;22.5833
+Xinpu;34.5906
+Yibin;28.7596
+Yangzhou;32.3912
+Melbourne;-37.8142
+Berlin;52.5200
+Hengshui;37.7348
+Timbío;2.3445
+Kunming;25.0433
+Yiyang;28.5833
+Guigang;23.0961
+Changchun;43.9000
+Jiangguanchi;34.0244
+Casablanca;33.5333
+Meizhou;24.2998
+Zhangjiakou;40.8108
+Chifeng;42.2663
+Ürümqi;43.8225
+Suzhou;31.3000
+İzmir;38.4200
+Linfen;36.0812
+Shantou;23.3735
+Kabul;34.5253
+Mogadishu;2.0392
+Luzhou;28.8918
+Hefei;31.8639
+Boston;42.3188
+Liuzhou;24.3264
+Zhaoqing;23.0500
+Xiaoxita;30.7083
+Shijiazhuang;38.0422
+Ningbo;29.8750
+Fuzhou;27.9814
+Phoenix;33.5722
+Zhuzhou;27.8407
+Amman;31.9497
+Chuzhou;32.3062
+Jeddah;21.5433
+Qingyuan;23.6842
+Loudi;27.7378
+Binzhou;37.3806
+Deyang;31.1289
+Taiyuan;37.8733
+Kano;12.0000
+Wuhu;31.3340
+Nanning;22.8192
+Harbin;45.7500
+Abuja;9.0667
+Yokohama;35.4442
+Baojishi;34.3609
+Zaozhuang;34.8667
+Xiamen;24.4797
+Neijiang;29.5872
+Fuzhou;26.0769
+Baicheng;23.9010
+Anshan;41.1066
+Medan;3.5894
+Yulinshi;38.2655
+Wenzhou;27.9991
+Changzhou;31.8122
+Puyang;35.7639
+Jiaozuo;35.2290
+Nanchang;28.6842
+Ibadan;7.3964
+Hechi;24.6928
+Detroit;42.3834
+Montréal;45.5089
+Busan;35.1800
+Hohhot;40.8151
+Seattle;47.6211
+Algiers;36.7539
+Hanzhong;33.0794
+Tangshan;39.6292
+Shiyan;32.6351
+Lucknow;26.8500
+Siping;43.1715
+Mashhad;36.3000
+Boankra;6.6944
+Changzhi;36.1953
+Dubai;25.2631
+Qinzhou;21.9500
+Guiyang;26.5794
+Bengbu;32.9354
+San Francisco;37.7558
+Bazhou;31.8576
+Qincheng;34.5809
+Suining;30.5098
+Wuxi;31.5667
+Leshan;29.5854
+Putian;25.4394
+Zhenjiang;32.2109
+Faisalabad;31.4167
+Guang’an;30.4673
+Tongren;27.7233
+Santa Cruz;-17.7892
+Qinhuangdao;39.9398
+Tongliao;43.6172
+Jinzhou;41.1144
+Heyuan;23.7503
+San Diego;32.8313
+Jaipur;26.9000
+Xinzhou;38.4178
+Lanzhou;36.0617
+Wuzhou;23.4833
+Athens;37.9842
+Addis Ababa;9.0300
+Chaoyang;41.5757
+Brasília;-15.7939
+Taichung;24.1439
+Kuwait City;29.3697
+Budapest;47.4925
+Shaoguan;24.8011
+Shanwei;22.7664
+Quezon City;14.6300
+Rizhao;35.4164
+Kyiv;50.4500
+Sanaa;15.3483
+Meishan;30.0575
+Incheon;37.4833
+Guatemala City;14.6099
+Birmingham;52.4800
+Zhongshan;22.5333
+Ningde;26.6617
+Weihai;37.5000
+Daqing;46.5979
+Bursa;40.1833
+Salvador;-12.9747
+Rome;41.8931
+Haikou;20.0200
+La Paz;-16.5000
+Xiangtan;27.8431
+Pyongyang;39.0194
+Minneapolis;44.9635
+Omdurman;15.6500
+Malang;-7.9800
+Mudanjiang;44.5861
+Stuttgart;48.7775
+Brooklyn;40.6501
+Kaohsiung;22.6150
+Guayaquil;-2.1900
+Lisbon;38.7253
+Longyan;25.0881
+Tieling;42.2841
+Manchester;53.4794
+Baotou;40.6562
+Handan;36.6116
+Cawnpore;26.4499
+Dingxi;35.5806
+Nanping;26.6448
+Tampa;27.9945
+Zigong;29.3498
+Maracaibo;10.6333
+Chaozhou;23.6700
+Mbuji-Mayi;-6.1500
+Denver;39.7620
+Gulou;26.0865
+Weifang;36.7167
+Huai’an;33.5058
+Zibo;36.7831
+Ankang;32.6877
+Baoshan;25.1211
+Antananarivo;-18.9333
+Huludao;40.7094
+Munich;48.1375
+Yanjiang;30.1256
+Santo Domingo;18.4764
+Sanming;26.2658
+Tashkent;41.3111
+Longba;33.5350
+Yangjiang;21.8556
+Jiamusi;46.8081
+Luohe;33.5830
+Lincang;23.8864
+Medellín;6.2308
+Xuanzhou;30.9475
+Yunfu;22.9242
+Shaoxing;30.0000
+Yantai;37.3997
+Huizhou;23.1115
+Lishui;28.4500
+Mirzāpur;25.1460
+Hamburg;53.5500
+Guangyuan;32.4353
+Cali;3.4206
+Lusaka;-15.4167
+Huangshi;30.2018
+Xining;36.6239
+Ouagadougou;12.3686
+Daegu;35.8717
+Fortaleza;-3.7275
+Yaoundé;3.8667
+Jilin;43.8519
+Dandong;40.1167
+Zhuhai;22.2769
+Lianshan;40.7523
+Yingkou;40.6653
+Antalya;36.8874
+Nāgpur;21.1497
+Queens;40.7498
+Accra;5.5500
+Bekasi;-6.2349
+Ghāziābād;28.6700
+Yuxi;24.3495
+Luoyang;34.6587
+Brisbane;-27.4678
+Anshun;26.2456
+Depok;-6.3940
+Shangzhou;33.8680
+Huainan;32.4831
+Colombo;6.9344
+Kuaidamao;41.7302
+Baku;40.3667
+Fukuoka;33.5833
+Yan’an;36.5952
+Jincheng;35.4906
+Vancouver;49.2500
+Nantong;31.9829
+Tangerang;-6.1783
+Caracas;10.4806
+Sanmenxia;34.7736
+Laibin;23.7333
+Konya;37.8667
+Manaus;-3.1000
+Eşfahān;32.6447
+Qinbaling;35.7278
+Baltimore;39.3051
+Ma’anshan;31.6858
+Shengli;37.4500
+Gaoping;30.7824
+Taizhou;28.6583
+Harare;-17.8292
+Kowloon;22.3167
+Las Vegas;36.2333
+Havana;23.1367
+Perth;-31.9559
+Phnom Penh;11.5694
+Puning;23.2993
+Huaibei;33.9562
+Qingyang;24.8141
+Haiphong;20.8651
+Chongzuo;22.4167
+Rawalpindi;33.6000
+Yushan;31.3867
+St. Louis;38.6359
+Kumasi;6.6667
+Vadodara;22.3000
+Hezhou;24.4164
+Pingliang;35.5412
+Portland;45.5371
+Vishākhapatnam;17.7042
+Gujranwala;32.1567
+Baicheng;45.6148
+Gaziantep;37.0628
+Fushun;41.8708
+Riverside;33.9381
+Bamako;12.6458
+Quito;-0.2200
+Minsk;53.9000
+Tijuana;32.5250
+Bamenda;5.9614
+Boosaaso;11.2886
+Indore;22.7167
+Şanlıurfa;37.1583
+Vienna;48.2083
+Karaj;35.8272
+Kananga;-5.8970
+Peshawar;34.0144
+Sapporo;43.0667
+Ecatepec;19.6097
+Pingxiang;27.6333
+Orlando;28.4773
+Aleppo;36.2000
+Sacramento;38.5677
+Almaty;43.2775
+San Juan;18.3985
+San Antonio;29.4632
+Yinchuan;38.4795
+Thāne;19.1972
+Santos;-23.9369
+Blantyre;-15.7861
+Bucharest;44.4325
+Curitiba;-25.4297
+Multan;30.1978
+Tainan;22.9833
+Xiping;40.0820
+Port Harcourt;4.8242
+Warsaw;52.2300
+Jixi;45.2937
+Saidu Sharif;34.7500
+Liaoyang;41.2643
+Beihai;21.4667
+Meru;0.0500
+Brazzaville;-4.2694
+Fuxin;42.0127
+Wuwei;37.9278
+Mersin;36.8000
+Bhopāl;23.2500
+Lubumbashi;-11.6647
+Denpasar;-8.6500
+Davao;7.0667
+Shuyangzha;34.1299
+Adana;37.0000
+Damascus;33.5131
+Brussels;50.8467
+Hyderabad City;25.3792
+Diyarbakır;37.9100
+San Jose;37.3012
+Chinchvad;18.6186
+Montevideo;-34.8836
+Pittsburgh;40.4397
+Shuozhou;39.3408
+Cincinnati;39.1413
+Benxi;41.2920
+Baiyin;36.5448
+Mosul;36.3400
+Manhattan;40.7834
+Caloocan City;14.6500
+Kampala;0.3136
+Patna;25.6000
+Tegucigalpa;14.1000
+Cleveland;41.4764
+Sanzhou;30.8200
+Changshu;31.6500
+Mecca;21.4225
+Heihe;50.2458
+Jingdezhen;29.2942
+Conakry;9.5092
+Recife;-8.0500
+Indianapolis;39.7771
+Austin;30.3005
+Sangereng;-6.2889
+Kansas City;39.1238
+Zhongli;24.9650
+Novosibirsk;55.0333
+Bilāspur;22.0900
+Semarang;-6.9667
+Ludhiāna;30.9100
+Nārāyanganj;23.6200
+Stockholm;59.3294
+Chengtangcun;35.0833
+Āgra;27.1800
+Balandougou;13.3558
+Agwār;27.1800
+León de los Aldama;21.1167
+Yopougon;5.3167
+Puebla;19.0333
+Madurai;9.9252
+Hebi;35.7497
+Córdoba;-31.4167
+Shīrāz;29.6100
+Jamshedpur;22.7925
+Tabrīz;38.0814
+Huzhou;30.8925
+Columbus;39.9862
+Sofia;42.7000
+Kawasaki;35.5167
+San José;9.9325
+Aba;5.1167
+Palembang;-2.9861
+Zhangjiajie;29.1255
+Kōbe;34.6900
+Jiaxing;30.7522
+Charlotte;35.2083
+Guiping;23.4000
+Lianjiang;21.6146
+Ximeicun;24.9633
+Jianguang;28.1958
+Yucheng;29.9888
+Panama City;8.9833
+Xushan;30.1697
+Belém;-1.4558
+Virginia Beach;36.7335
+Leizhou;20.9147
+Gwangju;35.1653
+Nāsik;20.0000
+Porto Alegre;-30.0331
+Valencia;10.1667
+Onitsha;6.1667
+Abu Dhabi;24.4667
+Daejeon;36.3510
+Zapopan;20.7167
+Bronx;40.8501
+Yekaterinburg;56.8356
+Huazhou;32.6832
+Kyōto;35.0117
+Jinhua;29.1046
+Amsterdam;52.3728
+Shuangyashan;46.6388
+Pizhou;34.3422
+El Kelaa des Srarhna;32.0481
+Dakar;14.6928
+Kharkiv;49.9925
+Yangshe;31.8775
+Guyuan;36.0080
+Rui’an;27.7780
+Khulna;22.8167
+Muscat;23.6139
+Wenling;28.3797
+Gaozhou;21.9135
+Farīdābād;28.4167
+Chizhou;30.6583
+Tel Aviv-Yafo;32.08
+Ulaanbaatar;47.9203
+Goiânia;-16.6667
+Fuqing;25.7232
+Kayseri;38.7225
+Wuzhong;37.9874
+Belgrade;44.8200
+Pingdu;36.7833
+Milan;45.4669
+Aurangābād;19.8800
+Copenhagen;55.6761
+Yangquan;37.8576
+Yutan;28.3147
+Huangshan;29.7132
+Auckland;-36.8406
+Makassar;-5.1619
+Santiago;19.4572
+Milwaukee;43.0642
+Rājkot;22.3000
+Prague;50.0875
+Samsun;41.2903
+Liangshi;27.2578
+Barranquilla;10.9833
+Saitama;35.8614
+Guarulhos;-23.4628
+Al Başrah;30.5150
+Mandalay;21.9831
+Juárez;31.7386
+Xintai;35.9100
+Wusong;30.9333
+Meerut;28.9800
+Yushu;44.8249
+Rongcheng;26.2312
+Huazhou;21.6540
+Adelaide;-34.9275
+Baishan;41.9377
+Dayan;26.8808
+Haicheng;40.8523
+Tripoli;32.8872
+Jiangyin;31.9087
+Yicheng;31.3697
+Huaiyin;33.5819
+Porto;41.1621
+Cacuaco;-8.8053
+Soweto;-26.2678
+Rosario;-32.9575
+Canagatan;18.0000
+Helsinki;60.1708
+Jabalpur;23.1667
+Providence;41.8230
+Rucheng;32.3852
+Nizhniy Novgorod;56.3269
+Ahvāz;31.3203
+Jepara;-6.5333
+Shaoyang;32.9387
+Comayagüela;14.0981
+Laiwu;36.1833
+Sharjah;25.3575
+Kalamboli;19.2333
+Jingling;30.6667
+Kazan;55.7964
+Suwon;37.2667
+Yongcheng;33.9317
+Sumedang;-6.8400
+Calgary;51.0500
+Cần Thơ;10.0333
+Yiwu;29.3081
+Bagam;1.0833
+Beidao;34.6020
+Vasai;19.4700
+Xiangshui;26.5964
+Jacksonville;30.3322
+Akçaabat;41.0167
+Campinas;-22.9058
+Dadukou;26.5849
+Mombasa;-4.0500
+Lingcheng;22.7000
+Najafgarh;28.6092
+Vila Velha;3.2167
+Gāzipura;23.9889
+Chelyabinsk;55.1500
+Vārānasi;25.3189
+Xinyu;27.7950
+Qom;34.6400
+Hargeysa;9.5631
+Zhangye;38.9355
+Hiroshima;34.3914
+Maiduguri;11.8333
+Chiang Mai;18.7953
+Doha;25.2867
+Maputo;-25.9667
+Mbandaka;0.0478
+Pikine;14.7500
+Medina;24.4700
+Srīnagar;34.0900
+Omsk;54.9667
+Dublin;53.3500
+Liaoyuan;42.8976
+Cilacap;-7.7167
+Yingtan;28.2333
+Bandar Lampung;-5.4500
+Samara;53.2028
+Guankou;28.1417
+Ulsan;35.5500
+Dhanbād;23.7998
+Dingzhou;38.5158
+Lianyuan;27.6961
+Rongcheng;29.8239
+Kaiyuan;36.0656
+Nay Pyi Taw;19.7475
+Zhuji;29.7169
+Kigali;-1.9536
+Bukavu;-2.5000
+Leiyang;26.4179
+Bafoussam;5.4667
+Yichun;47.7235
+Benin City;6.3333
+Rostov;47.2333
+Xiantao;30.3833
+Amritsar;31.6400
+Callao;-12.0333
+Salt Lake City;40.7776
+Alīgarh;27.8800
+Shagamu;6.8333
+Yingchuan;34.1511
+Ciudad Nezahualcóyotl;19.4081
+Tbilisi;41.7225
+Guwāhāti;26.1722
+Ufa;54.7261
+Fès;34.0433
+São Luís;-2.5283
+Biên Hòa;10.9500
+Sevilla;37.2400
+N’Djamena;12.1100
+Mexicali;32.6633
+Nezahualcóyotl;19.4006
+Ikare;7.5167
+Nashville;36.1715
+Tamale;9.4075
+Xibeijie;39.7370
+Yuyao;30.0372
+Hāora;22.5800
+Hanchuan;30.6520
+Gongzhuling;43.5036
+Krasnoyarsk;56.0089
+Cologne;50.9364
+Bujumbura;-3.3833
+Bishkek;42.8747
+Zhufeng;36.0000
+São Gonçalo;-22.8269
+Yerevan;40.1814
+Ezhou;30.3972
+Nur-Sultan;51.1472
+Tongjin;37.2333
+Nouakchott;18.0858
+Xiashi;30.5333
+Rānchi;23.3600
+Taixing;32.1724
+Vereeniging;-26.6736
+Gwalior;26.2215
+Zhongwei;37.5139
+Goyang;37.6500
+Oslo;59.9133
+Vijayavāda;16.5193
+Chandīgarh;30.7500
+Edmonton;53.5344
+Sendai;38.2682
+Raleigh;35.8324
+Mizhou;35.9900
+Tunis;36.8064
+Xishan;27.6609
+Barquisimeto;10.0678
+Hegang;47.3139
+Voronezh;51.6717
+Perm;58.0139
+Changwon;35.2708
+Fangchenggang;21.6000
+Shouguang;36.8833
+Bogor;-6.5966
+Cartagena;10.4000
+Matola;-25.9667
+Jodhpur;26.2800
+Memphis;35.1087
+Ogbomoso;8.1333
+Rangapukur;25.5600
+Managua;12.1544
+Sanya;18.2533
+Shymkent;42.3167
+Wutong;30.6326
+Niamey;13.5150
+Shubrā al Khaymah;30.1286
+Linhai;28.8523
+Denizli;37.7667
+Maceió;-9.6658
+Monrovia;6.3133
+Wafangdian;39.6271
+Zhongxiang;31.1690
+Louisville;38.1663
+Odesa;46.4775
+Thủ Đức;10.8266
+Volgograd;48.7086
+Islamabad;33.6931
+Port-au-Prince;18.5333
+Xinyi;22.3559
+Raipur;21.2500
+Arequipa;-16.4000
+Richmond;37.5295
+Zaoyang;32.1287
+Buffalo;42.9018
+Shuizhai;33.4433
+Xingyi;25.0910
+Kota;25.1800
+Quetta;30.1833
+Kathmandu;27.7172
+Ottawa;45.4247
+Lilongwe;-13.9833
+Asmara;15.3228
+Freetown;8.4844
+Vientiane;17.9667
+Jerusalem;31.7784
+Riga;56.9489
+Bangui;4.3733
+Dushanbe;38.5367
+Lomé;6.1319
+Ashgabat;37.9500
+Zagreb;45.8167
+Libreville;0.3903
+Cotonou;6.3667
+Pretoria;-25.7461
+Vilnius;54.6872
+Winnipeg;49.8844
+Quebec City;46.8139
+Chisinau;47.0228
+Port Moresby;-9.4789
+Skopje;41.9961
+Djibouti;11.5883
+Gaza;31.5069
+Kingston;17.9714
+Rabat;34.0209
+San Salvador;13.6989
+The Hague;52.0800
+Asunción;-25.3000
+Juba;4.8500
+Maseru;-29.3100
+Bissau;11.8500
+Valletta;35.8983
+Bratislava;48.1439
+Kitchener;43.4186
+Manama;26.2250
+Tallinn;59.4372
+Beirut;33.8869
+Cape Town;-33.9253
+Tirana;41.3289
+Sarajevo;43.8564
+Wellington;-41.2889
+Banjul;13.4531
+Halifax;44.6475
+Canberra;-35.2931
+Yamoussoukro;6.8161
+Victoria;48.4283
+Nicosia;35.1725
+Windhoek;-22.5700
+Saint-Denis;-20.8789
+Porto-Novo;6.4972
+Sucre;-19.0475
+Ljubljana;46.0514
+Nassau;25.0781
+Bloemfontein;-29.1167
+Fort-de-France;14.6000
+New Delhi;28.6139
+Gaborone;-24.6581
+Paramaribo;5.8522
+Dili;-8.5536
+Dodoma;-6.1731
+Georgetown;6.8058
+Gibraltar;36.1333
+Malabo;3.7500
+Suva;-18.1416
+Nouméa;-22.2758
+Pristina;42.6633
+Male;4.1753
+Port Louis;-20.1644
+Podgorica;42.4413
+Willemstad;12.1080
+Bern;46.9481
+Gitega;-3.4283
+Reykjavík;64.1467
+Luxembourg;49.6117
+Papeete;-17.5334
+Praia;14.9180
+Sri Jayewardenepura Kotte;6.9108
+Bridgetown;13.0975
+Moroni;-11.6990
+Thimphu;27.4722
+Mbabane;-26.3208
+Honiara;-9.4319
+Port of Spain;10.6667
+Castries;14.0167
+Putrajaya;2.9300
+Cayenne;4.9330
+São Tomé;0.3361
+Port-Vila;-17.7333
+Bandar Seri Begawan;4.8903
+Monaco;43.7333
+Apia;-13.8333
+Tarawa;1.3382
+Oranjestad;12.5186
+Saint Helier;49.1858
+Mamoudzou;-12.7794
+Majuro;7.0833
+Douglas;54.1450
+George Town;19.2866
+Victoria;-4.6167
+Kingstown;13.1578
+Andorra la Vella;42.5000
+Saint John’s;17.1167
+Nuku‘alofa;-21.1333
+Nuuk;64.1814
+Belmopan;17.2514
+Roseau;15.3014
+Basseterre;17.3000
+Tórshavn;62.0000
+Road Town;18.4167
+Pago Pago;-14.2740
+Grand Turk;21.4664
+Marigot;18.0706
+Palikir;6.9178
+Funafuti;-8.5167
+Vaduz;47.1410
+Lobamba;-26.4465
+Avarua;-21.2070
+Saint George’s;12.0500
+San Marino;43.9346
+Tifariti;26.1580
+Philipsburg;18.0237
+Capitol Hill;15.2137
+Stanley;-51.7000
+Hamilton;32.2942
+Vatican City;41.9040
+Alofi;-19.0560
+Basse-Terre;16.0104
+Hagåtña;13.4745
+Jamestown;-15.9251
+Brades;16.7928
+Yaren;-0.5477
+Gustavia;17.8958
+Ngerulmud;7.5006
+Saint-Pierre;46.7811
+The Valley;18.2167
+Mata-Utu;-13.2825
+Kingston;-29.0569
+Longyearbyen;78.2167
+Adamstown;-25.0667
+Flying Fish Cove;-10.4167
+King Edward Point;-54.2833
+Bareilly;28.3640
+Quảng Hà;15.9333
+Domaa-Ahenkro;7.2833
+Oklahoma City;35.4676
+Xingcheng;24.1681
+Dongtai;32.8534
+Yingcheng;24.1878
+Chiba;35.6073
+Al Mijlad;11.0339
+Pekanbaru;0.5092
+Luocheng;22.7645
+Dnipro;48.4675
+Danyang;31.9948
+Godē;5.9527
+Natal;-6.9838
+Nada;19.5000
+Zamboanga City;6.9042
+Kirkuk;35.4667
+Bridgeport;41.1918
+Naples;40.8333
+Wuchuan;21.4283
+Huilong;31.8131
+Morelia;19.7683
+Málaga;36.7194
+Cebu City;10.3200
+Al Manşūrah;31.0500
+Coimbatore;11.0168
+Santo Domingo Este;18.4855
+Setagaya;35.6466
+Sŏngnam;37.4333
+Taishan;22.2486
+Teresina;-5.0949
+Solāpur;17.6800
+Tangier;35.7767
+Kermānshāh;34.3142
+Krasnodar;45.0333
+Baidoa;3.1167
+Gaalkacyo;6.7697
+Anqiu;36.3619
+Feicheng;36.1860
+Seberang Jaya;5.4000
+El Alto;-16.5047
+Kitakyūshū;33.8833
+Meishan;34.1736
+Khartoum North;15.6333
+Kisangani;0.5153
+Aguascalientes;21.8760
+Marrakech;31.6300
+Donetsk;48.0028
+Trujillo;-8.1120
+New Orleans;30.0687
+Taihe;30.8706
+Trichinopoly;10.7903
+Xin’an;34.3662
+Taihecun;45.7680
+Kashgar;39.4681
+Naucalpan de Juárez;19.4753
+Çankaya;39.9244
+Santiago de Cuba;20.0217
+Owerri;5.4833
+Padang;-0.9500
+Qingzhou;36.6967
+Lichuan;30.2965
+Santiago del Estero;-27.7833
+Daye;30.1003
+Hengzhou;22.6896
+Fort Worth;32.7817
+Hartford;41.7661
+Esenyurt;41.0470
+Campo Grande;-20.4839
+Zhuanghe;39.6896
+Bobo-Dioulasso;11.1833
+Ad Dammām;26.4333
+Quzhou;28.9545
+Lhasa;29.6534
+Jiaozhou;36.2481
+Bunia;1.5667
+Taguig City;14.5200
+Cancún;21.1606
+Mérida;20.9700
+Yangchun;22.1717
+Dengtalu;36.1386
+Morādābād;28.8389
+Antipolo;14.5842
+Abeokuta;7.1608
+Bucheon;37.5000
+Zhoushan;29.9887
+Tiruppūr;11.1085
+Natal;-5.7833
+Chihuahua;28.6353
+Klang;3.0333
+As Sulaymānīyah;35.5572
+Gurgaon;28.4560
+Turin;45.0792
+Tucson;32.1541
+Hai’an;32.5320
+Ar Ramādī;33.4258
+Laiyang;36.9758
+Sale;34.0333
+Jalandhar;31.2569
+Marseille;43.2964
+Bucaramanga;7.1333
+Kaifeng Chengguanzhen;34.8519
+Ikeja;6.6186
+Eskişehir;39.7767
+Saltillo;25.4231
+Gaomi;36.3833
+Liverpool;53.4075
+Ipoh;4.5972
+Oran;35.6969
+Portsmouth;50.8058
+Southampton;50.9025
+Hermosillo;29.0989
+Cochabamba;-17.3833
+Weichanglu;37.1792
+Shache;38.4261
+Wuxi;26.5895
+Leping;28.9632
+Hailun;47.4585
+Macheng;31.1817
+Akure;7.2500
+Ilorin;8.5000
+Yuci;37.6823
+Saratov;51.5333
+Erbil;36.1912
+Iguaçu;-22.7400
+Pasig City;14.5750
+Dehui;44.5333
+Kālkāji Devi;28.5485
+Bhubaneshwar;20.2700
+Honolulu;21.3294
+Tongchuan;34.9057
+Cheongju;36.6333
+Chengxiang;31.4515
+Thessaloníki;40.6403
+Warri;5.5167
+Sakai;34.5733
+Pointe-Noire;-4.8000
+Rongjiawan;29.1409
+Mediouna;33.4500
+Butterworth;5.3992
+Renqiu;38.7094
+Xindi;29.8182
+Bhayandar;19.2900
+Wu’an;36.6941
+São Bernardo do Campo;-23.7000
+Māndvi;19.3000
+Barinas;8.6333
+Zijinglu;34.7513
+Gaoyou;32.7847
+Culiacán;24.8069
+Hejian;38.4451
+Yiyang;26.4103
+Puxi;35.2125
+Androtsy;-24.1000
+McAllen;26.2252
+Qingping;34.5380
+Omaha;41.2627
+João Pessoa;-7.1200
+Dongyang;29.2785
+Querétaro;20.5875
+Kraków;50.0614
+George Town;5.4144
+Abaeté;-19.1583
+Palermo;2.8917
+Valencia;39.4700
+Xigazê;29.2500
+El Paso;31.8476
+Seyhan;36.9831
+Niigata;37.9161
+Hempstead;40.6629
+Leeds;53.8003
+Hamamatsu;34.7108
+Bağcılar;41.0344
+Xiangxiang;27.7389
+Bilbao;43.2569
+Chaohucun;31.6783
+Fuyang;30.0553
+Homs;34.7333
+Küçükçekmece;41.0000
+Lubango;-14.9167
+Zouping;36.8625
+Khŭjand;40.2833
+San Luis Potosí;22.1511
+Nottingham;52.9533
+Cencheng;22.9297
+Dali;25.6808
+Hamhŭng;39.9167
+Korla;41.7259
+Rājshāhi;24.3667
+Erzurum;39.9086
+Frankfurt;50.1106
+Al ‘Ayn;24.2075
+Songzi;30.1772
+Albuquerque;35.1054
+Patiāla;30.3400
+Laixi;36.8667
+Bahawalpur;29.3956
+Zhongba;31.7761
+Kaduna;10.5167
+Qingnian;36.8494
+San Pedro Sula;15.5000
+Qamdo;31.1375
+Xinhualu;34.3962
+Nerima;35.7355
+Guangshui;31.6189
+Pietermaritzburg;-29.6167
+Baardheere;2.3333
+Tlajomulco de Zúñiga;20.4736
+Samarinda;-0.5000
+Changhua;24.0667
+Sizhan;39.0099
+Ciudad Guayana;8.3667
+Cúcuta;7.8942
+Dhūlia;20.8997
+Burco;9.5279
+Licheng;31.4174
+Ōta-ku;35.5613
+Thiruvananthapuram;8.4875
+Tyumen;57.1500
+Nampula;-15.1167
+Zaporizhzhia;47.8500
+Kyaukse;21.6131
+Chengguan;35.5256
+Kumamoto;32.8031
+Nehe;48.4800
+Osogbo;7.7667
+Cabinda;-5.5600
+Kermān;30.2833
+Zunhua;40.1881
+Rochester;43.1680
+Valenzuela;14.7000
+Orūmīyeh;37.5486
+Wugang;26.7345
+Shuangqiao;35.0833
+Tshikapa;-6.4167
+São José dos Campos;-23.1789
+Comodoro Rivadavia;-45.8647
+Cagayan de Oro;8.4833
+Tondo;14.6170
+Langzhong;31.5504
+Qian’an;40.0059
+Lviv;49.8425
+Sarasota;27.3387
+Reynosa;26.0922
+Santo André;-23.6572
+An Najaf;32.0000
+Sagamihara;35.5667
+Guli;28.9008
+Mississauga;43.6000
+Concepción;-36.8282
+Okayama;34.6500
+Anlu;31.2575
+Mwanza;-2.5167
+Fresno;36.7830
+Changsha;22.3762
+Torreón;25.5394
+Shihezi;44.3054
+Enugu;6.4528
+Jaboatão;-8.1803
+Tulsa;36.1283
+Yanggok;37.6333
+Yatou;37.1653
+Edogawa;35.7066
+Allentown;40.5961
+Ribeirão Prêto;-21.1783
+Xichang;27.8983
+Latakia;35.5167
+Bhiwandi;19.2967
+City of Parañaque;14.4700
+Dasmariñas;14.3294
+Dayton;39.7805
+Sahāranpur;29.9640
+Warangal;17.9689
+Soledad;10.9167
+Osasco;-23.5328
+Dashiqiao;40.6328
+Birmingham;33.5279
+Nampo;38.7333
+Shiliguri;26.7100
+Banjarmasin;-3.3200
+Sha Tin;22.3802
+Salem;11.6500
+General Santos;6.1167
+Cocody;5.3500
+Ḩamāh;35.1333
+Pendik;40.8747
+Bacoor;14.4624
+Vellore;12.9165
+Shishi;24.7355
+Guadalupe;25.6775
+Adachi;35.7749
+Qianxi;27.0284
+Tolyatti;53.5089
+Macau;22.2006
+Bauchi;10.3158
+Hamilton;43.2567
+Łódź;51.7769
+Miluo Chengguanzhen;28.8049
+Gaizhou;40.4019
+Karbalā’;32.6167
+Leling;37.7333
+Jianshe;34.2189
+Shizuoka;34.9756
+Charleston;32.8168
+Jingcheng;32.0058
+Kochi;9.9700
+Mar del Plata;-38.0000
+Cape Coral;26.6443
+Tasikmalaya;-7.3161
+Rasht;37.2808
+Xinmin;41.9952
+Shanhu;29.5908
+Zhongshu;27.8116
+Gorakhpur;26.7637
+Zaragoza;41.6500
+Wrocław;51.1100
+Acapulco de Juárez;16.8636
+Bahār;34.9072
+Kumul;42.8193
+Murcia;37.9861
+Pinghu;30.7005
+Palermo;38.1157
+Guankou;30.9933
+Tlaquepaque;20.6167
+Songyang;34.4603
+Ch’ŏngjin;41.7833
+Puyang Chengguanzhen;35.7004
+Qionghu;28.8417
+Zhaodong;46.0635
+Narela;28.8527
+Huambo;-12.7767
+Wenchang;31.0540
+Villavicencio;4.1500
+Shulan;44.4079
+Tlalnepantla;19.5367
+Catia La Mar;10.6000
+Sargodha;32.0836
+Al Hufūf;25.3833
+Durango;24.0250
+Jalingo;8.9195
+Bouaké;7.6833
+Mazatlán;23.2167
+San Jose del Monte;14.8139
+Ansan;37.3167
+Abomey-Calavi;6.4486
+Lingbao Chengguanzhen;34.5221
+Hwasu-dong;37.1997
+Sialkot City;32.4925
+Huế;16.4667
+Bulawayo;-20.1700
+Xiping;25.6005
+Sanhe;39.9808
+Ch’ŏnan;36.8167
+Contagem;-19.9319
+Jieshou;33.2605
+Selçuklu;37.8814
+Ērer Sātā;9.5667
+Honchō;35.6946
+Düsseldorf;51.2333
+Izhevsk;56.8500
+Guntūr;16.3008
+Guixi;28.2861
+Sorocaba;-23.5017
+Yıldırım;40.1100
+Petaling Jaya;3.0972
+Tengyue;25.0208
+Wuxue;29.8518
+Rasūlpur;28.5700
+Bhāvnagar;21.7600
+Brahmapur;19.3150
+Qufu;35.6000
+Gaobeidian;39.3257
+Ruiming;25.8833
+Columbia;34.0378
+Concord;37.9722
+Noida;28.57
+Gold Coast;-28.0167
+Xinshi;31.0236
+Ta‘izz;13.5789
+Aracaju;-10.9167
+Jeonju;35.8167
+Bhāngar;22.5800
+Jin’e;29.3395
+Barnaul;53.3333
+Makati City;14.5567
+Rotterdam;51.9167
+Changping;40.2248
+Benghazi;32.1167
+Kryvyi Rih;47.9086
+Ḩalwān;29.8453
+Colorado Springs;38.8674
+Suohe;34.7879
+Chimalhuacán;19.4167
+Xinxing;39.8734
+Bhilai;21.3667
+Mangalore;12.9020
+Port-Bouët;5.2667
+Zhuangyuan;37.3056
+Glasgow;55.8611
+Namangan;41.0011
+Ulyanovsk;54.3167
+Tân An;10.9050
+Irkutsk;52.2833
+Bhilai;21.2100
+Nāgercoil;8.1833
+Jos;9.9167
+Pontianak;-0.0206
+Bazhou;39.1235
+Turpan;42.9512
+Villa Nueva;14.5314
+Las Piñas City;14.4500
+Springfield;42.1155
+Knoxville;35.9692
+Meihekou;42.5279
+Jurong;31.9579
+Feira de Santana;-12.2500
+Khabarovsk;48.4833
+Zhugang;28.1277
+Leipzig;51.3400
+Xinji;37.9423
+Serang;-6.1200
+Jambi;-1.5900
+Kandahār;31.6200
+San Miguel de Tucumán;-26.8167
+Gothenburg;57.7075
+Yaroslavl;57.6167
+Baton Rouge;30.4420
+Zhangshu;28.0667
+Vladivostok;43.1333
+Ogden;41.2279
+Kuantan;3.8167
+Raurkela;22.2492
+Cuttack;20.5236
+Ar Rayyān;25.2500
+Haifa;32.8192
+Malanje;-9.5333
+Bacolod;10.6765
+Zhuozhou;39.4887
+Grand Rapids;42.9619
+Uberlândia;-18.9231
+Albany;42.6664
+Tianchang;32.6853
+Kawaguchi;35.8077
+Itabashi;35.7512
+Suginami-ku;35.6995
+Cimahi;-6.8712
+Tuxtla;16.7528
+Garoua;9.3000
+Ḩafr al Bāţin;28.4342
+Tumkūr;13.3400
+Balikpapan;-1.2768
+Durban;-29.8833
+Kagoshima;31.6000
+Al Ḩillah;23.4895
+Makhachkala;42.9833
+Sihui;23.3448
+Irapuato;20.6667
+Brampton;43.6833
+Luocheng;30.9793
+Mbale;1.0806
+Pereira;4.8143
+Bakersfield;35.3529
+Uvira;-3.4000
+Dortmund;51.5167
+Chuxiong;25.0461
+Mission Viejo;33.6096
+Zāhedān;29.4964
+New Haven;41.3113
+Shah Alam;3.0722
+Wenlan;23.3989
+Cuiabá;-15.5958
+Shangzhi;45.2116
+Essen;51.4508
+Botou;38.0740
+Mymensingh;24.7539
+Anyang;37.3833
+Genoa;44.4111
+Durgāpur;23.5500
+Port Sudan;19.6167
+Al Mafraq;32.3399
+Puente Alto;-33.6167
+Dehra Dūn;30.3450
+Aţ Ţā’if;21.2751
+Wancheng;18.8000
+Hachiōji;35.6664
+Xiulin;29.7211
+Fu’an;27.1000
+Tomsk;56.4886
+Tonalá;20.6167
+Juiz de Fora;-21.7619
+Worcester;42.2705
+Kolwezi;-10.7167
+Chāpra;25.7848
+Bristol;51.4536
+Luofeng;37.3590
+Lingyuan;41.2407
+Irbid;32.5500
+Al Maḩallah al Kubrá;30.9686
+Wencheng;19.6167
+Bremen;53.0833
+Ciudad Bolívar;8.1219
+Orenburg;51.7667
+Shenzhou;38.0005
+Āsansol;23.6800
+Kuiju;36.8528
+Zhenzhou;32.2739
+Surakarta;-7.5667
+Dresden;51.0500
+Kolhāpur;16.6917
+Benguela;-12.5500
+Ensenada;31.8578
+Kemerovo;55.3667
+Lanxi;29.2167
+Dangyang;30.8258
+Farīdpur;23.6020
+Herāt;34.3419
+Luanzhou;39.7396
+Hamadān;34.8064
+Novokuznetsk;53.7667
+Nellore;14.4500
+Palma;39.5667
+Chiclayo;-6.7630
+Nānded;19.1500
+Ajmer;26.4499
+Al Ḩudaydah;14.8022
+Kimhae;35.2342
+Provo;40.2457
+Rustenburg;-25.6667
+Amrāvati;20.9258
+Poznań;52.4083
+Huanghua;38.3710
+Muntinlupa City;14.3800
+Londrina;-23.3100
+Nansana;0.3639
+Tabūk;28.3972
+Heroica Matamoros;25.8797
+Akron;41.0798
+Samarkand;39.6547
+Xingcheng;40.6189
+Kaiyuan;42.5380
+Hannover;52.3667
+Valledupar;10.4833
+Fengcheng;40.4543
+Ixtapaluca;19.3186
+Ghulja;43.9000
+City of Calamba;14.2167
+Ananindeua;-1.3658
+Xiangyang;34.2999
+Fuding;27.2000
+An Nāşirīyah;31.0439
+Al Ḩillah;32.4833
+Ibagué;4.4333
+Ryazan;54.6300
+Kassala;15.4500
+Tripoli;34.4367
+Chang’an;29.4761
+Kōtō-ku;35.6728
+Naberezhnyye Chelny;55.7000
+Aksu;41.1850
+Salta;-24.7833
+Astrakhan;46.3500
+Gulbarga;17.3290
+Cadaado;6.1403
+Lyon;45.7600
+Wuhai;39.6844
+Mingguang;32.7816
+Antwerp;51.2178
+Yazd;31.8822
+Touba;14.8667
+Ardabīl;38.2425
+Bīkaner;28.0167
+Agartala;23.8333
+Ndola;-12.9667
+Himeji;34.8167
+Palm Bay;27.9631
+Tultitlán de Mariano Escobedo;19.6450
+Ailan Mubage;43.9080
+Bandar ‘Abbās;27.1833
+Bắc Ninh;21.1833
+Ciudad Apodaca;25.7817
+Santa Teresa del Tuy;10.2333
+Maipú;-33.5167
+Penza;53.2000
+Soacha;4.5872
+Al Qaţīf;26.5560
+Port Said;31.2625
+Loni;28.7500
+Yucheng;36.9329
+Sevastopol;44.6050
+Meknès;33.8950
+Mixco;14.6338
+Arāk;34.0917
+Pohang;36.0322
+Longzhou;30.3200
+Anda;46.4078
+Jinghong;22.0057
+Sheffield;53.3808
+Utsunomiya;36.5551
+Suez;29.9667
+Nuremberg;49.4539
+Surrey;49.1900
+Heshan;22.7697
+Ujjain;23.1700
+Jiaji;19.2431
+Santa Marta;11.2419
+Joinvile;-26.3204
+Beining;41.5961
+Des Moines;41.5725
+Hải Dương;20.9397
+Carrefour;18.5344
+Maturín;9.7423
+Homyel’;52.4453
+Leicester;52.6344
+Yanji;42.9044
+Macapá;0.0330
+Yicheng;31.7117
+Ulhāsnagar;19.2200
+Al ‘Āshir min Ramaḑān;30.3065
+Lipetsk;52.6167
+Al ‘Amārah;31.8333
+Bhīlwāra;25.3500
+Encheng;22.1879
+Murrieta;33.5719
+Aden;12.8000
+Kitwe;-12.8167
+Matsuyama;33.8333
+Jhānsi;25.4486
+Pingtung;22.6761
+Lapu-Lapu City;10.3127
+Matsudo;35.7876
+Montería;8.7500
+Ichikawa;35.7219
+Nagqu;31.4766
+Imus;14.4297
+Hsinchu;24.8167
+Kimberley;-28.7383
+Jammu;32.7300
+Belas;-8.9983
+Talatona;-8.9167
+Ile-Ife;7.4667
+Purnea;25.7780
+Kirov;58.6000
+Mykolaiv;46.9750
+Meicheng;30.6412
+Tinnevelly;8.7136
+Niterói;-22.8833
+Farāh;32.3436
+Sukkur;27.7061
+Oujda-Angad;34.6867
+Taozhou;30.8956
+Marka;1.6833
+Higashi-ōsaka;34.6794
+Johor Bahru;1.4556
+Hongjiang;27.1167
+Bello;6.3333
+Chimbote;-9.0745
+Duisburg;51.4347
+Qaraghandy;49.8028
+Mesa;33.4015
+Toulouse;43.6045
+Likasi;-10.9833
+Dengtacun;41.4237
+Lembok;-8.5650
+Zhijiang;30.4271
+Chengjiao;35.4043
+Beipiao;41.8020
+Suoluntun;45.2279
+Staten Island;40.5834
+Kota Bharu;6.1333
+Ciudad López Mateos;19.5500
+Celaya;20.5222
+Vinh;18.6667
+Duyun;26.2672
+Los Mochis;25.7835
+‘Ajmān;25.4136
+Nyala;12.0500
+Larkana;27.5583
+Wichita;37.6895
+Nishinomiya-hama;34.7376
+Cheboksary;56.1333
+Yuanping;38.7299
+Toledo;41.6638
+Yueqing;28.1188
+Edinburgh;55.9533
+Belgaum;15.8500
+Tula;54.2000
+Gdańsk;54.3475
+Shahe;36.8622
+Serra;-20.1289
+Brookhaven;40.8320
+Gaoping;35.7911
+Dunhua;43.3667
+Az Zarqā’;32.0833
+Sylhet;24.9000
+Kaihua;23.3715
+Caerdydd;51.4817
+Jāmnagar;22.4700
+Fuyuan;48.3614
+Gaya;24.7500
+Florianópolis;-27.6122
+Chiniot;31.7194
+Jiannan;31.3446
+Ōita;33.2333
+Berbera;10.4356
+Kaliningrad;54.7003
+Mbeya;-8.9000
+Nangong;37.3606
+Ambattūr;13.1143
+Katlehong;-26.3333
+Kurashiki;34.5833
+Barura;23.3750
+San Juan;-31.5342
+Vila Velha;-20.3364
+Mazār-e Sharīf;36.7000
+Shekhupura;31.7111
+Worthing;50.8147
+Piura;-5.2000
+Mandaluyong City;14.5800
+Kartal;40.8872
+Jiaojiangcun;28.6804
+Harrisburg;40.2752
+Laohekou;32.3849
+Kâğıthane;41.0719
+Agege;6.6219
+Angeles City;15.1472
+São José do Rio Prêto;-20.8081
+Pasay City;14.5500
+Beian;48.2395
+Fujin;47.2489
+Salt Lake City;22.6100
+Balashikha;55.8167
+Xiaoyi;37.1449
+Port St. Lucie;27.2796
+Lanús;-34.7000
+Qingzhen;26.5555
+Jiangshan;28.7412
+Ba‘qūbah;33.7500
+Katsushika-ku;35.7434
+Buraydah;26.3333
+Longjiang;27.5820
+Tân Uyên;11.0508
+Long Beach;33.7977
+Marikina City;14.6500
+Manado;1.4931
+Campos;-21.7539
+Kanazawa;36.5611
+Iloilo;10.7167
+Reno;39.5497
+Calabar;4.9767
+Kuqa;41.7156
+Piraeus;37.9430
+Madison;43.0822
+Jalgaon;21.0040
+Cranbourne;-38.0996
+Kowloon City;22.3282
+Mauá;-23.6678
+Fukuyama;34.4833
+Xicheng;23.3629
+Kikwit;-5.0386
+Amagasaki;34.7333
+Pyeongtaek;36.9922
+Kurnool;15.8300
+Little Rock;34.7256
+Melaka;2.1944
+General Trias;14.3833
+Jian’ou;27.0387
+Esenler;41.0339
+Huadian;42.9633
+Ţanţā;30.7833
+Kota Kinabalu;5.9750
+Kursk;51.7167
+Minzhu;43.7192
+Stavropol;45.0500
+Udaipur;24.5800
+Mogi das Cruzes;-23.5228
+Mariupol;47.0958
+Eslāmshahr;35.5606
+San Nicolás de los Garza;25.7500
+Greenville;34.8354
+Sham Shui Po;22.3307
+Barcelona;10.1333
+Constantine;36.3650
+Tanbei;35.0907
+Ado-Ekiti;7.6167
+Batman;37.8870
+Bandung;-6.9120
+Baisha;29.4774
+Avcılar;40.9792
+Denton;33.2175
+Rodriguez;14.7167
+Taoyuan District;24.9913
+Yongji;34.8670
+Chauddagram;23.2283
+Danjiangkou;32.5408
+Kahramanmaraş;37.5833
+Fujisawa;35.3500
+Andijon;40.7833
+Mathura;27.4925
+Zürich;47.3744
+Diadema;-23.6861
+Machida;35.7106
+Ulan-Ude;51.8272
+Spokane;47.6671
+Ning’an;44.3439
+Zhangjiakou Shi Xuanhua Qu;40.5944
+Sunch’ŏn;39.4167
+Jinchang;38.5168
+Kashiwa;35.8676
+Guangming;45.3357
+Sāngli;16.8667
+Oakland;37.7904
+Beira;-19.8333
+Kupang;-10.1702
+Jeju;33.5097
+Davangere;14.4666
+Caxias do Sul;-29.1667
+Manizales;5.1000
+Yogyakarta;-7.8014
+Calicut;11.2500
+Koumassi;5.3000
+Veracruz;19.1903
+Zanjān;36.6789
+Welkom;-27.9831
+Shinagawa-ku;35.6092
+Kenitra;34.2500
+Agadir;30.4333
+Somolu;6.5408
+Uyo;5.0500
+Sokoto;13.0622
+Lancaster;40.0420
+Masan;35.1833
+Huili Chengguanzhen;26.6614
+Sidi Bouzid;35.0381
+Cusco;-13.5250
+Porto Velho;-8.7619
+Sihŭng;37.3799
+Xalapa;19.5400
+Florencio Varela;-34.8167
+Tver;56.8578
+Trabzon;41.0050
+Malatya;38.3486
+Xunyang;32.8357
+Uijeongbu;37.7486
+Akola;20.7000
+Aomori;40.8223
+Yan’an Beilu;44.0144
+Owo;7.1961
+Aves;41.4400
+Buenaventura;3.8772
+Poughkeepsie;41.6950
+Laval;45.5833
+Boise;43.6005
+Toyota;35.0824
+Santa Rosa;14.3167
+Daloa;6.8833
+Elazığ;38.6744
+Hpa-An;16.8906
+Rahimyar Khan;28.4200
+Bettiah;26.8014
+Ugep;5.8000
+Winston-Salem;36.1029
+Kushtia;23.9101
+Mishan;45.5420
+Hailin;44.5735
+Seremban;2.7222
+Boa Vista;2.8194
+Lecheng;25.1307
+Zhengjiatun;43.5130
+Luhansk;48.5667
+Pencheng;29.6792
+Magnitogorsk;53.3833
+Thủ Dầu Một;10.9667
+Takamatsu;34.3500
+Syracuse;43.0407
+El Obeid;13.1833
+Da’an;45.5050
+Xingren;25.4352
+Biñan;14.3333
+Arusha;-3.3667
+Fenyang;37.2647
+Ajdābiyā;30.7556
+Paju;37.8667
+Mataram;-8.5833
+Carapicuíba;-23.5192
+Jhang City;31.2694
+Tepic;21.5083
+Jayapura;-2.5330
+Rio Branco;-9.9747
+Toyama;36.6959
+Fangting;31.1282
+Sanandaj;35.3144
+Delhi Cantonment;28.6000
+Linghai;41.1676
+Shorāpur;16.5200
+Toyonaka;34.7833
+Sochi;43.5853
+Bhāgalpur;25.2500
+Bellary;15.1000
+Ivanovo;57.0000
+Kisumu;-0.0833
+Augusta;33.3645
+Türkmenabat;39.0833
+Zaria;11.0667
+Bryansk;53.2500
+Kumi;36.1195
+Asyūţ;27.1833
+Wanyuan;32.0691
+Maracay;10.2469
+Padiāla;30.5667
+Yüreğir;36.9981
+Jiexiu;37.0282
+Stockton;37.9765
+Bogra;24.8500
+Santa Fe;-31.6333
+Campina Grande;-7.2306
+Nagasaki;32.7447
+Szczecin;53.4325
+Maringá;-23.4000
+Palm Coast;29.5389
+Chattanooga;35.0660
+Qazvīn;36.2667
+Quilon;8.8800
+Jundiaí;-23.1858
+Hirakata;34.8167
+Gifu;35.4232
+Khayelitsha;-34.0403
+Kūkatpalli;17.4849
+Jiangjiafan;31.0238
+Maungdaw;20.8167
+Kissimmee;28.3041
+Durham;35.9792
+Dera Ghazi Khan;30.0331
+Miyazaki;31.9167
+Bhātpāra;22.8700
+Hazāribāgh;23.9800
+Sandakan;5.8388
+Taytay;14.5692
+Hejin;35.5914
+Olinda;-8.0000
+Thanh Hóa;19.8075
+Surgut;61.2500
+Nnewi;6.0167
+Minamisuita;34.7594
+Thiès;14.7833
+Betsiboka;-16.9500
+Belgorod;50.6000
+Tāngāil;24.2644
+Yokosuka;35.2500
+Nha Trang;12.2450
+Malabon;14.6600
+Al Jahrā’;29.3500
+Yola;9.2300
+Pasto;1.2078
+Lobito;-12.3597
+Al Jubayl;27.0000
+Saurimo;-9.6500
+Bologna;44.4939
+Arlington;32.6998
+Gujrat;32.5739
+Ad Dīwānīyah;31.9892
+Piracicaba;-22.7253
+Hancheng;35.4768
+Karamay;45.5799
+Kākināda;16.9661
+San-Pédro;4.7500
+Tieli;46.9838
+Cilegon;-6.0027
+Darbhanga;26.1700
+Victorville;34.5277
+Gwoza;11.0861
+Saki;8.6667
+Tétouan;35.5667
+Aqtöbe;50.2836
+Bibā;28.9218
+Plovdiv;42.1500
+Oyo;7.8500
+Ilesa;7.6167
+Tarlac City;15.4869
+Okazaki;34.9543
+Sirūr;18.8300
+Cainta;14.5667
+Ḩā’il;27.5167
+Garoowe;8.4000
+Olomouc;49.5939
+Yidu;30.3880
+Lianzhou;24.7868
+Ceel Baraf;3.2073
+Florence;43.7714
+Christchurch;-43.5310
+Nuevo Laredo;27.4861
+Brno;49.1925
+Bawshar;23.5333
+London;42.9836
+Novi Sad;45.2542
+Aurora;39.7083
+Gusau;12.1500
+Modesto;37.6375
+Kaunas;54.8972
+Sardārshahr;28.4401
+Zêtang;29.2380
+Las Palmas;28.1272
+Ichinomiya;35.3039
+Taunggyi;20.7836
+Lancaster;34.6935
+Fayetteville;36.0714
+Cantonment;31.5167
+Pānihāti;22.6900
+Huancayo;-12.0667
+Betim;-19.9678
+Usulután;13.3500
+Sintra;38.7992
+Chitungwiza;-17.9939
+Hatay;36.2025
+Iquitos;-3.7500
+Sivas;39.7500
+Helixi;30.6267
+Scranton;41.4044
+Mamou;10.3833
+Al Kharj;24.1483
+Manukau City;-37.0000
+Stoke-on-Trent;53.0000
+Cumaná;10.4500
+Rohtak;28.8909
+Vinnytsia;49.2333
+Māler Kotla;30.5167
+Lipa City;13.9411
+Mandaue City;10.3333
+Bhawana;31.5661
+Khorramābād;33.4878
+Ambon;-3.7000
+Takasaki;36.3219
+Butuan;8.9534
+Toyohashi;34.7692
+Keelung;25.1333
+Baguio City;16.4119
+La Florida;-33.5333
+Gebze;40.8000
+Lengshuijiang;27.6858
+Petare;10.4833
+Anguo;38.4177
+Kita-ku;35.7528
+Madan;30.3392
+Panshi;42.9392
+Bharatpur;27.6833
+Az Zubayr;30.3833
+Caucaia;-3.7167
+Vitsyebsk;55.1917
+Shinjuku;35.6939
+Nicolás Romero;19.5833
+Huichang;34.9136
+Nagano;36.6486
+Bauru;-22.3150
+Yanjiao;39.9432
+Bochum;51.4819
+Tecámac;19.7131
+Anápolis;-16.3339
+Coventry;52.4081
+Oxnard;34.1964
+Korba;22.3500
+Cibinong;-6.4850
+Dāsarhalli;13.0465
+Qardho;9.5000
+Wŏnsan;39.1475
+Kocaeli;40.7625
+Newcastle;-27.7464
+Iligan;8.2300
+Youngstown;41.0993
+Cabuyao;14.2750
+Kayapınar;37.9400
+Nakano;35.7073
+Utrecht;52.0833
+Bengkulu;-3.7956
+Orizaba;18.8500
+Blumenau;-26.9333
+Montes Claros;-16.7306
+Indio;33.7346
+Pétion-Ville;18.5128
+Tungi;23.9000
+Buurhakaba;2.7833
+Shuanghe;30.3866
+Konak;38.4189
+Ash Shuhadā’;30.6039
+Pensacola;30.4413
+Umuahia;5.5333
+Gedaref;14.0333
+Palu;-0.8950
+Mardan;34.2012
+Pokhara;28.2083
+Mahilyow;53.9167
+Wudalianchi;48.6433
+Hrodna;53.6667
+Sungai Petani;5.6500
+Linxia Chengguanzhen;35.6000
+Sīkar;27.6200
+Nam Định;20.4200
+Vitória;-20.2889
+Sasarām;24.9500
+Karūr;10.9601
+Franca;-20.5389
+Vladimir;56.1286
+Karnāl;29.6860
+Kismaayo;-0.3581
+São Vicente;-23.9633
+Kawagoe;35.9251
+Villahermosa;17.9892
+Taraz;42.9000
+Cubal;-13.1117
+Luena;-11.7918
+Ibb;13.9667
+Yong’an;25.9733
+Wuppertal;51.2667
+Manisa;38.6306
+San Fernando;15.0333
+Chānda;19.9500
+Minatitlán;17.9833
+Malmö;55.6058
+Nizhniy Tagil;57.9167
+San Pedro;14.3583
+Cuito;-12.3833
+Hongzhai;34.9857
+Guédiawaye;14.7833
+Wakayama;34.2333
+Tin Shui Wai;22.4608
+Pavlodar;52.3000
+Gimpo;37.7000
+Itaquaquecetuba;-23.4864
+Nara;34.6844
+Van;38.4942
+Corrientes;-27.4833
+Neiva;2.9345
+Arkhangelsk;64.5500
+Batangas;13.8300
+Licheng;24.4935
+Koshigaya;35.8911
+Sinŭiju;40.1000
+Cabimas;10.4000
+Yakeshi;49.2842
+Oruro;-17.9667
+Ahmadnagar;19.0800
+Āvadi;13.1097
+Sarai Alamgir;32.9000
+Varna;43.2167
+Gorgān;36.8386
+Takatsuki;34.8500
+Holguín;20.8869
+Qo‘qon;40.5286
+Semey;50.4333
+Yingmen;39.9487
+Cariacica;-20.2639
+Palmira;3.5833
+Tapachula;14.9000
+Bydgoszcz;53.1219
+Antofagasta;-23.6500
+Anaheim;33.8390
+Rājahmundry;16.9800
+Chita;52.0333
+Bonita Springs;26.3558
+Caruaru;-8.2828
+Nice;43.7034
+Shāhjānpur;27.8800
+António Enes;-16.2333
+Central Coast;-33.3000
+Pamukkale;37.9167
+Wad Medani;14.4000
+Öskemen;49.9833
+Tanch’ŏn;40.4580
+Tokorozawa;35.7996
+Hosūr;12.7409
+Serekunda;13.4333
+Greensboro;36.0956
+Kūstī;13.1667
+Cuddapah;14.4700
+Simferopol;44.9484
+Sarıyer;41.1669
+Sumqayıt;40.5917
+Ōtsu;35.0167
+Vitória da Conquista;-14.8658
+Makiivka;48.0556
+Vũng Tàu;10.3833
+Brest;52.1347
+Uruapan;19.4208
+Gómez Palacio;25.5611
+Yeosu;34.7333
+Kaluga;54.5333
+Meram;37.8364
+Muzaffarpur;26.1225
+Alwar;27.5498
+Lublin;51.2500
+Lianran;24.9211
+Buôn Ma Thuột;12.6667
+Cuernavaca;18.9186
+Alicante;38.3453
+East London;-33.0175
+Tarsus;36.9165
+Matadi;-5.8167
+Islip;40.7385
+Cimanggis;-6.3645
+Kaesŏng;37.9667
+Beni;0.5000
+Sultanbeyli;40.9683
+Huntsville;34.6981
+Randburg;-26.0936
+Jitpur;27.6666
+Beylikdüzü;41.0011
+Petrolina;-9.3928
+Chinju;35.2000
+Tangdong;25.9755
+Reading;51.4542
+Sambalpur;21.4700
+Hangu;39.2320
+Belfast;54.5964
+Shah Latif Town;24.8806
+Iwaki;37.0505
+Salamanca;20.5703
+Yingzhong;32.2381
+Viña del Mar;-33.0244
+Hirosaki;40.6031
+Bielefeld;52.0211
+Az Zaqāzīq;30.5667
+Nazrēt;8.5414
+Cuenca;-2.8974
+Tampere;61.4981
+Bonn;50.7333
+Al Fayyūm;29.3084
+Blida;36.4722
+Ciudad Obregón;27.4939
+Uberaba;-19.7478
+Corpus Christi;27.7254
+Asan;36.7833
+Ribeirão das Neves;-19.7669
+Soledad de Graciano Sánchez;22.1833
+Maebashi;36.3895
+Kāmārhāti;22.6686
+Gəncə;40.6828
+Kendari;-3.9907
+Balıkesir;39.6333
+Thái Nguyên;21.6000
+Asahikawa;43.7706
+Smolensk;54.7828
+Dahūk;36.8667
+Wŏnju;37.3417
+Nakuru;-0.3000
+Lafia;8.5000
+Fort Wayne;41.0888
+Güngören;41.0225
+Koriyama;37.4004
+Bamiantong;44.9164
+Taourirt;34.4169
+Rāmpur;28.8000
+Debrecen;47.5300
+Cabanatuan City;15.4908
+Markham;43.8767
+Fayetteville;35.0850
+Pelotas;-31.7719
+Roodepoort;-26.1625
+Volzhskiy;48.8056
+Ann Arbor;42.2759
+Bijāpur;16.8300
+Sukabumi;-6.9181
+Tharād;24.3926
+Ratnāgiri;16.9944
+Ulanhot;46.0726
+Yunzhong;39.8143
+Jackson;32.3157
+Cotabato;7.2200
+Al Fallūjah;33.3500
+Kōchi;33.5589
+Minna;9.6139
+Bielsko-Biała;49.8225
+Canoas;-29.9200
+Gwangmyeongni;37.4760
+Cluj-Napoca;46.7667
+Bari;41.1253
+Pucallpa;-8.3833
+Kuching;1.5575
+Gonder;12.6075
+Kikuyu;-1.2500
+Mekele;13.4969
+Gonaïves;19.4456
+Guasave;25.5744
+Naha;26.2122
+Nantes;47.2181
+Binxian;35.0364
+Shimoga;13.9333
+Hotan;37.1000
+Kaiyuan;23.7147
+Ciudad del Este;-25.5167
+Temara;33.9267
+Antioch;37.9787
+Uíge;-7.6167
+Osh;40.5333
+Córdoba;37.8845
+Camagüey;21.3839
+Mobile;30.6782
+San Salvador de Jujuy;-24.1833
+Al Kūt;32.4907
+Cherepovets;59.1167
+Lexington;38.0423
+San Miguelito;9.0330
+Okene;7.5500
+Timişoara;45.7597
+Menongue;-14.6556
+Jūnāgadh;21.5200
+Katsina;12.9889
+Poltava;49.5894
+Maroua;10.5971
+Xiaoli;22.6782
+Kaech’ŏn;39.6986
+Asan;36.3500
+Tehuacán;18.4617
+Aksaray;38.3742
+Attiecoubé;5.3333
+Coatzacoalcos;18.1500
+Saransk;54.1833
+Nukus;42.4667
+Puerto Plata;19.8000
+Hāpur;28.7309
+Zalantun;48.0033
+Münster;51.9625
+Trichūr;10.5200
+An Nhơn;13.9170
+Taubaté;-23.0250
+Binangonan;14.4514
+Cirebon;-6.7071
+Safi;32.2833
+Mitchells Plain;-34.0506
+Boaco;12.4719
+Asheville;35.5707
+Cà Mau;9.1833
+Trenton;40.2237
+Toshima;35.7261
+Vologda;59.2167
+Barddhamān;23.2333
+Tanza;14.3944
+Bor;6.2125
+Kasur;31.1167
+Yakou;33.2937
+Santa Rosa;38.4458
+Orël;52.9686
+Shahr-e Qods;35.7214
+Kingston upon Hull;53.7444
+Mannheim;49.4878
+Santa Ana;33.7367
+Guarujá;-23.9936
+Playa del Carmen;20.6281
+Pasir Gudang;1.5028
+Datang;22.9481
+Panvel;18.9944
+Lansing;42.7142
+Zarzal;4.3983
+La Victoria;18.5500
+Port Elizabeth;-33.9581
+Alanya;36.5500
+Nizāmābād;18.6720
+Al ‘Ajamī;31.0959
+Quy Nhơn;13.7667
+Yakutsk;62.0272
+Yokkaichi;34.9650
+Ponta Grossa;-25.0994
+Catania;37.5000
+Chalco;19.2647
+Henderson;36.0133
+Gwangju;37.3667
+Longquan;25.9106
+Karlsruhe;49.0092
+Shahrīār;35.6597
+Kurgan;55.4408
+Kasugai;35.2475
+St. Paul;44.9478
+Sariwŏn;38.5064
+St. Catharines;43.1833
+Karawang;-6.3125
+Lakeland;28.0557
+Niagara Falls;43.0600
+Oulgaret;11.9570
+Taboão da Serra;-23.5328
+Vladikavkaz;43.0400
+Nghi Sơn;19.4170
+Juliaca;-15.4833
+Parbhani;19.2700
+Hisar;29.1500
+Puerto La Cruz;10.2000
+Puerto Princesa;9.7500
+Podolsk;55.4311
+Meguro;35.6415
+Ciudad Victoria;23.7389
+Ciudad Santa Catarina;25.6833
+Santarém;-2.4300
+Newark;40.7245
+Vaughan;43.8333
+Āwasa;7.0500
+Ōakashichō;34.6500
+Yeşilyurt;38.2961
+Pekalongan;-6.8833
+Pondokaren;-6.2811
+Adıyaman;37.7639
+Kurume;33.3167
+Vila Nova de Gaia;41.1333
+Paulista;-7.9408
+Oaxaca;17.0606
+Armenia;4.5300
+Akita;39.7200
+Awka;6.2000
+San Bernardo;-33.5833
+Curepipe;-20.3188
+Iksan;35.9439
+Pachuca;20.1000
+Al Maţarīyah;31.1833
+Sóc Trăng;9.6028
+Bahía Blanca;-38.7167
+Coacalco;19.6333
+San Juan del Río;20.3833
+Fort Collins;40.5477
+Limeira;-22.5650
+Popayán;2.4542
+Praia Grande;-24.0061
+Qianzhou;28.3185
+Newcastle;54.9800
+Māldah;25.0119
+Ciudad General Escobedo;25.7933
+Oyster Bay;40.7846
+Montpellier;43.6119
+Phan Thiết;10.9333
+Stockport;53.4083
+Al Qunfudhah;19.1264
+Bada Barabīl;22.1200
+Tampico;22.2553
+Białystok;53.1353
+Coatepeque;14.7000
+Ash Shāmīyah;31.9636
+Mérida;8.4800
+Chakwal;32.9303
+Murmansk;68.9706
+Ar Raqqah;35.9500
+Afyonkarahisar;38.7578
+Bihār;25.1970
+Jember;-8.1727
+Valladolid;41.6528
+Reading;40.3400
+Springfield;37.1943
+İskenderun;36.5817
+Al Mubarraz;25.4416
+Petrópolis;-22.5050
+Augsburg;48.3689
+Navotas;14.6667
+Chernihiv;51.4939
+Yangsan;35.3333
+Comilla;23.4500
+Irvine;33.6772
+Bradford;53.8000
+Tagum;7.4478
+Espoo;60.2056
+Valparaíso;-33.0461
+Silang;14.2306
+Finglas;53.4597
+Rangpur;25.7500
+Vigo;42.2314
+Sikandarābād;28.4512
+Battalgazi;38.4228
+Bāli;22.6500
+Çorum;40.5455
+Ismailia;30.5833
+Vila Teixeira da Silva;-12.0072
+Pānīpat;29.3875
+Delmas;18.5500
+Strasbourg;48.5833
+Mabalacat;15.2167
+Batna;35.5500
+Āīzawl;23.7272
+Tambov;52.7167
+Dexing;28.9580
+Iaşi;47.1622
+Kunp’o;37.3500
+San Lorenzo;-25.3400
+Santa Maria;14.8183
+Sonpur;25.7000
+Groznyy;43.3125
+Kherson;46.6425
+Anchorage;61.1508
+The Woodlands;30.1738
+Hong’an;47.2100
+Resistencia;-27.4514
+Graz;47.0708
+Karīmnagar;18.4386
+Braşov;45.6667
+Sumida;35.7107
+Sekondi;4.9433
+South Bend;41.6767
+Morioka;39.7021
+Sonīpat;28.9900
+Sétif;36.1900
+Atyraū;47.1167
+Ipswich;52.0594
+Dewās;22.9600
+Hulin;45.7671
+Rockford;42.2596
+Savannah;32.0286
+Itagüí;6.1667
+Croix-des-Bouquets;18.5761
+Farg‘ona;40.3864
+Magway;20.1500
+Huixquilucan;19.3611
+Lincoln;40.8099
+Ichalkaranji;16.7000
+Punto Fijo;11.7167
+Várzea Grande;-15.6500
+Sincelejo;9.2950
+Ibaraki;34.8164
+Katowice;50.2667
+Ar Ruşayfah;32.0178
+Camaçari;-12.6978
+Jersey City;40.7184
+San Cristóbal;7.7682
+Round Lake Beach;42.3791
+Bolton;53.5780
+San Pablo;14.0700
+Suzano;-23.5428
+Korhogo;9.4167
+Bhatinda;30.2300
+Cascavel;-24.9556
+Flint;43.0236
+Ostrava;49.8356
+Tacna;-18.0147
+Shreveport;32.4653
+Al Qurnah;31.0158
+Jālna;19.8410
+Aarhus;56.1572
+Constanţa;44.1667
+San Juan Sacatepéquez;14.7189
+Myeik;12.4333
+Fukushima;37.7608
+Coro;11.3950
+Bago;17.3333
+Pasarkemis;-6.1703
+Fuquan;26.7039
+Tongchuanshi;35.0800
+Sannai;24.5984
+Huozhou;36.5726
+Temuco;-38.7333
+Ihosy;-22.4036
+Sterlitamak;53.6333
+Tegal;-6.8667
+Ica;-14.0667
+Lucena;13.9333
+Plano;33.0502
+Jining;41.0300
+Chuncheon;37.8667
+Malārd;35.6658
+Pematangsiantar;2.9600
+Satna;24.6005
+Long Xuyên;10.3736
+Myrtle Beach;33.7094
+Governador Valadares;-18.8500
+Petrozavodsk;61.7833
+Santa Ana;13.9950
+Mau;25.9417
+Companiganj;22.8750
+Wiesbaden;50.0825
+Mingaora;34.7717
+Davenport;41.5565
+Bukhara;39.7667
+Sumbe;-11.2053
+Việt Trì;21.3000
+Sunderland;54.9060
+Bārāsat;22.7200
+Cherkasy;49.4444
+Maastricht;50.8500
+Çorlu;41.1500
+Kostroma;57.7681
+Gyeongsan;35.8167
+Ciego de Ávila;21.8481
+Mamuju;-2.6833
+Los Alcarrizos;18.5167
+Nizhnevartovsk;60.9500
+San Mateo;14.6969
+Shaowu;27.3417
+Canton;40.8078
+Sfax;34.7400
+Dinājpur;25.6167
+Dire Dawa;9.6000
+Gagnoa;6.1333
+Khmelnytskyi;49.4167
+Farrukhābād;27.3900
+Lashkar Gāh;31.5831
+Posadas;-27.3667
+Gatineau;45.4833
+Windsor;42.2833
+Santa Clarita;34.4175
+Kunsan;35.9833
+Minato;35.6580
+Qarshi;38.8667
+Chula Vista;32.6281
+Saugor;23.8300
+Kafr ad Dawwār;31.1311
+Ratlām;23.3340
+Yeosu;34.7607
+Crato;-7.4639
+Mỹ Tho;10.3500
+Volta Redonda;-22.5228
+Eugene;44.0564
+Tsu;34.7184
+Novorossiysk;44.7167
+Bijiao;22.9311
+Székesfehérvár;47.1956
+Soubré;5.7833
+Palmas;-10.1844
+Majene;-3.5403
+Sorong;-0.8667
+Chandler;33.2825
+Craiova;44.3333
+Thái Bình;20.4461
+Binjai;3.5986
+Fuchū;35.6689
+Gabela;-10.8500
+Sakarya;40.7833
+Dayr az Zawr;35.3333
+Brāhmanbāria;23.9656
+Mito;36.3658
+Sartā;36.4491
+Plymouth;50.3714
+Santo Domingo de los Colorados;-0.2542
+Arnavutköy;41.1856
+Nguru;12.8792
+Maradi;13.4833
+Gombe;10.2904
+Gijón;43.5333
+Drug;21.1900
+Floridablanca;7.2167
+Handwāra;34.4000
+Quilmes;-34.7167
+Talisay;10.2500
+Kunduz;36.7286
+Yoshkar-Ola;56.6328
+Nalchik;43.4833
+Aswān;24.0889
+Ichihara;35.4981
+Salem;44.9233
+Zhytomyr;50.2500
+Imphāl;24.8074
+İnegöl;40.0806
+Chernivtsi;48.3000
+Tarija;-21.5333
+Siddhirganj;23.6833
+Bimo;4.2558
+Heroica Nogales;31.3186
+Bergen;60.3894
+Sumaré;-22.8219
+Feni;23.0183
+Sumy;50.9167
+Anantapur;14.6800
+Westminster;51.4947
+Xiangkhoang;19.4167
+Marabá;-5.3500
+Kütahya;39.4167
+Gent;51.0536
+Yao;34.6269
+Djelfa;34.6667
+Barueri;-23.5111
+Bordeaux;44.8400
+Nagaoka;37.4462
+Suncheon;34.9506
+Jalālābād;34.4342
+Engels;51.5017
+Malolos;14.8433
+Nogales;31.1833
+Dezfūl;32.3825
+Ed Daein;11.4608
+Luque;-25.2700
+Potosí;-19.5892
+Concord;35.3933
+São José dos Pinhais;-25.5350
+Osmaniye;37.0750
+Arrah;25.5514
+Kyŏngju;35.8500
+Dumai;1.6667
+Tāluqān;36.7167
+Damanhūr;31.0361
+El Fasher;13.6306
+Malkājgiri;17.4519
+Nawabshah;26.2442
+Tchibota;-4.1794
+Annaba;36.9000
+Gelsenkirchen;51.5167
+Mönchengladbach;51.2000
+Kakogawachō-honmachi;34.7500
+Wollongong;-34.4331
+Gilbert;33.3100
+Nonthaburi;13.8667
+Columbus;32.5100
+Marilao;14.7581
+Fukui;36.0641
+Venice;45.4397
+Boksburg;-26.2125
+Quảng Ngãi;15.1167
+Olongapo;14.8300
+Ciudad Benito Juárez;25.6500
+Hiratsuka;35.3167
+Tiruvottiyūr;13.1600
+Oumé;6.3833
+Sōka;35.8254
+Bunkyō-ku;35.7080
+Aguadilla;18.4382
+Al Ḩamzah;31.7339
+Lubbock;33.5657
+Mossoró;-5.1878
+Kotri;25.3660
+North Las Vegas;36.2883
+Tuzla;40.8161
+Singa;13.1500
+Mişrātah;32.3775
+Isparta;37.7647
+Derby;52.9217
+Verona;45.4386
+Huayin;34.5664
+Siverek;37.7500
+St. Petersburg;27.7931
+Ndulo;-11.4833
+Rāniyah;36.2550
+Germiston;-26.2178
+Tallahassee;30.4551
+Mount Lavinia;6.8731
+Etāwah;26.7700
+Horlivka;48.3336
+Antsirabe;-19.8667
+Ondo;7.0833
+Indaiatuba;-23.0903
+Puducherry;11.9167
+Laredo;27.5625
+Ấp Đa Lợi;11.9333
+Foz do Iguaçu;-25.5400
+Khimki;55.8892
+Sab‘ al Būr;33.4644
+Gravataí;-29.9333
+Chiayi;23.4800
+Kediri;-7.8111
+Damaturu;11.7444
+Tokushima;34.0703
+Arua;3.0353
+Peoria;40.7520
+Turmero;10.2283
+Pointe-à-Pitre;16.2411
+Kuala Terengganu;5.3292
+Campeche;19.8500
+Byatarayanpur;13.0659
+Mawlamyine;16.4847
+Godomè;6.3667
+San Pedro Carchá;15.4768
+Moçâmedes;-15.1953
+La Paz;24.1422
+Central District;22.2867
+São Carlos;-22.0000
+Vitoria-Gasteiz;42.8500
+Wolverhampton;52.5833
+Avondale;33.3873
+Lafayette;30.2082
+Ash Shaţrah;31.4097
+Irving;32.8583
+Rishon LeẔiyyon;31.95
+Montgomery;32.3482
+Çekme;41.0369
+Jhenida;23.5417
+Bharatpur;27.2200
+Gadda Madiral;18.7519
+Shinozaki;33.9500
+Goma;-1.6794
+Tacloban;11.2444
+Turku;60.4500
+Rạch Giá;10.0167
+Kanggye;40.9667
+Taganrog;47.2167
+Kızıltepe;37.1939
+El Geneina;13.4500
+Las Condes;-33.4117
+Hakodate;41.7686
+Uşak;38.6778
+Jūnāgarh;19.8599
+Begusarai;25.4200
+São José;-27.6000
+A Coruña;43.3667
+Los Teques;10.3411
+Jinshi;29.6334
+Chōfugaoka;35.6506
+Tsing Yi Town;22.3456
+Higüey;18.6167
+Juazeiro do Norte;-7.2000
+Bata;1.8650
+Al Minyā;28.1194
+Aachen;50.7756
+Bābol;36.5514
+Komsomol’sk-na-Amure;50.5667
+Iwo;7.6333
+Rivne;50.6192
+Galaţi;45.4233
+Natogyi;21.4167
+Braunschweig;52.2667
+Kalār;34.6292
+Al Bayḑā’;32.7664
+Yanbu;24.0883
+Kurmuk;10.5500
+Shibuya-ku;35.6637
+Gāndhīdhām;23.0800
+Manzhouli;49.5881
+Visalia;36.3276
+Gdynia;54.5000
+Rāmnagar;27.1700
+Palangkaraya;-2.2100
+Chemnitz;50.8333
+Chigasaki;35.3333
+Büyükçekmece;41.0200
+Khomeynī Shahr;32.7003
+Carmen;18.4167
+McKinney;33.2016
+Sahiwal;30.6611
+Qā’em Shahr;36.4631
+Banikoara;11.3000
+Kiel;54.3233
+Sibu;2.3000
+Yato;35.4833
+Paraná;-31.7331
+Santa Clara;22.4069
+Yamagata;38.2554
+Katihār;25.5300
+Beykoz;41.1342
+Imperatriz;-5.5333
+Oruro;-17.9799
+Merlo;-34.6653
+Tsukuba-kenkyūgakuen-toshi;36.0835
+Wilmington;34.2099
+Kesbewa;6.7953
+Barnsley;53.5547
+Chesapeake;36.6778
+Syktyvkar;61.6667
+Győr;47.6842
+Birāṭnagar;26.4542
+Hafizabad;32.0714
+Saskatoon;52.1333
+Krishnarājpur;13.0120
+Abertawe;51.6167
+Americana;-22.7386
+Mahajanga;-15.7167
+Long Khánh;10.9170
+Nelamangala;13.1020
+Jessore;23.1704
+Beichengqu;40.4348
+Glendale;33.5791
+Tuy Hòa;13.0819
+Garland;32.9100
+Singrauliya;24.1100
+Fuji;35.1613
+Mokpo;34.7589
+Kabinda;-6.1300
+Tanga;-5.0667
+Santa Maria;-29.6833
+Sabzevār;36.2125
+Bānchpār;23.2000
+Rāmgundam;18.7639
+Tarapoto;-6.4833
+Bahir Dar;11.6000
+Baruta;10.4322
+Sapele;5.8261
+Sasebo;33.1800
+Myitkyina;25.3833
+Pandharpur;17.6778
+Sakākā;29.9697
+Haeju;38.0333
+Petaẖ Tiqwa;32.0889
+González Catán;-34.7667
+Masaurhi Buzurg;25.3500
+Qyzylorda;44.8500
+Diaobingshancun;42.4391
+Man;7.4000
+Zhangping;25.2938
+Dagana;16.4833
+Bạc Liêu;9.2833
+Kennewick;46.1978
+Lille;50.6278
+Düzce;40.8417
+Ipatinga;-19.5000
+Anju;39.6200
+Marília;-22.2139
+Winter Haven;28.0118
+Monclova;26.9103
+Stavanger;58.9700
+Abī al Khaşīb;30.4411
+Atushi;39.7162
+Chimoio;-19.1167
+Limassol;34.6747
+Ivano-Frankivsk;48.9228
+Novo Hamburgo;-29.6778
+Halle;51.4828
+Arakawa;35.7361
+Longueuil;45.5333
+Szeged;46.2550
+Viamão;-30.0808
+Košice;48.7167
+Matsumoto;36.2380
+Tuticorin;8.7642
+Banda Aceh;5.5500
+Shenmu;38.8270
+Springs;-26.2547
+Taiping;4.8500
+Zinder;13.8053
+Gangānagar;29.9200
+As Sīb;23.6703
+P’yŏng-dong;39.2500
+Scottsdale;33.6872
+Āmol;36.4697
+Norfolk;36.8945
+Nyíregyháza;47.9531
+Eindhoven;51.4333
+Killeen;31.0753
+Wuyishan;27.7562
+Mirpur Khas;25.5269
+Sandnes;58.8517
+Beji;-6.3704
+Pathein;16.7778
+Nizhnekamsk;55.6333
+Magdeburg;52.1317
+Neya;34.7667
+Rewa;24.5300
+Chishui;28.5902
+Centurion;-25.8603
+Uluberiya;22.4700
+Djougou;9.7000
+Pākdasht;35.4817
+Shakhty;47.7000
+North Hempstead;40.7912
+York;39.9651
+Atlantic City;39.3797
+Ibb;13.9759
+Elche;38.2669
+Abhā;18.2169
+Bulandshahr;28.4069
+Groningen;53.2167
+Nashua;42.7491
+Jacareí;-23.3053
+Arlington;38.8786
+Brownsville;25.9975
+Bole;44.8539
+Ganda;-13.0858
+Cannanore;11.8689
+Najafābād;32.6347
+Bayamo;20.3817
+Kamianske;48.5167
+Borūjerd;33.8972
+Singaraja;-8.1167
+Macaé;-22.3708
+Miri;4.3925
+Machala;-3.2667
+Kasulu;-4.5800
+Longquan;28.0733
+Granada;37.1781
+Bo;7.9564
+Messina;38.1936
+Oral;51.2225
+Badalona;41.4333
+Formosa;-26.1833
+San Cristóbal;18.4167
+Arapiraca;-9.7519
+Mambéré;5.5000
+Damboa;11.1500
+Okara;30.8092
+Saidpur;25.8004
+Freiburg im Breisgau;47.9950
+Khénifra;32.9394
+Saga;33.2667
+Rāichūr;16.2000
+Burnaby;49.2667
+Meycauayan;14.7333
+Sơn Tây;21.1333
+Nazipur;25.0415
+Rancagua;-34.1667
+Kasukabe;35.9753
+Dzerzhinsk;56.2333
+Phú Yên;21.4156
+Bratsk;56.1167
+Barishal;22.7000
+Jiayuguan;39.8112
+Santa Ana;14.5800
+Eloy Alfaro;-2.1733
+Envigado;6.1667
+Banfield;-34.7500
+Guadalupe;22.7528
+Ageoshimo;35.9774
+Fremont;37.5265
+Qarchak;35.4394
+Gulfport;30.4274
+Purwokerto;-7.4278
+Puerto Vallarta;20.6458
+Toluca;19.2925
+Ormoc;11.0106
+Neuquén;-38.9525
+Fresnillo;23.1750
+Singkawang;0.9000
+Orsk;51.2000
+Vizianagaram;18.1159
+Manavgat;36.7833
+Cotia;-23.6042
+Pāli;25.7700
+Songadh;21.1670
+Noginsk;64.4833
+Kropyvnytskyi;48.5000
+Haridwār;29.9450
+Ordu;40.9833
+Taitō;35.7126
+Ternopil;49.5667
+Bojnūrd;37.4750
+Rondonópolis;-16.4667
+Cobán;15.4833
+Guantánamo;20.1367
+Krefeld;51.3333
+Pāthardi;19.1700
+Şabyā;17.1489
+Kolpino;59.7333
+Petlād;22.4700
+Khanewal;30.3000
+Magé;-22.6528
+Ninh Hòa;12.4917
+Khatīma;28.9200
+Apapa;6.4500
+Choloma;15.6136
+Capiatá;-25.3500
+Pallāvaram;12.9675
+Nadiād;22.6900
+Tarrasa;41.5611
+Daşoguz;41.8333
+Probolinggo;-7.7500
+Cikupa;-6.4947
+Evansville;37.9881
+Araraquara;-21.7939
+Quetzaltenango;14.8333
+Angarsk;52.5500
+Sousse;35.8333
+Nyanza;-2.3500
+Cox’s Bāzār;21.4272
+Takarazuka;34.8114
+Atsugichō;35.4333
+Itapevi;-23.5489
+Marcory;5.3000
+Toamasina;-18.1500
+Padangsidempuan;1.3786
+Varāmīn;35.3242
+Mutare;-18.9667
+Mubi;10.2604
+Chuādānga;23.6440
+Korolëv;55.9167
+Hunchun;42.8679
+Blagoveshchensk;50.2578
+Velikiy Novgorod;58.5210
+Longjin;22.8711
+Rennes;48.1147
+Ashdod;31.8
+Częstochowa;50.8000
+Carlos Manuel de Céspedes;21.5767
+Chapecó;-27.0958
+Hialeah;25.8696
+Ōta;36.2911
+Sandton;-26.1070
+Navarre;30.4174
+Ijebu-Ode;6.8208
+Tilburg;51.5500
+Cork;51.8972
+Tanjore;10.7870
+Bandar-e Būshehr;28.9264
+Hachinohe;40.5123
+Staryy Oskol;51.2981
+Kichha;28.9200
+Secunderābād;17.4399
+Tiptūr;13.2600
+Ji’an Shi;41.1231
+Mallawī;27.7333
+José C. Paz;-34.5167
+Bel Air South;39.5022
+Rufisque;14.7167
+Presidente Prudente;-22.1256
+Barra do Dande;-8.4728
+Hobart;-42.8806
+Swindon;51.5600
+Lutsk;50.7500
+Katri;23.4800
+Sambhal;28.5800
+Guéckédou;8.5667
+Sabadell;41.5483
+Neyshābūr;36.2200
+North Port;27.0576
+Radom;51.4036
+Santa Luzia;-19.7700
+Polokwane;-23.9000
+Chí Linh;21.1330
+Tchaourou;8.8833
+Duekoué;6.7333
+San Felipe;10.3353
+Sāveh;35.0214
+San Bernardino;34.1416
+Portland;43.6773
+Santo Tomas;14.0833
+Osisioma;5.1497
+La Vega;19.2200
+Nishitōkyō;35.7256
+Damietta;31.4167
+Pangkalpinang;-2.1333
+Juazeiro;-9.4306
+Kremenchuk;49.0631
+Itabuna;-14.7858
+Ānand;22.5560
+Ciputat;-6.3111
+Al Khubar;26.2833
+Peñalolén;-33.4833
+Islington;51.5440
+Mainz;49.9833
+Konibodom;40.2833
+Zākhū;37.1500
+Enterprise;36.0091
+Bremerton;47.5436
+Córdoba;18.8942
+Green Bay;44.5148
+Tuluá;4.0833
+Pleiku;13.9833
+Hortolândia;-22.8583
+Bitung;1.4472
+Naihāti;22.8900
+Petrel;38.4789
+Kafue;-15.7667
+Jiutepec;18.8833
+Manta;-0.9500
+Osan;37.1498
+San Miguel;13.4814
+Butembo;0.1500
+Netanya;32.3286
+Oviedo;43.3600
+Itaboraí;-22.7439
+Appleton;44.2780
+Zamora;19.9833
+Alor Setar;6.1183
+Luton;51.8783
+Babylon;40.6925
+Laâyoune;27.1536
+Shashemenē;7.2000
+Tân An;10.5333
+Spring Valley;36.0952
+Denov;38.2667
+Cartagena;37.6000
+Tacoma;47.2431
+Yamunānagar;30.1330
+Lübeck;53.8697
+Zielona Góra;51.9333
+Maţraḩ;23.6167
+Qostanay;53.2000
+Banjarbaru;-3.4425
+Sa Đéc;10.3000
+Wayaobu;37.1398
+Valencia;7.9042
+Norwich;52.6286
+Gujiao;37.9069
+Ayacucho;-13.1631
+Petropavl;54.8833
+Madiun;-7.6300
+Dongxing;21.5833
+Zhubei;24.8333
+São Leopoldo;-29.7600
+Hebron;31.5333
+Spartanburg;34.9442
+Marg‘ilon;40.4711
+Ar Ruseris;11.8500
+Trece Martires City;14.2833
+Gangneung;37.7500
+Roanoke;37.2785
+Cúa;10.1667
+Almere;52.3667
+As Samāwah;31.3167
+Monghyr;25.3810
+Vantaa;60.2944
+Kāpra;17.4859
+Golmud;36.4072
+Comalcalco;18.2801
+Geneva;46.2017
+Regina;50.4547
+La Victoria;10.2278
+Shimla;31.1033
+Northampton;52.2304
+Babruysk;53.1500
+Mohammedia;33.6833
+Erfurt;50.9833
+Sete Lagoas;-19.4658
+Sikasso;11.3167
+Warnes;-17.5167
+Móstoles;40.3333
+Quilicura;-33.3667
+Chilas;35.4194
+Cao Lãnh;10.4672
+El Tigre;8.8858
+Gokāk;16.1667
+Divinópolis;-20.1389
+Gainesville;29.6804
+Colombo;-25.2919
+Jerez de la Frontera;36.6817
+Puri;19.8106
+Sidi Bel Abbès;35.2000
+Nandyāl;15.4800
+Limbe;4.0167
+Kure;34.2500
+Tumaco;1.8067
+Padova;45.4064
+Irákleio;35.3403
+Deltona;28.9050
+Arroyo Naranjo;23.0436
+Bhadrāvati;13.8485
+Colón;9.3572
+Linz;48.3058
+Oberhausen;51.4967
+Criciúma;-28.6775
+Kuje;8.8822
+Mytishchi;55.9167
+Lyubertsy;55.6783
+Pamplona;42.8167
+Panchkula;30.7400
+Kalamazoo;42.2749
+Pskov;57.8167
+Bila Tserkva;49.7956
+‘Aqrah;36.7414
+Ploieşti;44.9411
+Isesaki;36.3114
+Naga City;13.6244
+Burgas;42.5030
+Burhānpur;21.3000
+Chungju;36.9667
+Maracanaú;-3.8667
+Thousand Oaks;34.1914
+Hickory;35.7410
+Pagadian;7.8272
+Legazpi City;13.1333
+Barrancabermeja;7.0667
+Bukit Mertajam;5.3631
+Kirātot;32.8376
+Ashaiman;5.7000
+Taisheng;23.2938
+Sidon;33.5606
+Rostock;54.0833
+Guarenas;10.4739
+Santa Cruz;28.4667
+Panabo;7.3000
+Dongning;44.0608
+Borj Hammoud;33.8936
+Kasangati;0.4378
+Solihull;52.4130
+Burutu;5.3500
+Nasīm Shahr;35.5644
+Moratuwa;6.7991
+Yonkers;40.9466
+Ich’ŏn;37.2667
+Milton Keynes;52.0400
+Marawi City;8.0000
+Puerto Cabello;10.4667
+Beersheba;31.2589
+Huangyan;28.6500
+Oulu;65.0142
+Santo Agostinho;-8.2897
+Lubuklinggau;-3.2967
+Mary;37.6000
+Sunyani;7.3333
+Cascais;38.7000
+Northcote;-36.8019
+Moreno Valley;33.9244
+Qinā;26.1667
+Toledo;10.3833
+Kharagpur;22.3302
+Waitakere;-36.8500
+Fontana;34.0968
+Monywa;22.1083
+Dindigul;10.3500
+Robertsonpet;12.9563
+Morogoro;-6.8242
+Pingzhen;24.9439
+Banī Suwayf;29.0667
+College Station;30.5852
+Bà Rịa;10.4992
+Cidade de Nacala;-14.5428
+Talca;-35.4269
+Fargo;46.8651
+Portoviejo;-1.0561
+Parakou;9.3500
+Hospet;15.2689
+Trieste;45.6503
+San Carlos City;15.9281
+Kodaira;35.7285
+Itami;34.7833
+Lingampalli;17.4865
+Kalemie;-5.9128
+Kamirenjaku;35.6836
+Loures;38.8333
+Biskra;34.8500
+Ingrāj Bāzār;25.0044
+Phủ Từ Sơn;21.1189
+La Ceiba;15.7792
+Bené Beraq;32.0833
+Nagareyama;35.8563
+Ongole;15.5060
+Zanzibar;-6.1650
+Jiutai;44.1447
+Bolu;40.7347
+Ziguinchor;12.5833
+Ternate;0.7800
+Puqi;29.7204
+Qal‘at Bīshah;20.0000
+Ellore;16.7117
+Betigeri;15.4430
+Passo Fundo;-28.2500
+Banjar;-7.3667
+Kinh Môn;21.0330
+Bingerville;5.3500
+Bắc Giang;21.2667
+Sejong;36.4870
+Yachiyo;35.7224
+Amarillo;35.1984
+Mandi Burewala;30.1500
+Vĩnh Long;10.2500
+Mokameh;25.3898
+Coquimbo;-29.9531
+Tekirdağ;40.9778
+Huntington;40.8521
+Parnamirim;-5.9167
+Holon;32.0167
+Kukawa;12.9167
+Biysk;52.5333
+Charleroi;50.4000
+Aberdeen;57.1500
+Deoghar;24.4800
+La Guaira;10.6000
+Bīrjand;32.8667
+Chhindwāra;22.0570
+Timayy al Imdīd;30.9438
+Mazabuka;-15.8467
+Poza Rica de Hidalgo;20.5333
+Toruń;53.0222
+Tanjungpinang;0.9188
+Kassel;51.3158
+Haldia;22.0667
+Luxor;25.6833
+Lạng Sơn;21.8478
+At Tājī;33.5092
+Tarakan;3.3000
+Las Tunas;20.9597
+Al Khawr;25.6900
+Matsue;35.4708
+Arica;-18.4667
+Hà Tĩnh;18.3333
+Cosenza;39.3000
+Al Khums;32.6497
+Huacho;-11.1000
+El Jadid;33.2333
+Cajamarca;-7.1667
+Norwich;41.5495
+Ciudad Madero;22.2500
+Mai’Adua;13.1906
+Jacobabad;28.2769
+Almería;36.8403
+Tokat;40.3139
+Sātkhira;22.7188
+Néma;16.6167
+Khandwa;21.8200
+Pulimaddi;15.4800
+Morena;26.5000
+Soio;-6.1333
+Guacara;10.2333
+Olympia;47.0417
+Kabankalan;9.9833
+Isidro Casanova;-34.7000
+Rio Claro;-22.4108
+Santa Tecla;13.6731
+Isanlu;8.1667
+Az Zāwīyah;32.7522
+Kasama;-10.2117
+Maharagama;6.8494
+Kouribga;32.8833
+Amroha;28.9044
+Lahad Datu;5.0300
+Chilpancingo;17.5500
+Drabar;33.4300
+Waterbury;41.5582
+Liège;50.6397
+Banja Luka;44.7725
+Salinas;36.6883
+Huntington;38.4109
+Alcalá de Henares;40.4818
+Taranto;40.4711
+Khowy;38.5519
+Uripa;11.9167
+Kankan;10.3833
+Huntington Beach;33.6960
+Clarksville;36.5692
+Martapura;-3.4500
+Ciudad del Carmen;18.6333
+Bhind;26.5587
+Chakradharpur;22.7000
+Tocuyito;10.0889
+Alvorada;-29.9897
+Richmond;49.1667
+Araçatuba;-21.2089
+Santa Barbara;34.4285
+Gemena;3.2500
+Oradea;47.0722
+Desē;11.1333
+Helong;42.5404
+Croydon;51.3727
+Béni Mellal;32.3394
+Madhyamgram;22.7000
+Mwene-Ditu;-7.0000
+Khammam;17.2473
+Bhiwāni;28.7800
+Higashi-Hiroshima;34.4167
+N’Zérékoré;7.7500
+Huánuco;-9.9295
+Rzeszów;50.0333
+Eldoret;0.5167
+Mbanza-Ngungu;-5.2500
+Shrīrāmpur;22.7500
+Hino;35.6713
+Zipaquirá;5.0333
+Rio Grande;-32.0350
+Prokopyevsk;53.8833
+Rajin;42.3444
+Fuenlabrada;40.2833
+Ghāndīnagar;23.2230
+Brescia;45.5389
+Kusŏng;39.9667
+Baharampur;24.1000
+Sūhāj;26.5500
+Acarigua;9.5597
+Hugli;22.9089
+San Pedro de Macorís;18.4500
+Glendale;34.1819
+Mbarara;-0.6133
+Parma;44.8015
+Sunrise Manor;36.1783
+Kenema;7.8758
+Brikama;13.2667
+Suzuka;34.8820
+Kajo Kaji;3.8492
+Koronadal;6.5000
+Cuautla;18.8167
+Grand Prairie;32.6871
+Viranşehir;37.2306
+Iskandar;41.5581
+Karaköprü;37.1847
+Sosnowiec;50.2833
+Tanauan;14.0833
+Myawadi;16.6878
+La Serena;-29.9000
+Sodo;6.8550
+Trondheim;63.4297
+Morbi;22.8200
+Ārba Minch’;6.0333
+Prato;43.8808
+Overland Park;38.8870
+Tchitato;-7.3450
+Malema;-14.9486
+Anseong;37.0078
+Yuzhno-Sakhalinsk;46.9500
+Richmond Hill;43.8667
+Narsingdi;23.9167
+Gorontalo;0.5333
+Guanajuato;21.0178
+Hagerstown;39.6401
+Peterborough;52.5662
+Nampa;43.5844
+Quelimane;-17.8764
+Tébessa;35.4000
+Kumagaya;36.1474
+San Fernando;7.8940
+Rijeka;45.3272
+Gastonia;35.2494
+Mahbūbnagar;16.7488
+Karaman;37.1819
+La Plata;-34.9211
+Fatehpur;25.9300
+Pāndhurnā;21.6000
+Yamaguchi;34.1833
+Lae;-6.7303
+Muar;2.0500
+Cap-Haïtien;19.7600
+Oakville;43.4500
+Godoy Cruz;-32.9167
+Būkān;36.5172
+Muş;38.7333
+Hyesan;41.4000
+Kielce;50.8742
+Frisco;33.1560
+Kırıkkale;39.8417
+Jalapa;14.6379
+Rājendranagar;17.3198
+Castanhal;-1.2969
+Guanare;9.0436
+Cedar Rapids;41.9662
+Basildon;51.5800
+Fernando de la Mora;-25.3200
+Leganés;40.3281
+Pābna;24.0167
+Rāe Bareli;26.2236
+Florencia;1.6139
+General Mariano Alvarez;14.3000
+Fianarantsoa;-21.4536
+San Cristóbal;16.7370
+Bago;10.5388
+Valera;9.3206
+Bournemouth;50.7200
+Pasuruan;-7.6406
+Armavir;45.0000
+Balakovo;52.0333
+Jhelum;32.9425
+Donostia;43.3200
+Hemet;33.7341
+Aydın;37.8481
+Batu;-7.8720
+Orai;25.9800
+Manzanillo;19.0522
+Anjōmachi;34.9587
+Lam Tin;22.3094
+Malaybalay;8.1564
+Ferraz de Vasconcelos;-23.5411
+Santa Bárbara d’Oeste;-22.7544
+Chibia;-15.1833
+Odawara;35.2500
+Kishiwada;34.4667
+Saddiqabad;28.3006
+Shahr-e Kord;32.3311
+Rybinsk;58.0500
+Abū Ghurayb;33.2919
+Chŏngju;39.6500
+Cachoeiro de Itapemirim;-20.8489
+Hagen;51.3667
+Paradise;36.0872
+Ngaoundéré;7.3167
+Pak Kret;13.9125
+Donghua;35.2175
+Braga;41.5503
+Sioux Falls;43.5396
+Las Heras;-32.8500
+Araure;9.5667
+Digos;6.7500
+Pinar del Río;22.4122
+El Progreso;15.4000
+Numazu;35.0956
+Rāiganj;25.6200
+Tachikawa;35.6942
+Prabumulih;-3.4328
+Angra dos Reis;-23.0067
+Bhusāval;21.0500
+San Francisco de Macorís;19.3000
+Vancouver;45.6366
+Sobral;-3.6739
+Al Ḩasakah;36.5117
+Klerksdorp;-26.8667
+Kecskemét;46.9061
+Guatire;10.4717
+Iquique;-20.2167
+El Bosque;-33.5667
+Kōfu;35.6621
+San Diego;10.2558
+Gharyān;32.1697
+Thingangyun;16.8281
+Peoria;33.7843
+Bārākpur;22.7642
+Padalarang;-6.8435
+Tottori;35.5000
+Chaedŏk;40.7988
+Jōetsu;37.1479
+Bahraigh;27.5750
+Ucu Seles;-11.4047
+Calbayog City;12.0667
+Waco;31.5599
+Kairouan;35.6772
+Tambaram;12.8310
+Cabo Frio;-22.8789
+Shendi;16.6833
+Lorain;41.4409
+Erie;42.1167
+Shibīn al Kawm;30.5586
+Ed Damazin;11.7667
+Umreth;22.6986
+Reims;49.2628
+Dunhuang;40.1411
+Mahesāna;23.6000
+Nossa Senhora do Socorro;-10.8550
+Breda;51.5889
+Getafe;40.3047
+Modena;44.6458
+Guri;37.6000
+Jamaame;0.0667
+Basel;47.5547
+Tân Châu;10.7739
+Dinapore;25.6225
+Semnān;35.5728
+Temirtaū;50.0500
+Toyokawa;34.8268
+Newport News;37.1051
+Yei;4.0904
+Alasandigutta;15.6300
+Luzhang;25.8519
+Al Qāmishlī;37.0500
+Fardīs;35.7167
+Chūō-ku;35.6706
+Geelong;-38.1500
+Vĩnh Châu;9.3330
+Siguiri;11.4189
+Severodvinsk;64.5667
+Batāla;31.8186
+Potsdam;52.4000
+Kottayam;9.5947
+Itajaí;-26.9000
+Trảng Bàng;11.0330
+Cuango;-9.1444
+Aqtaū;43.6525
+Ongata Rongai;-1.4000
+Niš;43.3192
+Cuauhtémoc;28.4050
+Aurora;41.7638
+Narashino;35.6804
+Abakan;53.7167
+Burlington;43.3167
+Cuautitlán;19.6833
+Odense;55.3958
+La Pintana;-33.5833
+Pinrang;-3.7857
+Isiro;2.7833
+Toulon;43.1258
+Sorsogon;12.9742
+Lagos de Moreno;21.3567
+Sirsa;29.5333
+Dourados;-22.2208
+Amadora;38.7333
+Kāraikkudi;10.0735
+Brăila;45.2692
+Uji;34.8844
+Nova Friburgo;-22.2819
+Fort Lauderdale;26.1412
+Reggio di Calabria;38.1144
+Berazategui;-34.7167
+Phan Rang-Tháp Chàm;11.5667
+Vallejo;38.1125
+Dosquebradas;4.8333
+Thanhlyin;16.7333
+York;53.9601
+Petropavlovsk-Kamchatskiy;53.0167
+Himatnagar;23.6000
+Alleppey;9.4900
+Epe;6.5573
+Sittwe;20.1670
+Dam Dam;22.6200
+Jaunpur;25.7300
+Murfreesboro;35.8490
+Jīma;7.6667
+Sucúa;-2.4600
+Kindia;10.0497
+Curug;-6.3711
+Guna;24.6500
+Lhokseumawe;5.1881
+Roxas City;11.5894
+Funtua;11.5204
+Boma;-5.8500
+Turbo;8.1000
+Hinthada;17.6461
+Çanakkale;40.1519
+La Rioja;-29.4125
+Madanapalle;13.5500
+Palopo;-3.0000
+Njeru;0.4311
+Obuase;6.2000
+Nijmegen;51.8475
+Saarbrücken;49.2333
+San Luis Río Colorado;32.4767
+Edirne;41.6769
+Tiaret;35.3667
+Mahād;18.0830
+Purwakarta;-6.5533
+Longjing;42.7700
+Split;43.5100
+Ilhéus;-14.7889
+Hosa’ina;7.5500
+Barra Mansa;-22.5439
+Shivpuri;25.4300
+Bhālswa Jahangirpur;28.7354
+Hamm;51.6833
+Tongjiang;47.6502
+Almada;38.6803
+Norilsk;69.3333
+Spring Hill;28.4798
+Mongu;-15.2775
+Al ‘Arīsh;31.1249
+Divo;5.8333
+Urayasu;35.6539
+Bida;9.0804
+Bade;24.9575
+Paita;-5.0911
+Torbalı;38.1619
+Townsville;-19.2500
+Langsa;4.4800
+Dagupan City;16.0430
+Teziutlan;19.8178
+Tempe;33.3881
+High Point;35.9910
+Sultānpur Mazra;28.6981
+Unnāo;26.5500
+Şalālah;17.0197
+Medford;42.3372
+Salatiga;-7.3247
+Matosinhos;41.1833
+Hamilton;-37.7833
+Lin’an;23.6236
+Chicoloapan;19.4167
+Kandi;11.1286
+Danbury;41.4015
+Meiktila;20.8833
+Dundo;-7.3801
+Bejaïa;36.7511
+Titāgarh;22.7400
+Loum;4.7180
+Baranavichy;53.1333
+Santa María Texmelucan;19.2833
+Kamakurayama;35.3197
+Yangmei;24.9167
+Ilford;51.5575
+Les Cayes;18.2000
+Ciudad Valles;21.9833
+Santander;43.4628
+Kadugli;11.0167
+Linhares;-19.3894
+Letpandan;17.7866
+Krasnogorsk;55.8217
+Wārāseonī;21.7647
+Mauli;30.6990
+Saint-Louis;16.0333
+Rio Verde;-17.7450
+Plzeň;49.7475
+Biu;10.6111
+Ait Melloul;30.3342
+Comitán;16.2511
+Saint-Étienne;45.4347
+Orekhovo-Borisovo Yuzhnoye;55.6031
+Oeiras;38.6833
+Habaswein;1.0100
+Catumbela;-12.4167
+Santa Cruz;14.5998
+Ereğli;41.2792
+Sầm Sơn;19.7333
+Harar;9.3111
+Shibirghān;36.6650
+Burgos;42.3408
+Chandannagar;22.8671
+Cuddalore;11.7500
+Olsztyn;53.7778
+Elk Grove;38.4161
+Kotdwāra;29.7500
+Marāgheh;37.3906
+Thành Phố Uông Bí;21.0356
+Gliwice;50.2833
+Bodrum;37.0378
+Tebingtinggi;3.3283
+Cianjur;-6.8200
+Alcorcón;40.3500
+Ontario;34.0393
+Chetumal;18.5036
+Khānaqīn;34.3333
+Frederick;39.4337
+Sīrjān;29.4370
+Tyre;33.2708
+Mexico;15.0667
+Menemen;38.6000
+Ludwigshafen;49.4811
+Vero Beach South;27.6132
+Syzran;53.1667
+Carúpano;10.6722
+Ocala;29.1780
+Lubao;14.9333
+Luziânia;-16.2528
+Oceanside;33.2247
+Chīrāla;15.8246
+Ratnapura;6.6806
+León;12.4344
+San Andrés Tuxtla;18.4487
+Tiantoujiao;23.0236
+Castellón de la Plana;39.9831
+Piedras Negras;28.7000
+Banhā;30.4667
+Linjiang;41.8471
+Rancho Cucamonga;34.1247
+Hạ Long;20.9500
+Deo;24.6561
+Silchar;24.8200
+Tlemcen;34.8828
+Hitachi;36.5991
+Kindu;-2.9500
+Shāhīn Shahr;32.8667
+Le Havre;49.4900
+Gadag;15.4167
+Akhisar;38.9167
+Polomolok;6.2167
+Mang La;14.3833
+Sirājganj;24.4500
+Tiruvannāmalai;12.1300
+Rantau Prapat;2.3333
+Banyuwangi;-8.2186
+Albacete;38.9956
+Bīdar;17.9120
+San Miguel;15.1458
+Mülheim;51.4275
+Sacaba;-17.4042
+Garden Grove;33.7787
+Reggio Emilia;44.7000
+Barrie;44.3711
+Kaolack;14.1389
+Moca;19.3833
+São Caetano do Sul;-23.7000
+Cape Coast;5.1000
+Izumo;35.3667
+Baliuag;14.9540
+Oldenburg;53.1439
+Sawangan;-6.4086
+Petite Rivière de l’Artibonite;19.1333
+Niiza;35.7935
+Cazanga;-9.3000
+Surigao;9.7897
+Batumi;41.6458
+Francisco Morato;-23.2817
+Cary;35.7819
+Volgodonsk;47.5167
+Bảo Lộc;11.5481
+Ramat Gan;32.07
+Petarukan;-6.8961
+Kohat;33.5833
+Makurdi;7.7306
+Kamensk-Ural’skiy;56.4000
+Loja;-3.9833
+Valsād;20.6100
+Escuintla;14.2978
+Ussuriysk;43.8000
+Sakura;35.7167
+Concepcion;15.3249
+Machilīpatnam;16.1700
+Uppsala;59.8581
+Tomakomai;42.6341
+Portmore;17.9500
+Bordj Bou Arreridj;36.0667
+Aplahoué;6.9333
+Pembroke Pines;26.0128
+Malāyer;34.2969
+Kluang;2.0336
+As Suwayq;23.8494
+Novocherkassk;47.4222
+Métouia;33.9667
+Magwe;4.1333
+Nishio;34.8333
+Bayamón;18.3794
+San Luis;-33.3000
+Puerto Montt;-41.4667
+Medinīpur;22.4240
+Fenglu;24.6728
+Saḩāb;31.8667
+Al Marj;32.5005
+Caluquembe;-13.9208
+Sŏsan;36.7817
+Damoh;23.8331
+Toliara;-23.3500
+Warrington;53.3900
+Gondomar;41.1500
+Minbya;20.3667
+Jamālpur;24.9004
+Santa Rita;10.2003
+Neyveli;11.6088
+Bāramūla;34.2000
+Kalalé;10.2953
+Oyama;36.3146
+Wāpi;20.3720
+Ambato;-1.2417
+Calabozo;8.9219
+Hŭich’ŏn;40.1707
+Mahābād;36.7678
+Itapecerica da Serra;-23.7172
+Villa Canales;14.4816
+Basuo;19.0920
+Zlatoust;55.1667
+Malanville;11.8667
+Jīnd;29.3167
+Palmdale;34.5944
+Haarlem;52.3833
+Pátra;38.2500
+Ríohacha;11.5442
+Catape;-13.7667
+Talas;38.6833
+Katha;24.1822
+Manchester;42.9848
+Tuguegarao;17.6133
+Guarapuava;-25.3833
+Itu;-23.2642
+Jutiapa;14.2917
+Çerkezköy;41.2833
+Mogok;22.9167
+Mukono;0.3533
+Al Kūfah;32.0300
+Ādoni;15.6244
+Grenoble;45.1715
+Tabora;-5.0167
+Sampit;-2.5333
+Lafayette;40.3991
+Tenāli;16.2390
+Iwata;34.7179
+Takaoka;36.7541
+Tam Kỳ;15.5667
+Skikda;36.8667
+Siirt;37.9250
+Osnabrück;52.2833
+Kuytun;44.4264
+Ipiales;0.8303
+Fyzābād;26.7730
+Körfez;40.7833
+Perugia;43.1122
+Udipi;13.3389
+Oshawa;43.9000
+Tanjungbalai;2.9700
+Obihiro;42.9167
+Santa Cruz;36.9789
+Leverkusen;51.0333
+Klaipėda;55.7500
+Hadano;35.3667
+Kushiro;42.9833
+Midsayap;7.1917
+Idlib;35.9333
+Arnhem;51.9833
+Kingswood;51.4600
+Béchar;31.6333
+Conjeeveram;12.8308
+Kandy;7.2964
+Proddatūr;14.7300
+Cienfuegos;22.1456
+Nador;35.1667
+Saqqez;36.2464
+Zhanlicun;23.2881
+Ebo;-11.0000
+Kökshetaū;53.2833
+Nāngloi Jāt;28.6833
+Fukang;44.1646
+Türkistan;43.3019
+Pikit;7.0500
+Huddersfield;53.6450
+Bocoio;-12.4667
+Chillán;-36.6067
+Marysville;48.0809
+Abengourou;6.7333
+Abū Ḩulayfah;29.1322
+Muridke;31.8020
+Tema;5.6667
+Metro;-5.1167
+Muskegon;43.2281
+Ipswich;-27.6167
+Myingyan;21.4600
+Quibala;-10.7333
+Teresópolis;-22.4119
+Ciudad Acuña;29.3242
+Tunja;5.5333
+‘Unayzah;26.0906
+San Marcos;10.6204
+Turgutlu;38.5000
+Pocheon;37.8947
+Ninh Bình;20.2539
+São José de Ribamar;-2.5500
+Wau;7.7000
+Ube;33.9500
+Gölcük;40.6667
+Muzaffargarh;30.0694
+Kebili;33.7050
+Jizzax;40.1158
+Kyaunggon;17.1000
+Simao;22.7807
+San Martin Texmelucan de Labastida;19.2833
+Brahmanpara;23.6167
+Naic;14.3167
+Jinggang;23.2723
+Bandar-e Māhshahr;30.5589
+Godhra;22.7772
+Anaco;9.4333
+Sullana;-4.9000
+Villeurbanne;45.7667
+Zemun;44.8500
+Sariaya;13.9667
+Tuxtepec;18.1000
+Springfield;39.7709
+Musashino;35.7177
+Bhisho;-32.8494
+Benoni;-26.1883
+Chitaldrug;14.2333
+Andong;36.5592
+Hayward;37.6328
+Rājapālaiyam;9.4204
+Guadalajara;40.6337
+Multai;21.7700
+Rafsanjān;30.4067
+Dijon;47.3167
+Al Ghardaqah;27.2578
+Bontang;0.1333
+Tulancingo;20.0833
+Chittoor;13.2160
+Salihli;38.4811
+Ndalatando;-9.3000
+Elektrostal;55.7833
+Jequié;-13.8630
+Apeldoorn;52.2167
+Trà Vinh;9.9333
+Đồng Hới;17.4831
+Krishnanagar;23.4000
+Sherbrooke;45.4000
+Ash Shīḩānīyah;25.3722
+Kidapawan;7.0083
+San Miguel;-34.5333
+Papantla de Olarte;20.4478
+Dhamār;14.5500
+Tân Phú;11.2720
+José María Ezeiza;-34.8333
+Southend;51.5500
+Ibirité;-20.0219
+Solingen;51.1667
+Tacheng;46.7517
+Zaranj;30.9600
+General Roca;-39.0333
+Bragança Paulista;-22.9531
+Darmstadt;49.8722
+Zhengding;38.1522
+Pindamonhangaba;-22.9239
+Enschede;52.2167
+Girón;7.0731
+Uttarpāra;22.6700
+Heidelberg;49.4167
+Khōst;33.3331
+Ceyhan;37.0289
+Koudougou;12.2500
+Saint-Marc;19.1167
+Newport;51.5886
+Khanpur;28.6453
+Ede;7.7389
+Huaycan;-12.0181
+Arad;46.1750
+Moga;30.8220
+Ferkessédougou;9.5833
+Zabrze;50.3025
+Bingöl;38.8861
+San Nicolás de los Arroyos;-33.3333
+Budaun;28.0500
+Miyakonojō;31.7167
+Pandi;14.8667
+Kramatorsk;48.7392
+Amersfoort;52.1500
+Seixal;38.6500
+Livorno;43.5519
+Ekibastuz;51.6667
+Hat Yai;7.0167
+Herne;51.5500
+Chirchiq;41.4667
+La Laguna;28.4853
+Catamarca;-28.4667
+Angers;47.4736
+Jijiga;9.3500
+George;-33.9667
+Ravenna;44.4161
+Higashimurayama;35.7546
+’s-Hertogenbosch;51.6833
+Bharūch;21.6948
+Ōgaki;35.3594
+Nan Zhuang;22.9839
+Quipungo;-14.8167
+Cadiz;10.9500
+Molo;-0.2500
+Châu Đốc;10.7000
+Zaanstad;52.4697
+Guimarães;41.4500
+Tigaraksa;-6.2667
+Matsuzaka;34.5779
+Macuspana;17.7667
+Aral;40.5480
+Hoofddorp;52.3061
+Sāmarrā’;34.1983
+Ilagan;17.1489
+New Bedford;41.6697
+Rafael Castillo;-34.7167
+Río Cuarto;-33.1333
+Rafaḩ;31.2886
+Bariadi;-2.7919
+Alexandria;38.8185
+Enfield;51.6522
+Daiwanishi;34.8333
+Gojra;31.1500
+Teixeira de Freitas;-17.5403
+Paterson;40.9147
+Camarajibe;-8.0219
+Corona;33.8616
+Fethiye;36.6514
+Mahlaing;21.0900
+Ŭiwang;37.3448
+Saharsa;25.8800
+Cinere;-6.3333
+Merced;37.3057
+Danao;10.5333
+Calama;-22.4667
+Chaoshan;23.0701
+Nāblus;32.2222
+Erzincan;39.7464
+Warner Robins;32.5961
+Salzburg;47.8000
+Mandi Bahauddin;32.5797
+El Eulma;36.1528
+Itapetininga;-23.5917
+Xiaping;26.7646
+Port Arthur;29.8554
+Chlef;36.1647
+Guaymas;28.1667
+Pathānkot;32.2668
+Nazilli;37.9125
+Kamina;-8.7386
+Lajes;-27.8158
+Macon;32.8065
+Piteşti;44.8606
+Kétou;7.3581
+Adzopé;6.1667
+Poblacion;10.4167
+Hanam;37.5167
+Capas;15.3372
+Ghorāhī;28.0333
+Vidisha;23.5239
+Cẩm Phả;21.0167
+Esmeraldas;0.9667
+Ar Ramthā;32.5589
+Kariya;34.9893
+Al Miqdādīyah;33.9786
+Almetyevsk;54.9000
+Danzao;23.0427
+Cagliari;39.2278
+Hitachi-Naka;36.3967
+Vĩnh Yên;21.3100
+Nalgonda;17.0500
+Rudarpur;28.9708
+Kansas City;39.1235
+Kisi;9.0833
+Thānesar;29.9667
+El Minié;34.4470
+Lakewood;39.6977
+Borāzjān;29.2694
+Gulu;2.7817
+Sunnyvale;37.3836
+Timon;-5.0939
+Palo Negro;10.1600
+Bytom;50.3483
+Souk Ahras;36.2864
+Middelburg;-25.7684
+Horad Barysaw;54.2279
+Regensburg;49.0167
+Fredericksburg;38.2992
+Jorhāt;26.7500
+Oxford;51.7519
+Neuss;51.2000
+Hājīpur;25.6925
+Caxias;-4.8589
+Bartın;41.6344
+San Juan;14.6000
+Melitopol;46.8489
+Zango;12.9333
+Sasolburg;-26.8142
+Kafr ash Shaykh;31.1117
+Kitenkela;-1.5167
+Bālurghāt;25.2200
+Madīnat as Sādis min Uktūbar;29.9361
+Dibrugarh;27.4800
+Verāval;20.9000
+Alagoinhas;-12.1358
+Edremit;39.5922
+Bandırma;40.3500
+Salavat;53.3667
+Gandajika;-6.7500
+Lucapa;-8.4228
+Leesburg;28.7672
+Tama;35.6369
+Ras Tanura;26.6500
+Hòa Thành;11.2831
+Harrow;51.5836
+Seogwipo;33.2497
+Tochigi;36.3813
+Moanda;-5.9342
+Colima;19.2433
+Barreiras;-12.1483
+Naogaon;24.8000
+Tete;-16.1667
+Villanueva;15.3167
+Noda;35.9500
+Kanasín;20.9344
+Ixtlahuaca;19.5689
+Hoeryŏng;42.4333
+Iringa;-7.7700
+San Jose;12.3528
+Kırşehir;39.1456
+Newcastle;-32.9167
+Sievierodonetsk;48.9481
+Sinpo;40.0347
+Paderborn;51.7181
+Nevşehir;38.6264
+Dutse;11.8283
+Minglanilla;10.2450
+Champaign;40.1142
+Kiambu;-1.1667
+Ueda;36.4019
+Dahuaishu;36.2601
+Amatitlán;14.4741
+Singida;-4.8167
+Shāntipur;23.2500
+Moriguchi;34.7375
+Yilan;24.7500
+Siem Reap;13.3622
+Golmeh;33.7842
+Fengyicun;23.6636
+Hindupur;13.8300
+Kawashiri;34.8301
+Poços de Caldas;-21.7878
+Peristéri;38.0167
+Logroño;42.4650
+Dīla;6.4083
+San Andres;14.5739
+Ciudad Choluteca;13.3011
+Bohicon;7.2000
+Baubau;-5.4667
+Erode;11.3409
+Ramu;3.9375
+Hollywood;26.0293
+Mudon;16.2578
+Taza;34.2167
+Nek’emtē;9.0833
+Tauranga;-37.6833
+Gwangyang;34.9333
+Marbella;36.5167
+Beāwar;26.1011
+Abaetetuba;-1.7178
+Kukichūō;36.0621
+Consolacion;10.4000
+Gonbad-e Kāvūs;37.2500
+Al Manāqil;14.2500
+Tororo;0.6928
+Pasadena;29.6575
+Miass;55.0000
+Mzuzu;-11.4581
+Delicias;28.1931
+Nakhodka;42.8167
+Quevedo;-1.0333
+Asaka;35.7972
+San Jose;15.7919
+Foggia;41.4642
+Pomona;34.0585
+Sayama;35.8530
+Aş Şuwayḩirah as Sāḩil;24.3620
+Escondido;33.1348
+Jaranwala;31.3342
+Đức Phổ;14.8100
+Miskolc;48.0833
+Clermont-Ferrand;45.7831
+Florencio Varela;-34.8167
+Chichicastenango;14.9442
+Manzanillo;20.3397
+Vryheid;-27.7669
+Talcahuano;-36.7167
+Kerch;45.3619
+M’Sila;35.7058
+Patos de Minas;-18.5817
+Kolār;13.1333
+Mariveles;14.4333
+Copiapó;-27.3664
+Kragujevac;44.0142
+Pôrto Seguro;-16.4333
+Badajoz;38.8803
+Soro;21.2900
+Lalian;31.8253
+Đồng Xoài;11.5169
+Nîmes;43.8380
+Sumbawanga;-7.9667
+Araguaína;-7.1908
+Chauk Azam;30.9648
+Rimini;44.0594
+Gubeng;-7.2729
+Ocumare del Tuy;10.1136
+Joliet;41.5188
+Auchi;7.0667
+Villa de Álvarez;19.2500
+Urganch;41.5500
+Komaki;35.2910
+Valdivia;-39.8139
+Valle de Santiago;20.3928
+Toda;35.8176
+Shāhrūd;36.4181
+Kutaisi;42.2500
+Kashikishi;-9.3000
+Lake Charles;30.2010
+Pénjamo;20.4311
+Odivelas;38.7903
+Mesquite;32.7602
+Saumlaki;-7.9750
+Gloucester;51.8644
+Maīmanah;35.9333
+Mauldin;34.7821
+Potchefstroom;-26.7150
+Imabari;34.0667
+Abbottabad;34.1558
+Concordia;-31.4000
+West Bromwich;52.5190
+Panama City;30.1995
+Bellevue;47.5951
+Centro Habana;23.1333
+Sagay;10.9000
+Ağrı;39.7186
+Hưng Yên;20.6500
+‘Ajlūn;32.3325
+Amasya;40.6500
+Santiago;16.6833
+Bandar-e Anzalī;37.4728
+Iruma;35.8358
+Kastamonu;41.3764
+Naperville;41.7480
+Dongsheng;22.8869
+Sitārganj;28.9300
+Marvdasht;29.8742
+Chingola;-12.5333
+Riobamba;-1.6731
+Szombathely;47.2351
+Jean-Rabel;19.8500
+Hābra;22.8300
+Mostaganem;35.9333
+Harlingen;26.1916
+Tuscaloosa;33.2348
+Al ‘Aqabah;29.5319
+Pemba;-12.9667
+Nowgong;26.3492
+Quilpué;-33.0500
+Sibiu;45.7928
+Yonago;35.4333
+Dundee;56.4620
+Disūq;31.1422
+Kopeysk;55.1000
+Lüleburgaz;41.4056
+Al Ḩawīyah;21.4411
+Salamanca;40.9650
+Mbanza Kongo;-6.2667
+Nchelenge;-9.3533
+Zhangaözen;43.3378
+Turbat;26.0031
+Mati;6.9483
+Mangghystaū;43.6905
+Malakal;9.5500
+Elkhart;41.6916
+Osorno;-40.5725
+Al Qurayyāt;31.3167
+Vólos;39.3667
+Bacău;46.5833
+Mogi Guaçu;-22.3719
+Pyatigorsk;44.0500
+Moshi;-3.3349
+Payatas;14.7099
+Torrance;33.8346
+Dar‘ā;32.6189
+Ramapo;41.1404
+Cairns;-16.9200
+Bīr;18.9833
+Poole;50.7167
+Rubtsovsk;51.5167
+Negombo;7.2111
+Cam Ranh;11.9020
+Maquela do Zombo;-6.0500
+Wamba;2.1442
+Binghamton;42.1014
+Odintsovo;55.6667
+Dadu;26.7319
+Franco da Rocha;-23.3286
+Houma;29.5800
+Misato;35.8301
+Le Mans;48.0077
+Etah;27.6300
+Keren;15.7778
+Topeka;39.0346
+Nārnaul;28.0444
+Calapan;13.4140
+Colina;-33.2017
+Kolomna;55.0833
+Lárisa;39.6417
+Yima;34.7473
+Bhāndāria;22.4883
+Pauktaw;20.1500
+Abohar;30.1334
+Parnaíba;-2.9050
+García;25.8167
+Taungdwingyi;20.0017
+Urdaneta;15.9761
+Aalborg;57.0500
+Barrechid;33.2667
+Arayat;15.1493
+Settat;33.0000
+Khairpur Mir’s;27.5333
+Aix-en-Provence;43.5263
+Bocaue;14.8000
+Baní;18.2900
+Xintang;22.7824
+Matanzas;23.0511
+Roseville;38.7703
+San Justo;-34.6833
+Qūchān;37.1060
+Yalova;40.6556
+Berezniki;59.4167
+Kaithal;29.8015
+Shillong;25.5744
+Thanatpin;17.2942
+Ereğli;37.5167
+Villa de Cura;10.0383
+Kusatsu;35.0167
+David;8.4333
+Kakamigahara;35.3988
+Khān Yūnis;31.3444
+Fairfield;38.2583
+Cuautitlán Izcalli;19.6500
+Al Mukallā;14.5333
+Santamesa;14.6000
+Comayagua;14.4522
+Okinawa;26.3342
+Flores;16.9333
+Barranca;-10.7541
+Khasavyurt;43.2500
+Saguenay;48.4167
+Gisenyi;-1.7000
+Kumba;4.6333
+Mehtar Lām;34.6683
+Chhatarpur;24.9177
+Bizerte;37.2778
+Ruse;43.8231
+Malasiqui;15.9167
+Debre Birhan;9.6833
+Bandundu;-3.3167
+Koiridih;24.1800
+Tyler;32.3184
+Qabr as Sitt;33.4472
+Coimbra;40.2111
+Calabayan;16.7667
+Nawābganj;24.6000
+Rewāri;28.1800
+Birkenhead;53.3930
+Altay;47.8666
+Ashikaga;36.3402
+Ghaznī;33.5492
+Yopal;5.3500
+Bilbays;30.4167
+Jaú;-22.2958
+Huelva;37.2500
+Kumbakonam;10.9602
+Lévis;46.8000
+Bhīmavaram;16.5430
+Jaraguá do Sul;-26.4833
+Jinjiang;19.7386
+Blackpool;53.8142
+Cizre;37.3320
+Paghmān;34.5833
+Los Ángeles;-37.4667
+Sannār;13.5500
+Elbistan;38.2014
+Boca Chica;18.4539
+Telford;52.6766
+Fullerton;33.8841
+Kamālshahr;35.8653
+Preston;53.7590
+Lichinga;-13.3167
+Brest;48.3900
+Pueblo;38.2701
+Teluknaga;-6.0989
+Moundou;8.5667
+Tetovo;42.0103
+Nizip;37.0100
+Lausanne;46.5198
+Bahawalnagar;29.9928
+Maykop;44.6000
+Fukayachō;36.1975
+Athens;33.9508
+Santa Maria;34.9333
+Dehri;24.9100
+Gweru;-19.4614
+Tabaco;13.3500
+Kelowna;49.8881
+Kisaran;2.9833
+Namacunde;-17.3000
+Mandsaur;24.0300
+Boulogne-Billancourt;48.8352
+Rybnik;50.0833
+Surprise;33.6815
+Nong’an;44.4190
+Inezgane;30.3658
+Rize;41.0247
+Rio das Ostras;-22.5269
+Vlorë;40.4667
+Bondoukou;8.0333
+Fujita;34.8674
+Jahrom;28.5000
+Charleston;38.3484
+Jyväskylä;62.2417
+Lleida;41.6167
+Middlesbrough;54.5767
+Khuzdar;27.8000
+Tepatitlán de Morelos;20.8170
+Las Cruces;32.3265
+Abbotsford;49.0500
+Batu Pahat;1.8500
+Krugersdorp;-26.1000
+Porac;15.0719
+Ozamiz City;8.1500
+Pécs;46.0708
+Las Margaritas;16.3667
+Tours;47.3936
+Kovrov;56.3683
+Shizhaobi;23.9210
+Kokubunji;35.7109
+Tottenham;51.5975
+Mejicanos;13.7333
+Ebina;35.4464
+Paranaguá;-25.5208
+Iguala de la Independencia;18.3450
+Metairie;29.9977
+Thornton;39.9197
+Masaya;11.9764
+Médéa;36.2675
+Yaritagua;10.0753
+Xiangcheng;25.4775
+Fusagasugá;4.3452
+Olathe;38.8833
+Nāḩiyat Ghammās;31.7431
+La Romana;18.4300
+Giá Rai;9.2500
+Tanay;14.4972
+Medina Estates;5.6833
+Ituzaingó;-34.6667
+Torbat-e Ḩeydarīyeh;35.2739
+Quảng Yên;20.9170
+Momostenango;15.0444
+Dawei;14.0833
+Kombolcha;11.0867
+Kuwana;35.0667
+Subang;-6.5714
+Atbara;17.6972
+Norrköping;58.6000
+Carolina;18.4054
+Poblacion;14.3854
+Pakpattan;30.3500
+Chicacole;18.3000
+Jicheon;36.1333
+Botucatu;-22.8858
+Gainesville;34.2902
+Minō;34.8269
+Shizuishan;39.2333
+La Trinidad;16.4621
+West Valley City;40.6886
+Koga;36.1782
+Sale;53.4240
+Coquitlam;49.2839
+Orange;33.8038
+San José del Cabo;23.0614
+Jacmel;18.2353
+Ishizaki;38.4176
+Al Khmissat;33.8167
+Ingolstadt;48.7631
+Çarşamba;41.1992
+Renca;-33.4000
+Warren;42.4934
+Bat Yam;32.0167
+Candelaria;13.9311
+Tsuchiura;36.0667
+Pīrānshahr;36.6956
+Umtata;-31.5800
+Pasadena;34.1597
+Dipolog;8.5872
+Sancti Spíritus;21.9339
+Bukoba;-1.3333
+Koganei;35.6995
+Tultepec;19.6850
+Dos Hermanas;37.2836
+Jolo;6.0000
+Montero;-17.3422
+Boca del Rio;19.1056
+Dabou;5.3167
+Phủ Lý;20.5411
+Zama;35.4833
+Brusque;-27.0949
+Shūnan;34.0500
+Dumaguete City;9.3103
+Mojokerto;-7.4722
+Darwin;-12.4381
+Silivri;41.0736
+Mandya;12.5242
+Ch’ungmu;34.8333
+Tarragona;41.1187
+Birgañj;27.0000
+Iğdır;39.9208
+Palhoça;-27.6444
+Lira;2.2472
+Carcar;10.1167
+Negage;-7.7667
+Gunungsitoli;1.2833
+Beaumont;30.0849
+Yunxian Chengguanzhen;32.8082
+Cunduacán;18.0667
+Atibaia;-23.1172
+Rangkasbitung;-6.3667
+Amiens;49.8920
+Bānkura;23.2500
+Kigoma;-4.8833
+Vila Franca de Xira;38.9500
+Quillacollo;-17.4000
+Myebon;20.0500
+Garanhuns;-8.8903
+Minoo;34.8333
+Bima;-8.4600
+Kisarazu;35.3760
+Burlington;36.0760
+Livingstone;-17.8500
+Curicó;-34.9833
+Porto Amboim;-10.7183
+Parla;40.2372
+Nasugbu;14.0667
+Siwān;26.2200
+Long Bình;10.9458
+Igboho;8.8333
+Gingoog;8.8167
+Maia;41.2333
+Uppsala;59.8601
+Yaizu;34.8669
+Khargone;21.8229
+Hampton;37.0551
+Marīvān;35.5269
+Columbia;38.9472
+Huehuetenango;15.3147
+Inazawa;35.2647
+Stara Zagora;42.4333
+Quimbele;-6.5167
+Chech’ŏn;37.1333
+Norzagaray;14.9167
+Port-Gentil;-0.7167
+Tiraspol;46.8403
+Pageralam;-4.0217
+Debre Mark’os;10.3333
+Tizi Ouzou;36.7169
+Tây Ninh;11.3678
+Giresun;40.9153
+Maijdi;22.8333
+Ksar El Kebir;35.0090
+Torrejón de Ardoz;40.4614
+Termiz;37.2167
+Zinacantepec;19.2833
+Mabacun;24.6807
+Floridablanca;14.9333
+Salerno;40.6806
+Rionegro;6.1535
+Ağcabədi;40.0528
+Blitar;-8.1000
+Târgu-Mureş;46.5456
+Yuma;32.5995
+Brighton;50.8208
+Toowoomba;-27.5667
+Tobruk;32.0761
+Srīpur;24.2011
+Elizabeth;40.6658
+Raigarh;21.8000
+Sukrah;36.8833
+Pyay;18.8167
+Tabarre;18.5833
+Ruda Śląska;50.2628
+Shuangcheng;45.3503
+Angono;14.5234
+Cartago;4.7000
+Yelahanka;13.1007
+Paco;14.5830
+May Pen;17.9650
+Racine;42.7274
+Zafarwal;32.3463
+Greeley;40.4152
+Andīmeshk;32.4600
+Ipetumodu;7.5070
+Conchalí;-33.3833
+Agboville;5.9333
+Djakotomé;6.9000
+Santa Rita;-7.1139
+Silopi;37.2486
+Daraga;13.1619
+Shahreẕā;32.0089
+Milagro;-2.1347
+Nakhon Ratchasima;14.9750
+Zābol;31.0286
+El Oued;33.3683
+Kent;47.3887
+Ashqelon;31.6667
+Mataró;41.5333
+Ba Đồn;17.7547
+Stamford;41.1039
+Odessa;31.8801
+Teófilo Otoni;-17.8578
+Hagonoy;14.8333
+Laghouat;33.8000
+Mörön;49.6356
+Apatzingan de la Constitucion;19.0886
+Aaley;33.8000
+Famalicão;41.4167
+Naga;10.2167
+Trois-Rivières;46.3500
+Bloomington;40.4757
+Veszprém;47.0930
+Zhangmu Touwei;22.9078
+Miramar;25.9773
+Londuimbali;-12.2186
+Reẖovot;31.8981
+Navoiy;40.0844
+Grand Junction;39.0877
+Sterling Heights;42.5809
+Batu Gajah;4.4667
+Tando Allahyar;25.4667
+Luuq;3.6981
+Idfū;24.9778
+Ségou;13.4500
+Isahaya;32.8500
+Chikmagalūr;13.3167
+Innsbruck;47.2683
+Ōme;35.7880
+Coral Springs;26.2702
+Marituba;-10.2833
+Matagalpa;12.9286
+Jijel;36.8206
+Jaramānā;33.4833
+Jandira;-23.5278
+Ferfer;5.0833
+Gondiā;21.4500
+Thandwe;18.4667
+Hassan;13.0050
+Pitalito;1.8989
+Bibémi;9.3167
+Abiko;35.8667
+Talavera;15.5839
+Khorramshahr;30.4397
+Limoges;45.8353
+Crato;-7.2339
+Ouargla;31.9500
+Ar Rass;25.8667
+Sinop;-11.8481
+San Carlos;10.4929
+Kipushi;-11.7625
+Lincoln;53.2283
+Palwal;28.1430
+Annecy;45.9160
+Mogaung;25.3014
+Ödemiş;38.2311
+Kamëz;41.3833
+Zagnanado;7.2667
+Cametá;-2.2439
+Cubatão;-23.8953
+Ibarra;0.3627
+San Luis;16.2000
+Palenque;17.4333
+Ferrara;44.8333
+San Juan;18.8100
+Āwarē;8.2667
+Karabük;41.1986
+Johnson City;36.3406
+Saidpur;25.7781
+Chicomba;-14.1333
+Pālghāt;10.7792
+Guelph;43.5500
+Buea;4.1667
+Los Guayos;10.1833
+Nanqiaotou;22.7217
+Ji-Paraná;-10.8853
+Batang;-6.9081
+Guagua;14.9667
+Spanish Town;17.9959
+Carrollton;32.9890
+Chittandikavundanūr;10.6931
+Surat Thani;9.1397
+Narita;35.7767
+Apopa;13.8000
+Relizane;35.7372
+Fürth;49.4667
+Lào Cai;22.4806
+Antsiranana;-12.3000
+Lashio;22.9333
+Silay;10.8000
+Parepare;-4.0167
+City of Isabela;6.7000
+Thaton;16.9333
+Zwolle;52.5167
+Nueva Concepción;14.1997
+Marand;38.4331
+Kānchrāpāra;22.9456
+Quibdó;5.6922
+Girardot;4.3050
+Pouso Alegre;-22.2281
+Tychy;50.1236
+Rustavi;41.5472
+Bassila;9.0167
+Midland;32.0243
+Cholula de Rivadabia;19.0633
+Trinidad;-14.8292
+Onomichi;34.4167
+Kislovodsk;43.9167
+Kozan;37.4500
+Udon Thani;17.4167
+Jīroft;28.6781
+Batticaloa;7.7167
+Chās;23.6300
+Yakima;46.5923
+Bongaigaon;26.4769
+Battambang;13.1000
+Vitória de Santo Antão;-8.1264
+Mukeriān;31.9500
+Malambo;10.8500
+Leiden;52.1600
+Huejutla de Reyes;21.1333
+Zhaozhou;37.7527
+Lakewood;40.0763
+Ergani;38.2692
+Lucheng;30.0553
+Hanumāngarh;29.5833
+Çayırova;40.8265
+Saïda;34.8303
+Taldyqorghan;45.0167
+Ñemby;-25.3935
+Cambridge;43.3972
+Fengcheng;37.4313
+Ponnagyun;20.3333
+Mothīhāri;26.6500
+Serpukhov;54.9167
+Mīt Ghamr;30.7167
+Bellingham;48.7548
+Yuba City;39.1357
+Villa Alemana;-33.0422
+Ciénaga;11.0069
+Táriba;7.8167
+Kibaha;-6.7667
+Chinguar;-12.5500
+Västerås;59.6161
+Würzburg;49.7833
+Mansa;-11.2000
+Alwāl;17.5047
+Songnim;38.7542
+Santo Tomas;7.5333
+Koidu;8.6439
+Hoshangābād;22.7475
+Opole;50.6667
+Novocheboksarsk;56.1333
+Araras;-22.3572
+Khanna;30.7000
+Puno;-15.8433
+Koforidua;6.0833
+Ahmadpur East;29.1439
+Rosario;13.8460
+Avrankou;6.5500
+Salto;-31.3833
+Mosquera;4.7078
+Missérété;6.5625
+Vihari;30.0419
+Amherst;43.0117
+Örebro;59.2739
+Temperley;-34.7667
+Baigou;39.1098
+Tukuyu;-9.2500
+Shiyan;23.1251
+Zoetermeer;52.0667
+Ban Bang Pu Mai;13.5441
+Iwakuni;34.1664
+Sinnūris;29.4072
+Garut;-7.2167
+Seto;35.2236
+Bataysk;47.1667
+Whitby;43.8833
+Buôn Hồ;12.8544
+Romford;51.5768
+Pinsk;52.1153
+Tumen;42.9627
+Ramos Mejía;-34.6500
+Rudnyy;52.9667
+Guimba;15.6606
+Miramar;22.3375
+Nefteyugansk;61.0833
+Nāḩiyat Khān Banī Sa‘d;33.5700
+La Granja;-33.5333
+South Lyon;42.4614
+Al Ḩajar al Aswad;33.4640
+Guasdualito;7.2467
+Domodedovo;55.4400
+Ulm;48.4000
+Darnah;32.7667
+Santa Lucía Cotzumalguapa;14.3333
+Nagda;23.4564
+Kadoma;34.7333
+Salmās;38.2017
+Santa Clara;37.3646
+St. George;37.0758
+Allada;6.6500
+Jāzān;16.8892
+Maricá;-22.9189
+Dessalines;19.2833
+Kaspiysk;42.8803
+Heilbronn;49.1500
+Anderlecht;50.8333
+Fort Smith;35.3495
+Neftekamsk;56.1417
+Ōmiyachō;35.2221
+San Ignacio;-5.1456
+Bajos de Haina;18.4167
+Bam;29.1061
+High Wycombe;51.6287
+Monza;45.5836
+Pforzheim;48.8950
+Ōsaki;38.5771
+Jhārsugra;21.8500
+Balneário de Camboriú;-26.9953
+Santana de Parnaíba;-23.4439
+Palni;10.4500
+Rosetta;31.4044
+Payakumbuh;-0.2333
+Simi Valley;34.2663
+Pakokku;21.3320
+Angren;41.0167
+Basīrhat;22.6612
+Duitama;5.8333
+Leiria;39.7500
+Larache;35.1833
+Navadwīp;23.4088
+Latina;41.4672
+Cambridge;52.2053
+Ünye;41.1333
+San Fernando;16.6200
+Exeter;50.7256
+Gurabo al Medio;19.4739
+Santa Cruz;14.2833
+Guntakal;15.1700
+Pithampur;22.6197
+Iizuka;33.6500
+Sabará;-19.8858
+Catabola;-12.1167
+Suhum;6.0333
+Bagong Silangan;14.7094
+Barbacena;-21.2167
+Bến Tre;10.2333
+Hālīsahar;22.9500
+Matamoros;25.5330
+Western Bicutan;14.5094
+Rishra;22.7100
+Hoima;1.4319
+Drohobych;49.3500
+Panevėžys;55.7333
+Leuwiliang;-6.5742
+Magelang;-7.4667
+Jizhou;37.5455
+Kampong Cham;11.9870
+Gashua;12.8681
+Shchelkovo;55.9167
+Dover;39.1610
+Chinautla;14.7029
+Pātan;23.8500
+Novomoskovsk;54.0833
+Norman;35.2335
+Cam Ranh;11.9136
+Kumbo;6.2000
+Sai Wan Ho;22.2877
+Giugliano in Campania;40.9319
+Cagua;10.1875
+Yuanlin;23.9611
+Indramayu;-6.3528
+Colchester;51.8917
+Gateshead;54.9500
+Pakxé;15.1167
+Bonao;18.9500
+Honchō;35.7580
+Abilene;32.4543
+Magalang;15.2167
+Uruguaiana;-29.7550
+Porlamar;10.9556
+Resende;-22.4689
+Daitōchō;34.7167
+Móng Cái;21.5333
+Sawrān;36.6606
+León;42.6056
+Sunām;30.1300
+Central Signal Village;14.5106
+Polatlı;39.5842
+Jirjā;26.3333
+Fugu;39.0259
+Jilib;0.5000
+Az Zulfī;26.2833
+Billings;45.7891
+Leeuwarden;53.2000
+Ouahigouya;13.5833
+Dūmā;33.5711
+Juticalpa;14.6664
+Zhaxi;27.8440
+Gexianzhuang;37.0694
+Wolfsburg;52.4231
+Savannakhet;16.5500
+Gorzów Wielkopolski;52.7333
+Ponce;18.0127
+Cai Lậy;10.4170
+Gyumri;40.7894
+Glazoué;7.9736
+Pervouralsk;56.9167
+New Mirpur;33.1490
+Noksan;36.2039
+San Pedro Garza García;25.6667
+Montreuil;48.8611
+Serik;36.9167
+Algeciras;36.1275
+Pāli;23.3500
+Bimbo;4.3313
+Hội An;15.8833
+Setúbal;38.5243
+Matsubara;34.5833
+Baia Mare;47.6667
+Kadirli;37.3697
+Khrustalnyi;48.1214
+Cherkessk;44.2222
+Malindi;-3.2236
+Pobé;6.9667
+Bergamo;45.6950
+Kirishima;31.7406
+Gapan;15.3122
+Magangué;9.2500
+Jimaguayú;21.2667
+Debre Tabor;11.8500
+Maicao;11.3778
+Delgado;13.7167
+Uruma;26.3792
+Lehigh Acres;26.6120
+Derbent;42.0500
+Melipilla;-33.6253
+Pati;-6.7415
+Cádiz;36.5350
+Djidja;7.3333
+Longtian;24.3512
+St. Cloud;45.5340
+Nāndgaon;20.3070
+Arecibo;18.4491
+Munūf;30.4658
+Punta Arenas;-53.1667
+Varginha;-21.5517
+Munch’ŏn;39.2590
+Kilifi;-3.6333
+Bhadrakh;21.0545
+Zacatecas;22.7736
+Santana;-0.0350
+Kaya;13.0833
+Alberton;-26.2672
+Kenosha;42.5865
+Ise;34.4833
+Lianhe;47.1414
+Brits;-25.6344
+Itatiba;-23.0058
+Dimāpur;25.9200
+Ed Damer;17.5900
+Bragança;-1.0628
+Patnos;39.2358
+Bayawan;9.3667
+Greenville;35.5943
+Barretos;-20.5569
+Arvada;39.8320
+Kâhta;37.7803
+Blackburn;53.7480
+Machiques;10.0667
+Ciudad Hidalgo;19.6923
+Slough;51.5084
+Pescara;42.4643
+Guelma;36.4619
+Behbahān;30.5958
+Pearland;29.5581
+Baidyabāti;22.7900
+Kotamobagu;0.7333
+Mufulira;-12.5356
+Puerto Cortés;15.8833
+Maina;13.4692
+Dharmavaram;14.4300
+Edéa;3.8000
+Honmachi;32.5000
+Ciudad Ojeda;10.2000
+Bento Gonçalves;-29.1708
+Independence;39.0871
+Fier;40.7250
+Kamalia;30.7258
+Ghazīpur;25.5833
+Orekhovo-Zuyevo;55.8000
+Texas City;29.4154
+Saint-Denis;48.9356
+Chinandega;12.6297
+Puruliya;23.3333
