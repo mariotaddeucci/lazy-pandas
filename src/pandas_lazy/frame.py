@@ -138,12 +138,12 @@ class LazyFrame:
             return LazyFrame(rel)
 
     @overload
-    def drop_duplicates(self, subset: list[str] | None = ..., inplace: Literal[False] = ...) -> "LazyFrame": ...
+    def drop_duplicates(self, subset: str | list[str] | None = ..., inplace: Literal[False] = ...) -> "LazyFrame": ...
 
     @overload
-    def drop_duplicates(self, subset: list[str] | None = ..., inplace: Literal[True] = ...) -> None: ...
+    def drop_duplicates(self, subset: str | list[str] | None = ..., inplace: Literal[True] = ...) -> None: ...
 
-    def drop_duplicates(self, subset: list[str] | None = None, inplace: bool = False) -> Union["LazyFrame", None]:
+    def drop_duplicates(self, subset: str | list[str] | None = None, inplace: bool = False) -> Union["LazyFrame", None]:
         """
         Remove duplicate rows from the relation.
 
@@ -157,6 +157,9 @@ class LazyFrame:
         if subset is None:
             rel = self._relation.distinct()
         else:
+            if isinstance(subset, str):
+                subset = [subset]
+
             rn_col = f"tmp_col_{uuid.uuid1().hex}"
             subset_str = ", ".join([f'"{c}"' for c in subset])
             window_spec = f"OVER(PARTITION BY {subset_str}) AS {rn_col}"
@@ -172,9 +175,9 @@ class LazyFrame:
     def __getitem__(self, key: str) -> LazyColumn: ...
 
     @overload
-    def __getitem__(self, key: list[str]) -> "LazyFrame": ...
+    def __getitem__(self, key: list[str] | LazyColumn) -> "LazyFrame": ...
 
-    def __getitem__(self, key: str | list[str]) -> Union["LazyColumn", "LazyFrame"]:
+    def __getitem__(self, key: str | list[str] | LazyColumn) -> Union[LazyColumn, "LazyFrame"]:
         """
         Select a single column or a subset of columns.
 
@@ -192,6 +195,9 @@ class LazyFrame:
 
         if isinstance(key, str):
             return LazyColumn(ColumnExpression(key))
+
+        if isinstance(key, LazyColumn):
+            return LazyFrame(self._relation.filter(key.expr))
 
         raise PandasLazyUnsupporttedOperation(
             f"PandasLazy does not support all pandas operations, use collect() to get a pandas DataFrame and then perform the operation {key}"
