@@ -26,6 +26,9 @@ jobs:
       - name: Set up UV
         run: python -m pip install uv
 
+      - name: Generate documentation
+        run: make docs-build
+
       - name: Execute lint checks
         run: make lint
 

@@ -16,3 +16,6 @@ lint:
 
 docs-serve:
 	uvx --with "mkdocstrings-python,mkdocs-material[imaging]" mkdocs serve
+
+docs-build:
+	uvx --with "mkdocstrings-python,mkdocs-material[imaging]" mkdocs build
