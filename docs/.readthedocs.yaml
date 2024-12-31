@@ -4,7 +4,7 @@ build:
   tools:
     python: "3.13"
 mkdocs:
-  configuration: docs/mkdocs.yaml
+  configuration: docs/mkdocs.yml
 python:
   install:
     - requirements: docs/requirements.txt

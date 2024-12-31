@@ -1,5 +1,5 @@
 UVX = uvx
-MKDOCS_OPTS = --with-requirements ./docs/requirements.txt
+MKDOCS_OPTS = --with-requirements requirements.txt
 
 test:
 	$(UVX) hatch test
@@ -20,8 +20,8 @@ lint:
 	$(UVX) codespell
 	$(UVX) pyprojectsort --check
 
-docs-serve:
-	$(UVX) $(MKDOCS_OPTS) mkdocs serve
+docs:
+	cd docs && $(UVX) $(MKDOCS_OPTS) mkdocs serve
 
 docs-build:
-	$(UVX) $(MKDOCS_OPTS) mkdocs build
+	cd docs && $(UVX) $(MKDOCS_OPTS) mkdocs build
