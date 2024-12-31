@@ -18,7 +18,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 
 [tool.codespell]
-skip = ".git,.tox,./venv,./site,./tests/assets/*"
+skip = ".git,.tox,./venv,./docs/site,./tests/assets/*"
 
 [tool.hatch.build]
 exclude = [
