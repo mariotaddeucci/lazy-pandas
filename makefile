@@ -13,7 +13,6 @@ format:
 	$(UVX) ruff format
 	$(UVX) pyprojectsort
 
-
 lint:
 	$(UVX) ruff check
 	$(UVX) ssort --check
