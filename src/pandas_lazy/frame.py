@@ -1,6 +1,7 @@
 import uuid
 from typing import TYPE_CHECKING, Literal, Union, overload
 
+import duckdb
 from duckdb import ColumnExpression, ConstantExpression, DuckDBPyRelation, Expression, StarExpression
 
 from pandas_lazy.column import LazyColumn
@@ -170,6 +171,30 @@ class LazyFrame:
             self._relation = rel
         else:
             return LazyFrame(rel)
+
+    def merge(
+        self,
+        right: Union["LazyFrame", duckdb.DuckDBPyRelation],
+        on: str | list[str],
+        how: Literal["inner", "right", "left", "outer"] = "inner",
+    ) -> "LazyFrame":
+        """
+        Merge two relations on one or more columns.
+
+        Args:
+            right (LazyFrame): The right relation to merge.
+            on (str | list[str]): The column(s) to merge on.
+            how (str): The type of merge to perform. Defaults to 'inner'.
+
+        Returns:
+            LazyFrame: A new LazyFrame with the merged data.
+        """
+        if isinstance(on, str):
+            on = [on]
+
+        right_relation = right._relation if isinstance(right, LazyFrame) else right
+
+        return LazyFrame(self._relation.join(right_relation, *on, how=how))
 
     @overload
     def __getitem__(self, key: str) -> LazyColumn: ...

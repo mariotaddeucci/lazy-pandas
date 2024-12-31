@@ -268,7 +268,7 @@ def read_parquet(
     return df[columns]
 
 
-def read_delta(path: str) -> LazyFrame:
+def read_delta(path: str, *, conn: duckdb.DuckDBPyConnection | None = None) -> LazyFrame:
     """
     Reads a Delta Lake table and returns a LazyFrame.
 
@@ -286,11 +286,14 @@ def read_delta(path: str) -> LazyFrame:
     df.head()
     ```
     """
-    relation = duckdb.sql(f"FROM delta_scan('{path}')")
+    if conn is None:
+        relation = duckdb.sql(f"FROM delta_scan('{path}')")
+    else:
+        relation = conn.sql(f"FROM delta_scan('{path}')")
     return LazyFrame(relation)
 
 
-def read_iceberg(path: str) -> LazyFrame:
+def read_iceberg(path: str, *, conn: duckdb.DuckDBPyConnection | None = None) -> LazyFrame:
     """
     Reads an Apache Iceberg table and returns a LazyFrame.
 
@@ -307,6 +310,9 @@ def read_iceberg(path: str) -> LazyFrame:
     df.head()
     ```
     """
-    duckdb.sql("install iceberg; load iceberg;")
-    relation = duckdb.sql(f"FROM iceberg_scan('{path}')")
+    if conn is None:
+        duckdb.sql("install iceberg; load iceberg;")
+        relation = duckdb.sql(f"FROM iceberg_scan('{path}')")
+    else:
+        relation = conn.sql(f"FROM iceberg_scan('{path}')")
     return LazyFrame(relation)

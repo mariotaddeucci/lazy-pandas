@@ -1,4 +1,5 @@
 import duckdb
+import numpy as np
 import pandas as pd
 import pandas_lazy as pdl
 
@@ -84,3 +85,89 @@ def test_drop_duplicates_subset():
     df = df.collect()
     assert df.shape == (1, 2)
     assert df.columns.tolist() == ["a", "b"]
+
+
+def test_merge_inner():
+    rel1 = duckdb.sql("SELECT 1 AS a, 2 AS b")
+    rel2 = duckdb.sql("SELECT 1 AS a, 4 AS d")
+    df1 = pdl.LazyFrame(rel1)
+    df2 = pdl.LazyFrame(rel2)
+
+    df = df1.merge(df2, on="a")
+    df = df.collect()
+    assert df.shape == (1, 3)
+    assert sorted(df.columns.tolist()) == ["a", "b", "d"]
+
+
+def test_merge_outer():
+    rel1 = duckdb.sql("SELECT 1 AS a, 2 AS b")
+    rel2 = duckdb.sql("SELECT 2 AS a, 4 AS d")
+    df1 = pdl.LazyFrame(rel1)
+    df2 = pdl.LazyFrame(rel2)
+
+    df = df1.merge(df2, on="a", how="outer")
+    df.sort_values("a", inplace=True)
+
+    df = df.collect()
+
+    assert df.shape == (2, 3)
+    assert sorted(df.columns.tolist()) == ["a", "b", "d"]
+    vl1, vl2 = df["b"].tolist()
+    assert vl1 == 2
+    assert np.isnan(vl2)
+    vl1, vl2 = df["d"].tolist()
+    assert np.isnan(vl1)
+    assert vl2 == 4
+    vl1, vl2 = df["a"].tolist()
+    assert vl1 == 1
+    assert vl2 == 2
+
+
+def test_merge_left():
+    rel1 = duckdb.sql("SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 3")
+    rel2 = duckdb.sql("SELECT 1 AS a, 4 AS d UNION ALL SELECT 2, 5")
+    df1 = pdl.LazyFrame(rel1)
+    df2 = pdl.LazyFrame(rel2)
+
+    df = df1.merge(df2, on="a", how="left")
+    df.sort_values("a", inplace=True)
+    df = df.collect()
+
+    assert df.shape == (2, 3)
+    assert sorted(df.columns.tolist()) == ["a", "b", "d"]
+    vl1, vl2 = df["b"].tolist()
+    assert vl1 == 2
+    assert vl2 == 3
+
+    vl1, vl2 = df["d"].tolist()
+    assert vl1 == 4
+    assert np.isnan(vl2)
+
+    vl1, vl2 = df["a"].tolist()
+    assert vl1 == 1
+    assert vl2 == 3
+
+
+def test_merge_right():
+    rel1 = duckdb.sql("SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 3")
+    rel2 = duckdb.sql("SELECT 1 AS a, 4 AS d UNION ALL SELECT 2, 5")
+    df1 = pdl.LazyFrame(rel2)
+    df2 = pdl.LazyFrame(rel1)
+
+    df = df1.merge(df2, on="a", how="right")
+    df.sort_values("a", inplace=True)
+    df = df.collect()
+
+    assert df.shape == (2, 3)
+    assert sorted(df.columns.tolist()) == ["a", "b", "d"]
+    vl1, vl2 = df["b"].tolist()
+    assert vl1 == 2
+    assert vl2 == 3
+
+    vl1, vl2 = df["d"].tolist()
+    assert vl1 == 4
+    assert np.isnan(vl2)
+
+    vl1, vl2 = df["a"].tolist()
+    assert vl1 == 1
+    assert vl2 == 3
