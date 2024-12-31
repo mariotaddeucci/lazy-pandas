@@ -1,21 +1,40 @@
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
+requires = [
+    "hatch-vcs",
+    "hatchling",
+]
 
 [project]
-name = "pandas_lazy"
-dynamic = ["version"]
+dependencies = [
+    "duckdb",
+]
 description = "Add your description here"
+dynamic = [
+    "version",
+]
+name = "pandas_lazy"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["duckdb"]
+
+[tool.codespell]
+skip = ".git,.tox,./venv,./docs/site,./tests/assets/*"
 
 [tool.hatch.build]
-exclude = ["/tests"]
+exclude = [
+    "/tests",
+]
 
 [tool.hatch.envs.hatch-test]
-dependencies = ["pytest >=8.3.3,<9", "pandas", "pyarrow", "pyiceberg[sql-sqlite]"]
-extra-args = ["-vv"]
+dependencies = [
+    "pandas",
+    "pyarrow",
+    "pyiceberg[sql-sqlite]",
+    "pytest >=8.3.3,<9",
+]
+extra-args = [
+    "-vv",
+]
 
 [tool.hatch.envs.hatch-test.scripts]
 run = "pytest{env:HATCH_TEST_ARGS:} {args}"
@@ -25,10 +44,14 @@ source = "vcs"
 
 [tool.pytest.ini_options]
 pythonpath = "src"
-testpaths = ["tests"]
+testpaths = [
+    "tests",
+]
 
 [tool.ruff]
 line-length = 120
 
 [tool.ruff.lint]
-extend-unsafe-fixes = ["UP"]
+extend-unsafe-fixes = [
+    "UP",
+]
