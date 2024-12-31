@@ -18,7 +18,7 @@ lint:
 	$(UVX) ruff check
 	$(UVX) ssort --check
 	$(UVX) ruff format --check
-	$(UVX) codespell
+	$(UVX) --with tomli codespell
 	$(UVX) pyprojectsort --check
 
 docs-serve:
