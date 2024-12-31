@@ -1,5 +1,5 @@
 UVX = uvx
-MKDOCS_OPTS = --with "mkdocstrings-python,mkdocs-material[imaging]"
+MKDOCS_OPTS = --with-requirements ./docs/requirements.txt
 
 test:
 	$(UVX) hatch test
