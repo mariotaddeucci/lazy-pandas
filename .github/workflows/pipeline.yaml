@@ -37,6 +37,3 @@ jobs:
 
       - name: Execute tests
         run: make test-all
-
-      - name: Publish documentation
-        run: make docs-deploy

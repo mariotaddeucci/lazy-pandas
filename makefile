@@ -26,6 +26,3 @@ docs-serve:
 
 docs-build:
 	$(UVX) $(MKDOCS_OPTS) mkdocs build
-
-docs-deploy:
-	$(UVX) $(MKDOCS_OPTS) mkdocs gh-deploy
