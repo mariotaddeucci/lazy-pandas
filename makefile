@@ -20,7 +20,7 @@ lint:
 	$(UVX) codespell
 	$(UVX) pyprojectsort --check
 
-docs:
+docs-serve:
 	cd docs && $(UVX) $(MKDOCS_OPTS) mkdocs serve
 
 docs-build:
