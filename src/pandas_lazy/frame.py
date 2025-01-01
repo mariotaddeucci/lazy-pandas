@@ -2,9 +2,17 @@ import uuid
 from typing import TYPE_CHECKING, Literal, Union, overload
 
 import duckdb
-from duckdb import ColumnExpression, ConstantExpression, DuckDBPyRelation, Expression, StarExpression
+from duckdb import (
+    ColumnExpression,
+    ConstantExpression,
+    DuckDBPyRelation,
+    Expression,
+    FunctionExpression,
+    StarExpression,
+)
+from duckdb.typing import DuckDBPyType
 
-from pandas_lazy.column import LazyColumn
+from pandas_lazy.column.lazy_column import LazyColumn
 from pandas_lazy.exceptions import PandasLazyUnsupporttedOperation
 
 if TYPE_CHECKING:
@@ -13,6 +21,9 @@ if TYPE_CHECKING:
     import pyarrow as pa
 
 __all__ = ["LazyFrame"]
+
+
+ColumnOrName = Union["LazyColumn", str]
 
 
 class LazyFrame:
@@ -40,6 +51,24 @@ class LazyFrame:
             pd.DataFrame: The materialized DataFrame.
         """
         return self._relation.to_df()
+
+    def dropna(
+        self, *, how: Literal["any", "all"] = "any", subset: str | list[str] | None = None, inplace: bool = False
+    ) -> Union["LazyFrame", None]:
+        operator = " AND " if how == "any" else " OR "
+
+        if subset is None:
+            subset = self.columns
+        elif isinstance(subset, str):
+            subset = [subset]
+
+        filter_expr = operator.join(f'"{col}" IS NOT NULL' for col in subset)
+        rel = self._relation.filter(filter_expr)
+
+        if inplace:
+            self._relation = rel
+        else:
+            return LazyFrame(rel)
 
     def to_pandas(self) -> "pd.DataFrame":
         """
@@ -171,6 +200,36 @@ class LazyFrame:
             self._relation = rel
         else:
             return LazyFrame(rel)
+
+    def astype(self, dtype: str | type | dict[str, str | DuckDBPyType]) -> "LazyFrame":
+        if isinstance(dtype, str | DuckDBPyType):
+            dtype = {col: dtype for col in self.columns}
+
+        curr = self
+        for col, col_dtype in dtype.items():
+            curr[col] = curr[col].astype(col_dtype)
+
+        return curr
+
+    def explode(self, column: str | list[str]) -> "LazyFrame":
+        if isinstance(column, str):
+            column = [column]
+
+        rel = self._relation.select(
+            StarExpression(exclude=column),
+            *[FunctionExpression("explode", ColumnExpression(col)) for col in column],
+        )
+
+        return LazyFrame(rel)
+
+    def copy(self) -> "LazyFrame":
+        """
+        Create a copy of the LazyFrame.
+
+        Returns:
+            LazyFrame: A new LazyFrame with the same underlying relation.
+        """
+        return LazyFrame(self._relation)
 
     def merge(
         self,

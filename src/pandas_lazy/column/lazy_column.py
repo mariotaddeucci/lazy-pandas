@@ -1,9 +1,13 @@
-from typing import Any, Callable, Tuple, cast
+from typing import Any, Callable, Tuple, Union, cast
 
-from duckdb import ConstantExpression, Expression
+from duckdb import CoalesceOperator, ConstantExpression, Expression, FunctionExpression
 from duckdb.typing import DuckDBPyType
+from pandas_lazy.column.lazy_datetime_column import LazyDateTimeColumn
+from pandas_lazy.column.lazy_string_column import LazyStringColumn
 
 __all__ = ["LazyColumn"]
+
+ColumnOrName = Union["LazyColumn", str]
 
 
 class UnsupporttedOperation(Exception): ...
@@ -42,20 +46,45 @@ class LazyColumn:
     def __init__(self, expr: Expression):
         self.expr = expr
 
+    def abs(self) -> "LazyColumn":
+        return self.create_from_function("abs", self.expr)
+
+    def round(self, decimals: int = 0) -> "LazyColumn":
+        return self.create_from_function("round", self.expr, ConstantExpression(decimals))
+
+    @classmethod
+    def create_from_function(cls, function: str, *arguments: Expression) -> "LazyColumn":
+        return LazyColumn(FunctionExpression(function, *arguments))
+
     def isin(self, *cols: Any) -> "LazyColumn":
         if len(cols) == 1 and isinstance(cols[0], (list, set)):
             cols = cast(Tuple, cols[0])
 
-        cols = cast(
-            Tuple,
-            [_get_expr(c) for c in cols],
-        )
+        cols = cast(Tuple, [_get_expr(c) for c in cols])
+
         return LazyColumn(self.expr.isin(*cols))
 
     def astype(self, dtype: str | DuckDBPyType) -> "LazyColumn":
         if isinstance(dtype, str):
             dtype = DuckDBPyType(dtype)
         return LazyColumn(self.expr.cast(dtype))
+
+    def fillna(self, value: Any) -> "LazyColumn":
+        return LazyColumn(CoalesceOperator(self.expr, _get_expr(value)))
+
+    def isnull(self) -> "LazyColumn":
+        return LazyColumn(self.expr.isnull())
+
+    def isna(self) -> "LazyColumn":
+        return self.isnull()
+
+    @property
+    def dt(self) -> LazyDateTimeColumn:
+        return LazyDateTimeColumn(self)
+
+    @property
+    def str(self) -> "LazyStringColumn":
+        return LazyStringColumn(self)
 
     __add__ = _bin_op("__add__")
     __radd__ = _bin_op("__radd__")
@@ -81,7 +110,6 @@ class LazyColumn:
     __lt__ = _bin_op("__lt__")
     __le__ = _bin_op("__le__")
 
-    # logistic operators
     def __eq__(  # type: ignore[override]
         self,
         other,
