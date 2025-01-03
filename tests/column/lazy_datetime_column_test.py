@@ -42,3 +42,45 @@ def test_dt_day(df):
     df["day"] = df["dt_time"].dt.day()
     df = df.collect()
     assert df["day"].tolist() == [1, 2]
+
+
+def test_dt_is_month_start(df):
+    df["is_month_start"] = df["dt_time"].dt.is_month_start()
+    df = df.collect()
+    assert df["is_month_start"].tolist() == [True, False]
+
+
+def test_dt_is_quarter_start():
+    df = LazyFrame(
+        duckdb.sql("select cast('2023-01-02' as datetime) as dt_time union select cast('2023-04-01' as datetime)")
+    )
+    df["is_quarter_start"] = df["dt_time"].dt.is_quarter_start()
+    df = df.sort_values("dt_time")
+    df = df.collect()
+    assert df["is_quarter_start"].tolist() == [False, True]
+
+
+def test_dt_is_year_start():
+    df = LazyFrame(
+        duckdb.sql("select cast('2023-01-02' as datetime) as dt_time union select cast('2023-01-01' as datetime)")
+    )
+    df = df.sort_values("dt_time")
+    df["is_year_start"] = df["dt_time"].dt.is_year_start()
+    df = df.collect()
+    assert df["is_year_start"].tolist() == [True, False]
+
+
+def test_dt_is_month_end():
+    df = LazyFrame(
+        duckdb.sql("select cast('2023-05-01' as datetime) as dt_time union select cast('2023-05-31' as datetime)")
+    )
+    df["is_month_end"] = df["dt_time"].dt.is_month_end()
+    df = df.sort_values("dt_time")
+    df = df.collect()
+    assert df["is_month_end"].tolist() == [False, True]
+
+
+def test_dt_weekday(df):
+    df["weekday"] = df["dt_time"].dt.weekday()
+    df = df.collect()
+    assert df["weekday"].tolist() == [1, 2]
