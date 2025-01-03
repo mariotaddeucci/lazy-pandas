@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream:src/pandas_lazy/column/lazy_column.py
 from typing import Any, Callable, Tuple, Union, cast
+=======
+from typing import Any, Callable, Literal, Tuple, cast
+>>>>>>> Stashed changes:src/pandas_lazy/column.py
 
 from duckdb import CoalesceOperator, ConstantExpression, Expression, FunctionExpression
 from duckdb.typing import DuckDBPyType
@@ -78,6 +82,34 @@ class LazyColumn:
     def isna(self) -> "LazyColumn":
         return self.isnull()
 
+<<<<<<< Updated upstream:src/pandas_lazy/column/lazy_column.py
+=======
+    def notnull(self) -> "LazyColumn":
+        return LazyColumn(self.expr.isnotnull())
+
+    def notna(self) -> "LazyColumn":
+        return self.notnull()
+
+    def between(
+        self, left: Any, right: Any, inclusive: Literal["both", "neither", "left", "right"] = "both"
+    ) -> "LazyColumn":
+        left_expr = _get_expr(left)
+        right_expr = _get_expr(right)
+
+        if inclusive == "both":
+            result = self.expr >= left_expr & self.expr <= right_expr
+        elif inclusive == "neither":
+            result = self.expr > left_expr & self.expr < right_expr
+        elif inclusive == "left":
+            result = self.expr >= left_expr & self.expr < right_expr
+        elif inclusive == "right":
+            result = self.expr > left_expr & self.expr <= right_expr
+        else:
+            raise ValueError(f"Invalid value for inclusive: {inclusive}")
+
+        return LazyColumn(result)
+
+>>>>>>> Stashed changes:src/pandas_lazy/column.py
     @property
     def dt(self) -> LazyDateTimeColumn:
         return LazyDateTimeColumn(self)

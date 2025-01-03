@@ -39,3 +39,6 @@ class LazyStringColumn:
 
     def contains(self, pat: str) -> "LazyColumn":
         return self.col.create_from_function("contains", self.col.expr, ConstantExpression(pat))
+
+    def zfill(self, width: int) -> "LazyColumn":
+        return self.col.create_from_function("lpad", self.col.expr, ConstantExpression(width), ConstantExpression("0"))
