@@ -37,3 +37,6 @@ class LazyDateTimeColumn:
 
     def is_month_end(self) -> "LazyColumn":
         return self.col == self.col.create_from_function("last_day", self.col.expr)
+
+    def weekday(self) -> "LazyColumn":
+        return self.col.create_from_function("dayofweek", self.col.expr)

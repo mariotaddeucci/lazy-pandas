@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 from duckdb import ConstantExpression
 
@@ -40,5 +40,25 @@ class LazyStringColumn:
     def contains(self, pat: str) -> "LazyColumn":
         return self.col.create_from_function("contains", self.col.expr, ConstantExpression(pat))
 
+    def find(self, sub: str) -> "LazyColumn":
+        return self.col.create_from_function("instr", self.col.expr, ConstantExpression(sub)) - 1
+
+    def pad(self, width: int, side: Literal["left", "right", "both"] = "left", fillchar: str = " ") -> "LazyColumn":
+        if side not in {"left", "right", "both"}:
+            raise ValueError("side must be 'left', 'right', or 'both'")
+
+        if side == "both":
+            raise NotImplementedError("side='both' is not supported yet")
+
+        return self.col.create_from_function(
+            "lpad" if side == "left" else "rpad", self.col.expr, ConstantExpression(width), ConstantExpression(fillchar)
+        )
+
     def zfill(self, width: int) -> "LazyColumn":
-        return self.col.create_from_function("lpad", self.col.expr, ConstantExpression(width), ConstantExpression("0"))
+        return self.pad(width, fillchar="0")
+
+    def ljust(self, width: int, fillchar: str = " ") -> "LazyColumn":
+        return self.pad(width, side="left", fillchar=fillchar)
+
+    def rjust(self, width: int, fillchar: str = " ") -> "LazyColumn":
+        return self.pad(width, side="right", fillchar=fillchar)
