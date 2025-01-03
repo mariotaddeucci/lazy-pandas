@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream:src/pandas_lazy/column/lazy_column.py
 from typing import Any, Callable, Tuple, Union, cast
-=======
-from typing import Any, Callable, Literal, Tuple, cast
->>>>>>> Stashed changes:src/pandas_lazy/column.py
 
 from duckdb import CoalesceOperator, ConstantExpression, Expression, FunctionExpression
 from duckdb.typing import DuckDBPyType
@@ -82,8 +78,6 @@ class LazyColumn:
     def isna(self) -> "LazyColumn":
         return self.isnull()
 
-<<<<<<< Updated upstream:src/pandas_lazy/column/lazy_column.py
-=======
     def notnull(self) -> "LazyColumn":
         return LazyColumn(self.expr.isnotnull())
 
@@ -109,7 +103,6 @@ class LazyColumn:
 
         return LazyColumn(result)
 
->>>>>>> Stashed changes:src/pandas_lazy/column.py
     @property
     def dt(self) -> LazyDateTimeColumn:
         return LazyDateTimeColumn(self)
