@@ -1,4 +1,4 @@
-from typing import Any, Callable, Tuple, Union, cast
+from typing import Any, Callable, Literal, Tuple, Union, cast
 
 from duckdb import CoalesceOperator, ConstantExpression, Expression, FunctionExpression
 from duckdb.typing import DuckDBPyType

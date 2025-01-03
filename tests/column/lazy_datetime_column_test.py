@@ -42,3 +42,27 @@ def test_dt_day(df):
     df["day"] = df["dt_time"].dt.day()
     df = df.collect()
     assert df["day"].tolist() == [1, 2]
+
+
+def test_dt_is_month_start(df):
+    df["is_month_start"] = df["dt_time"].dt.is_month_start()
+    df = df.collect()
+    assert df["is_month_start"].tolist() == [True, False]
+
+
+def test_dt_is_quarter_start(df):
+    df["is_quarter_start"] = df["dt_time"].dt.is_quarter_start()
+    df = df.collect()
+    assert df["is_quarter_start"].tolist() == [False, True]
+
+
+def test_dt_is_year_start(df):
+    df["is_year_start"] = df["dt_time"].dt.is_year_start()
+    df = df.collect()
+    assert df["is_year_start"].tolist() == [False, True]
+
+
+def test_dt_is_month_end(df):
+    df["is_month_end"] = df["dt_time"].dt.is_month_end()
+    df = df.collect()
+    assert df["is_month_end"].tolist() == [False, False]
