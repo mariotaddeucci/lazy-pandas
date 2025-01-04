@@ -1,4 +1,0 @@
-# Reference
-
-::: pandas_lazy
-
