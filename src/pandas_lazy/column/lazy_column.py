@@ -41,6 +41,9 @@ def _bin_op(
 
 
 class LazyColumn:
+    __div__ = _bin_op("__div__")
+    __rdiv__ = _bin_op("__rdiv__")
+
     def __init__(self, expr: Expression):
         """
         Initializes a new instance of LazyColumn.
@@ -456,6 +459,3 @@ class LazyColumn:
 
     __gt__ = _bin_op("__gt__")
     __ge__ = _bin_op("__ge__")
-
-    __div__ = _bin_op("__div__")
-    __rdiv__ = _bin_op("__rdiv__")
