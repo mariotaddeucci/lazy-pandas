@@ -7,19 +7,20 @@ hide:
 
 # Pandas Lazy
 
-Bem-vindo(a) à documentação oficial do **Pandas Lazy**!
-Uma biblioteca inspirada no [pandas](https://pandas.pydata.org/) que foca em processamento “lazy” (preguiçoso), permitindo alto desempenho e menor uso de memória em datasets extensos.
+Welcome to the **Pandas Lazy** official documentation!
+A library inspired by [pandas](https://pandas.pydata.org/) that focuses on *lazy* processing, enabling high performance and lower memory usage for large datasets.
 
-## O que é Pandas Lazy?
+## What is Pandas Lazy?
 
-O Pandas Lazy é construído sobre o conceito de atrasar a execução de operações em DataFrames até que seja estritamente necessário (lazy evaluation). Isso possibilita que:
-- As operações sejam otimizadas em lote.
-- O uso de memória seja reduzido ao mínimo durante o processo.
-- O tempo de execução total seja menor para pipelines complexos.
+Pandas Lazy is built on the concept of delaying DataFrame operations until they are strictly necessary (lazy evaluation). This allows:
+- Operations to be optimized in batches.
+- Memory usage to be minimized during processing.
+- Total runtime to be reduced for complex pipelines.
 
-## Comparativo de Código
+## Code Comparison
 
-Abaixo, um comparativo lado a lado mostrando como seria a mesma operação em **pandas** e em **Pandas Lazy**:
+Below is a side-by-side comparison showing how the same operation would look in **pandas** versus **Pandas Lazy**:
+
 
 === "Pandas Lazy"
 
@@ -60,11 +61,12 @@ Abaixo, um comparativo lado a lado mostrando como seria a mesma operação em **
         return df
     ```
 
-Note que no **pandas** tradicional as operações são executadas de imediato, enquanto no **Pandas Lazy** a computação só ocorre quando chamamos `.collect()`.
+Notice that in traditional **pandas**, operations are executed immediately, while in **Pandas Lazy**, computation only occurs when you call `.collect()`.
 
 ## Memory Usage
 
-A seguir, apresentamos um comparativo fictício de desempenho entre **pandas** e **Pandas Lazy**, exibindo um cenário em que um grande dataset é processado em 3 etapas (leitura, agregação e filtragem complexa).
+Below is a fictitious performance comparison between **pandas** and **Pandas Lazy**, showing a scenario where a large dataset is processed in three stages (reading, aggregation, and complex filtering).
+
 
 <div class="grid cards" markdown>
 ```plotly
