@@ -3,3 +3,4 @@ mkdocs-material[imaging]
 ruff
 mkdocs-gen-files
 duckdb
+mkdocs-plotly-plugin

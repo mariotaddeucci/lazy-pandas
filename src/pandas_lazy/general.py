@@ -1,8 +1,30 @@
 from io import StringIO, TextIOBase
 
 import duckdb
+import duckdb.typing
 
-from pandas_lazy.frame import LazyFrame
+from pandas_lazy.frame.lazy_frame import LazyFrame
+
+
+def from_pandas(df) -> LazyFrame:
+    """
+    Converts a pandas DataFrame to a LazyFrame.
+
+    Args:
+        df (pd.DataFrame): The pandas DataFrame to convert.
+
+    Returns:
+        LazyFrame: A LazyFrame containing the data from the pandas DataFrame.
+
+    Example:
+    ```python
+    import pandas as pd
+    import pandas_lazy as pdl
+    df = pd.DataFrame({'column1': [1, 2, 3], 'column2': ['a', 'b', 'c']})
+    lazy_df = pdl.from_pandas(df)
+    ```
+    """
+    return LazyFrame(duckdb.from_df(df))
 
 
 def read_csv(
@@ -44,6 +66,7 @@ def read_csv(
     union_by_name: bool | None = None,
     hive_types: dict[str, str] | None = None,
     hive_types_autocast: bool | None = None,
+    parse_dates: list[str] | None = None,
 ) -> LazyFrame:
     """
     Reads a CSV file and returns a LazyFrame.
@@ -86,6 +109,7 @@ def read_csv(
         union_by_name (bool | None, optional): If True, unions files by column name. Defaults to None.
         hive_types (dict[str, str] | None, optional): Dictionary specifying Hive types for columns. Defaults to None.
         hive_types_autocast (bool | None, optional): If True, automatically casts Hive types. Defaults to None.
+        parse_dates (list[str] | None, optional): List of column names to parse as dates. Defaults to None.
 
     Returns:
         LazyFrame: A LazyFrame containing the data from the CSV file.
@@ -136,7 +160,10 @@ def read_csv(
         hive_types=hive_types,
         hive_types_autocast=hive_types_autocast,
     )
-    return LazyFrame(relation)
+    df = LazyFrame(relation)
+    for col in parse_dates or []:
+        df[col] = df[col].astype(duckdb.typing.TIMESTAMP)
+    return df
 
 
 def read_json(

@@ -1,7 +1,6 @@
 from typing import TYPE_CHECKING
 
 from duckdb import ConstantExpression
-from duckdb.typing import DATE
 
 if TYPE_CHECKING:
     from pandas_lazy.column.lazy_column import LazyColumn
@@ -35,6 +34,7 @@ class LazyDateTimeColumn:
         """
         self.col = col
 
+    @property
     def date(self) -> "LazyColumn":
         """
         Converts the datetime values to date-only (removes time component).
@@ -56,8 +56,9 @@ class LazyDateTimeColumn:
             # [2023-01-01, 2023-01-15, 2023-03-31, ...]
             ```
         """
-        return self.col.astype(DATE)
+        return self.round("d")
 
+    @property
     def year(self) -> "LazyColumn":
         """
         Extracts the year component from each datetime value.
@@ -80,6 +81,7 @@ class LazyDateTimeColumn:
         """
         return self.col.create_from_function("year", self.col.expr)
 
+    @property
     def quarter(self) -> "LazyColumn":
         """
         Extracts the quarter (1 to 4) from each datetime value.
@@ -104,6 +106,7 @@ class LazyDateTimeColumn:
         """
         return self.col.create_from_function("quarter", self.col.expr)
 
+    @property
     def month(self) -> "LazyColumn":
         """
         Extracts the month (1 to 12) from each datetime value.
@@ -126,6 +129,7 @@ class LazyDateTimeColumn:
         """
         return self.col.create_from_function("month", self.col.expr)
 
+    @property
     def day(self) -> "LazyColumn":
         """
         Extracts the day of the month (1 to 31) from each datetime value.
@@ -148,6 +152,7 @@ class LazyDateTimeColumn:
         """
         return self.col.create_from_function("day", self.col.expr)
 
+    @property
     def is_month_start(self) -> "LazyColumn":
         """
         Checks if each datetime value is the start of the month.
@@ -174,6 +179,7 @@ class LazyDateTimeColumn:
             self.col.expr,
         )
 
+    @property
     def is_quarter_start(self) -> "LazyColumn":
         """
         Checks if each datetime value is the start of the quarter.
@@ -201,6 +207,7 @@ class LazyDateTimeColumn:
             self.col.expr,
         )
 
+    @property
     def is_year_start(self) -> "LazyColumn":
         """
         Checks if each datetime value is the start of the year.
@@ -227,6 +234,7 @@ class LazyDateTimeColumn:
             self.col.expr,
         )
 
+    @property
     def is_month_end(self) -> "LazyColumn":
         """
         Checks if each datetime value is the end of the month.
@@ -249,6 +257,10 @@ class LazyDateTimeColumn:
             ```
         """
         return self.col == self.col.create_from_function("last_day", self.col.expr)
+
+    @property
+    def is_year_end(self) -> "LazyColumn":
+        return (self.is_month_end) & (self.month == 12)
 
     def weekday(self) -> "LazyColumn":
         """
@@ -276,3 +288,10 @@ class LazyDateTimeColumn:
             ```
         """
         return self.col.create_from_function("dayofweek", self.col.expr)
+
+    @property
+    def hour(self) -> "LazyColumn":
+        return self.col.create_from_function("hour", self.col.expr)
+
+    def round(self, freq: str) -> "LazyColumn":
+        return self.col.create_from_function("date_trunc", ConstantExpression(freq), self.col.expr)
