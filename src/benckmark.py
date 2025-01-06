@@ -1,36 +1,51 @@
 import time
 
-import memray
 import pandas as pd
 import pandas_lazy as pdl
-
-TAXI_TRAIN_TEST_CSV = "/tmp/bench/train.csv"
-
-
-def with_pandas() -> None:
-    df = pd.read_csv(TAXI_TRAIN_TEST_CSV)
-    df = df[df["passenger_count"] > 1]
-    df["fare_ammount_by_passagenr"] = df["fare_amount"] / df["passenger_count"]
-    df["fare_ammount_by_passagenr"] = df["fare_ammount_by_passagenr"].astype("int")
-    df = df.drop_duplicates("fare_ammount_by_passagenr")
-    time.sleep(1)
-    del df
-    time.sleep(1)
+from memray import Tracker
 
 
-def with_pandas_lazy() -> None:
-    df = pdl.read_csv(TAXI_TRAIN_TEST_CSV)
-    df = df[df["passenger_count"] > 1]
-    df["fare_ammount_by_passagenr"] = df["fare_amount"] / df["passenger_count"]
-    df["fare_ammount_by_passagenr"] = df["fare_ammount_by_passagenr"].astype("int")
-    df = df.drop_duplicates("fare_ammount_by_passagenr")
-    df = df.collect()  # materialize the LazyFrame to a pandas DataFrame
-    time.sleep(1)
-    del df
-    time.sleep(1)
+def read_taxi_dataset_pd(location: str) -> pd.DataFrame:
+    df = pd.read_csv(location, parse_dates=["pickup_datetime"])
+    df = df[["pickup_datetime", "passenger_count"]]
+    df["passenger_count"] = df["passenger_count"]
+    df["pickup_date"] = df["pickup_datetime"].dt.date
+    del df["pickup_datetime"]
+    df = df.groupby("pickup_date").sum().reset_index()
+    df = df[["pickup_date", "passenger_count"]]
+    df = df.sort_values("pickup_date")
+    return df
+
+
+def read_taxi_dataset(location: str) -> pd.DataFrame:
+    df = pdl.read_csv(location, parse_dates=["pickup_datetime"])
+    df = df[["pickup_datetime", "passenger_count"]]
+    df["passenger_count"] = df["passenger_count"]
+    df["pickup_date"] = df["pickup_datetime"].dt.date
+    del df["pickup_datetime"]
+    df = df.groupby("pickup_date").sum().reset_index()
+    df = df[["pickup_date", "passenger_count"]]
+    df = df.sort_values("pickup_date")
+    df = df.collect()  # Materialize the lazy DataFrame to a pandas DataFrame
+    return df
+
+
+def lazy():
+    with Tracker("lazy.bin"):
+        df = read_taxi_dataset("~/Downloads/train.csv")
+        df.to_parquet("lazy.parquet")
+        del df
+
+
+def simple():
+    with Tracker("pandas.bin"):
+        df2 = read_taxi_dataset_pd("~/Downloads/train.csv")
+        df2.to_parquet("pandas.parquet")
+        del df2
 
 
 if __name__ == "__main__":
-    with memray.Tracker("profiler.bin"):
-        with_pandas()
-        with_pandas_lazy()
+    lazy()
+    time.sleep(5)
+    simple()
+    time.sleep(5)

@@ -14,6 +14,7 @@ from duckdb.typing import DuckDBPyType
 
 from pandas_lazy.column.lazy_column import LazyColumn
 from pandas_lazy.exceptions import PandasLazyUnsupporttedOperation
+from pandas_lazy.frame.lazy_groupped_frame import LazyGrouppedFrame
 
 if TYPE_CHECKING:
     import pandas as pd
@@ -27,13 +28,6 @@ ColumnOrName = Union["LazyColumn", str]
 
 
 class LazyFrame:
-    """
-    A class for lazy data manipulation using DuckDB relations.
-
-    Provides methods to transform, filter, and sort data without materializing
-    intermediate results until explicitly required.
-    """
-
     def __init__(self, relation: DuckDBPyRelation):
         """
         Initialize a LazyFrame with a DuckDB relation.
@@ -222,6 +216,21 @@ class LazyFrame:
 
         return LazyFrame(rel)
 
+    def reset_index(self) -> "LazyFrame":
+        return self
+
+    def groupby(self, by: Union[str, list[str]]) -> LazyGrouppedFrame:
+        """
+        Group the relation by one or more columns.
+
+        Args:
+            by (str | list[str]): The column(s) to group by.
+
+        Returns:
+            LazyGrouppedFrame: A new LazyGrouppedFrame with the grouped data.
+        """
+        return LazyGrouppedFrame(self, by)
+
     def copy(self) -> "LazyFrame":
         """
         Create a copy of the LazyFrame.
@@ -309,3 +318,12 @@ class LazyFrame:
             else:
                 self._relation = self._relation.project(*columns, expr)
             return
+
+    def __delitem__(self, key: str) -> None:
+        self._relation = self._relation.project(StarExpression(exclude=[key]))
+
+    def __repr__(self) -> str:
+        return repr(self._relation)
+
+    def __str__(self) -> str:
+        return str(self._relation)
