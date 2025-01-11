@@ -12,9 +12,9 @@ from duckdb import (
 )
 from duckdb.typing import DuckDBPyType
 
-from pandas_lazy.column.lazy_column import LazyColumn
-from pandas_lazy.exceptions import PandasLazyUnsupporttedOperation
-from pandas_lazy.frame.lazy_groupped_frame import LazyGrouppedFrame
+from lazy_pandas.column.lazy_column import LazyColumn
+from lazy_pandas.exceptions import PandasLazyUnsupporttedOperation
+from lazy_pandas.frame.lazy_groupped_frame import LazyGrouppedFrame
 
 if TYPE_CHECKING:
     import pandas as pd

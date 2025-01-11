@@ -26,10 +26,10 @@ Below is a side-by-side comparison showing how the same operation would look in 
 
     ```python linenums="1" hl_lines="2 5 13"
     import pandas as pd
-    import pandas_lazy as pdl
+    import lazy_pandas as lpd
 
     def read_taxi_dataset(location: str) -> pd.DataFrame:
-        df = pdl.read_csv(location, parse_dates=["pickup_datetime"])
+        df = lpd.read_csv(location, parse_dates=["pickup_datetime"])
         df = df[["pickup_datetime", "passenger_count"]]
         df["passenger_count"] = df["passenger_count"]
         df["pickup_date"] = df["pickup_datetime"].dt.date

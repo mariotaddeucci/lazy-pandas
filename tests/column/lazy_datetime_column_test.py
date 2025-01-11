@@ -1,7 +1,7 @@
 import duckdb
 import pandas as pd
 import pytest
-from pandas_lazy import LazyFrame
+from lazy_pandas import LazyFrame
 
 
 @pytest.fixture

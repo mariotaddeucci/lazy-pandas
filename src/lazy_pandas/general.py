@@ -2,8 +2,7 @@ from io import StringIO, TextIOBase
 
 import duckdb
 import duckdb.typing
-
-from pandas_lazy.frame.lazy_frame import LazyFrame
+from lazy_pandas.frame.lazy_frame import LazyFrame
 
 
 def from_pandas(df) -> LazyFrame:
@@ -19,9 +18,9 @@ def from_pandas(df) -> LazyFrame:
     Example:
     ```python
     import pandas as pd
-    import pandas_lazy as pdl
+    import lazy_pandas as lpd
     df = pd.DataFrame({'column1': [1, 2, 3], 'column2': ['a', 'b', 'c']})
-    lazy_df = pdl.from_pandas(df)
+    lazy_df = lpd.from_pandas(df)
     ```
     """
     return LazyFrame(duckdb.from_df(df))
@@ -116,8 +115,8 @@ def read_csv(
 
     Example:
     ```python
-    import pandas_lazy as pdl
-    df = pdl.read_csv('data.csv', header=True, sep=',', dtype={'column1': 'INTEGER', 'column2': 'VARCHAR'})
+    import lazy_pandas as lpd
+    df = lpd.read_csv('data.csv', header=True, sep=',', dtype={'column1': 'INTEGER', 'column2': 'VARCHAR'})
     df.head()
     ```
     """
@@ -219,8 +218,8 @@ def read_json(
 
     Example:
     ```python
-    import pandas_lazy as pdl
-    df = pdl.read_json('data.json', columns={'userId': 'INTEGER', 'completed': 'BOOLEAN'}, format='array')
+    import lazy_pandas as lpd
+    df = lpd.read_json('data.json', columns={'userId': 'INTEGER', 'completed': 'BOOLEAN'}, format='array')
     df.head()
     ```
     """
@@ -276,8 +275,8 @@ def read_parquet(
 
     Example:
     ```python
-    import pandas_lazy as pdl
-    df = pdl.read_parquet('data.parquet', columns=['column1', 'column2'])
+    import lazy_pandas as lpd
+    df = lpd.read_parquet('data.parquet', columns=['column1', 'column2'])
     df.head()
     ```
     """
@@ -307,9 +306,9 @@ def read_delta(path: str, *, conn: duckdb.DuckDBPyConnection | None = None) -> L
 
     Example:
     ```python
-    import pandas_lazy as pdl
+    import lazy_pandas as lpd
     from datetime import date
-    df = pdl.read_delta('s3://bucket/path_to_delta_table')
+    df = lpd.read_delta('s3://bucket/path_to_delta_table')
     df.head()
     ```
     """
@@ -332,8 +331,8 @@ def read_iceberg(path: str, *, conn: duckdb.DuckDBPyConnection | None = None) ->
 
     Example:
     ```python
-    import pandas_lazy as pdl
-    df = pdl.read_iceberg('s3://bucket/path_to_iceberg_table')
+    import lazy_pandas as lpd
+    df = lpd.read_iceberg('s3://bucket/path_to_iceberg_table')
     df.head()
     ```
     """

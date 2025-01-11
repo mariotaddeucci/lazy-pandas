@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 from duckdb import ConstantExpression
 
 if TYPE_CHECKING:
-    from pandas_lazy.column.lazy_column import LazyColumn
+    from lazy_pandas.column.lazy_column import LazyColumn
 
 
 class LazyDateTimeColumn:
