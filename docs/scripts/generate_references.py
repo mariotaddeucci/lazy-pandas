@@ -1,14 +1,12 @@
 import sys
 from pathlib import Path
 
-import lazy_pandas as lpd
 import mkdocs_gen_files
 
 package_dir = Path(__file__).parent.parent.parent / "src"
-
-print(str(package_dir))
 sys.path.insert(0, str(package_dir))
 
+import lazy_pandas as lpd  # noqa: E402
 
 vls = []
 
