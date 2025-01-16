@@ -40,7 +40,7 @@ extra-args = [
 run = "pytest{env:HATCH_TEST_ARGS:} {args}"
 
 [tool.hatch.version]
-source = "vcs"
+path = "src/lazy_pandas/__init__.py"
 
 [tool.pytest.ini_options]
 pythonpath = "src"

@@ -18,9 +18,9 @@ def from_pandas(df) -> LazyFrame:
     Example:
     ```python
     import pandas as pd
-    import lazy_pandas as lpd
+    import lazy_pandas as lp
     df = pd.DataFrame({'column1': [1, 2, 3], 'column2': ['a', 'b', 'c']})
-    lazy_df = lpd.from_pandas(df)
+    lazy_df = lp.from_pandas(df)
     ```
     """
     return LazyFrame(duckdb.from_df(df))
@@ -115,8 +115,8 @@ def read_csv(
 
     Example:
     ```python
-    import lazy_pandas as lpd
-    df = lpd.read_csv('data.csv', header=True, sep=',', dtype={'column1': 'INTEGER', 'column2': 'VARCHAR'})
+    import lazy_pandas as lp
+    df = lp.read_csv('data.csv', header=True, sep=',', dtype={'column1': 'INTEGER', 'column2': 'VARCHAR'})
     df.head()
     ```
     """
@@ -218,8 +218,8 @@ def read_json(
 
     Example:
     ```python
-    import lazy_pandas as lpd
-    df = lpd.read_json('data.json', columns={'userId': 'INTEGER', 'completed': 'BOOLEAN'}, format='array')
+    import lazy_pandas as lp
+    df = lp.read_json('data.json', columns={'userId': 'INTEGER', 'completed': 'BOOLEAN'}, format='array')
     df.head()
     ```
     """
@@ -275,8 +275,8 @@ def read_parquet(
 
     Example:
     ```python
-    import lazy_pandas as lpd
-    df = lpd.read_parquet('data.parquet', columns=['column1', 'column2'])
+    import lazy_pandas as lp
+    df = lp.read_parquet('data.parquet', columns=['column1', 'column2'])
     df.head()
     ```
     """
@@ -306,9 +306,9 @@ def read_delta(path: str, *, conn: duckdb.DuckDBPyConnection | None = None) -> L
 
     Example:
     ```python
-    import lazy_pandas as lpd
+    import lazy_pandas as lp
     from datetime import date
-    df = lpd.read_delta('s3://bucket/path_to_delta_table')
+    df = lp.read_delta('s3://bucket/path_to_delta_table')
     df.head()
     ```
     """
@@ -331,8 +331,8 @@ def read_iceberg(path: str, *, conn: duckdb.DuckDBPyConnection | None = None) ->
 
     Example:
     ```python
-    import lazy_pandas as lpd
-    df = lpd.read_iceberg('s3://bucket/path_to_iceberg_table')
+    import lazy_pandas as lp
+    df = lp.read_iceberg('s3://bucket/path_to_iceberg_table')
     df.head()
     ```
     """

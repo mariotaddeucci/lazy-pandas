@@ -1,7 +1,7 @@
 import os
 from tempfile import TemporaryDirectory
 
-import lazy_pandas as lpd
+import lazy_pandas as lp
 import pyarrow as pa
 import pytest
 from pyiceberg.catalog.sql import SqlCatalog
@@ -35,24 +35,24 @@ def iceberg_table_uri():
 
 def test_read_csv():
     wheather_statition_uri = os.path.join(ASSETS_PATH, "weather_station.csv")
-    df = lpd.read_csv(wheather_statition_uri, sep=";")
+    df = lp.read_csv(wheather_statition_uri, sep=";")
     assert df.columns == ["city", "temperature"]
 
 
 def test_read_parquet():
     wheather_statition_uri = os.path.join(ASSETS_PATH, "weather_station.parquet")
-    df = lpd.read_parquet(wheather_statition_uri, columns=["temperature", "city"])
+    df = lp.read_parquet(wheather_statition_uri, columns=["temperature", "city"])
     assert df.columns == ["temperature", "city"]
 
 
 def test_read_delta():
     delta_table_uri = os.path.join(ASSETS_PATH, "delta_table")
-    df = lpd.read_delta(delta_table_uri)
+    df = lp.read_delta(delta_table_uri)
     assert df.columns == ["a", "b", "c"]
 
 
 def test_read_iceberg(iceberg_table_uri):
-    df = lpd.read_iceberg(iceberg_table_uri)
+    df = lp.read_iceberg(iceberg_table_uri)
     assert df.columns == ["lat", "long"]
     df = df.collect()
     assert df.shape == (3, 2)
