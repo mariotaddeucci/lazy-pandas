@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 from duckdb import DuckDBPyRelation
 
 if TYPE_CHECKING:
-    from pandas_lazy import LazyFrame
+    from lazy_pandas import LazyFrame
 
 
 class LazyGrouppedFrame:

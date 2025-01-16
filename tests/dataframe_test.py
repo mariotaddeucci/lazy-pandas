@@ -1,12 +1,12 @@
 import duckdb
+import lazy_pandas as lpd
 import numpy as np
 import pandas as pd
-import pandas_lazy as pdl
 
 
 def test_list_columns():
     rel = duckdb.sql("SELECT 1 AS a, 2 AS b")
-    df = pdl.LazyFrame(rel)
+    df = lpd.LazyFrame(rel)
     assert df.columns == ["a", "b"]
     for col_name in df.columns:
         assert isinstance(col_name, str)
@@ -14,7 +14,7 @@ def test_list_columns():
 
 def test_collect():
     rel = duckdb.sql("SELECT 1 AS a, 2 AS b")
-    df = pdl.LazyFrame(rel)
+    df = lpd.LazyFrame(rel)
     df = df.collect()
     assert isinstance(df, pd.DataFrame)
     assert df.shape == (1, 2)
@@ -23,7 +23,7 @@ def test_collect():
 
 def test_new_column():
     rel = duckdb.sql("SELECT 1 AS a, 2 AS b")
-    df = pdl.LazyFrame(rel)
+    df = lpd.LazyFrame(rel)
     df["c"] = 3
     df = df.collect()
     assert df.shape == (1, 3)
@@ -33,7 +33,7 @@ def test_new_column():
 
 def test_overwrite_column():
     rel = duckdb.sql("SELECT 1 AS a, 2 AS b")
-    df = pdl.LazyFrame(rel)
+    df = lpd.LazyFrame(rel)
     df["a"] = 3
     df = df.collect()
     assert df.shape == (1, 2)
@@ -43,7 +43,7 @@ def test_overwrite_column():
 
 def test_select_columns():
     rel = duckdb.sql("SELECT 1 AS a, 2 AS b")
-    df = pdl.LazyFrame(rel)
+    df = lpd.LazyFrame(rel)
     df = df[["b"]]
     df = df.collect()
     assert df.shape == (1, 1)
@@ -52,7 +52,7 @@ def test_select_columns():
 
 def test_head():
     rel = duckdb.sql("SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 4")
-    df = pdl.LazyFrame(rel)
+    df = lpd.LazyFrame(rel)
     df = df.head(1)
     df = df.collect()
     assert df.shape == (1, 2)
@@ -61,7 +61,7 @@ def test_head():
 
 def test_sort_values():
     rel = duckdb.sql("SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 4")
-    df = pdl.LazyFrame(rel)
+    df = lpd.LazyFrame(rel)
     df = df.sort_values("b")
     df = df.collect()
     assert df.shape == (2, 2)
@@ -71,7 +71,7 @@ def test_sort_values():
 
 def test_drop_duplicates():
     rel = duckdb.sql("SELECT 1 AS a, 2 AS b UNION ALL SELECT 1, 2")
-    df = pdl.LazyFrame(rel)
+    df = lpd.LazyFrame(rel)
     df = df.drop_duplicates()
     df = df.collect()
     assert df.shape == (1, 2)
@@ -80,7 +80,7 @@ def test_drop_duplicates():
 
 def test_drop_duplicates_subset():
     rel = duckdb.sql("SELECT 1 AS a, 2 AS b UNION ALL SELECT 2, 2")
-    df = pdl.LazyFrame(rel)
+    df = lpd.LazyFrame(rel)
     df = df.drop_duplicates(subset=["b"])
     df = df.collect()
     assert df.shape == (1, 2)
@@ -90,8 +90,8 @@ def test_drop_duplicates_subset():
 def test_merge_inner():
     rel1 = duckdb.sql("SELECT 1 AS a, 2 AS b")
     rel2 = duckdb.sql("SELECT 1 AS a, 4 AS d")
-    df1 = pdl.LazyFrame(rel1)
-    df2 = pdl.LazyFrame(rel2)
+    df1 = lpd.LazyFrame(rel1)
+    df2 = lpd.LazyFrame(rel2)
 
     df = df1.merge(df2, on="a")
     df = df.collect()
@@ -102,8 +102,8 @@ def test_merge_inner():
 def test_merge_outer():
     rel1 = duckdb.sql("SELECT 1 AS a, 2 AS b")
     rel2 = duckdb.sql("SELECT 2 AS a, 4 AS d")
-    df1 = pdl.LazyFrame(rel1)
-    df2 = pdl.LazyFrame(rel2)
+    df1 = lpd.LazyFrame(rel1)
+    df2 = lpd.LazyFrame(rel2)
 
     df = df1.merge(df2, on="a", how="outer")
     df.sort_values("a", inplace=True)
@@ -126,8 +126,8 @@ def test_merge_outer():
 def test_merge_left():
     rel1 = duckdb.sql("SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 3")
     rel2 = duckdb.sql("SELECT 1 AS a, 4 AS d UNION ALL SELECT 2, 5")
-    df1 = pdl.LazyFrame(rel1)
-    df2 = pdl.LazyFrame(rel2)
+    df1 = lpd.LazyFrame(rel1)
+    df2 = lpd.LazyFrame(rel2)
 
     df = df1.merge(df2, on="a", how="left")
     df.sort_values("a", inplace=True)
@@ -151,8 +151,8 @@ def test_merge_left():
 def test_merge_right():
     rel1 = duckdb.sql("SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 3")
     rel2 = duckdb.sql("SELECT 1 AS a, 4 AS d UNION ALL SELECT 2, 5")
-    df1 = pdl.LazyFrame(rel2)
-    df2 = pdl.LazyFrame(rel1)
+    df1 = lpd.LazyFrame(rel2)
+    df2 = lpd.LazyFrame(rel1)
 
     df = df1.merge(df2, on="a", how="right")
     df.sort_values("a", inplace=True)

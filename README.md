@@ -1,1 +1,1 @@
-# pandas_lazy
+# lazy_pandas

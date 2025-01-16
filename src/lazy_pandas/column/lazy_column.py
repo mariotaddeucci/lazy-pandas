@@ -3,8 +3,8 @@ from typing import Any, Callable, Literal, Tuple, Union, cast
 from duckdb import CoalesceOperator, ConstantExpression, Expression, FunctionExpression
 from duckdb.typing import DuckDBPyType
 
-from pandas_lazy.column.lazy_datetime_column import LazyDateTimeColumn
-from pandas_lazy.column.lazy_string_column import LazyStringColumn
+from lazy_pandas.column.lazy_datetime_column import LazyDateTimeColumn
+from lazy_pandas.column.lazy_string_column import LazyStringColumn
 
 __all__ = ["LazyColumn"]
 

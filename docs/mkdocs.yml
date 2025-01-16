@@ -1,8 +1,9 @@
-site_name: PandasLazy
-repo_url: https://github.com/mariotaddeucci/pandas-lazy
-repo_name: mariotaddeucci/pandas-lazy
+site_name: LazyPandas
+repo_url: https://github.com/mariotaddeucci/lazy-pandas
+repo_name: mariotaddeucci/lazy-pandas
 theme:
   name: material
+  logo: assets/logo.png
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

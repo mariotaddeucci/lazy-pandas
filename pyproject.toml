@@ -13,7 +13,7 @@ description = "Add your description here"
 dynamic = [
     "version",
 ]
-name = "pandas_lazy"
+name = "lazy_pandas"
 readme = "README.md"
 requires-python = ">=3.10"
 
