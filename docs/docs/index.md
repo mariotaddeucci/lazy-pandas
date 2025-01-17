@@ -4,7 +4,13 @@ hide:
     - navigation
     - toc
 ---
-Welcome to the Lazy Pandas official documentation! A library that allows you to use the pandas API with DuckDB.
+Welcome to the Lazy Pandas official documentation! A library that allows you to use the pandas API with DuckDB as simple as a pip install.
+
+To start using Lazy Pandas, you can install it using pip:
+
+```sh
+pip install lazy-pandas
+```
 
 ## What is Lazy Pandas?
 
