@@ -23,7 +23,6 @@ Below is a side-by-side comparison showing how the same operation would look in 
     def read_taxi_dataset(location: str) -> pd.DataFrame:
         df = lp.read_csv(location, parse_dates=["pickup_datetime"])
         df = df[["pickup_datetime", "passenger_count"]]
-        df["passenger_count"] = df["passenger_count"]
         df["pickup_date"] = df["pickup_datetime"].dt.date
         del df["pickup_datetime"]
         df = df.groupby("pickup_date").sum().reset_index()
@@ -42,7 +41,6 @@ Below is a side-by-side comparison showing how the same operation would look in 
     def read_taxi_dataset(location: str) -> pd.DataFrame:
         df = pd.read_csv(location, parse_dates=["pickup_datetime"])
         df = df[["pickup_datetime", "passenger_count"]]
-        df["passenger_count"] = df["passenger_count"]
         df["pickup_date"] = df["pickup_datetime"].dt.date
         del df["pickup_datetime"]
         df = df.groupby("pickup_date").sum().reset_index()

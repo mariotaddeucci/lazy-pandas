@@ -16,4 +16,4 @@ __all__ = [
     "LazyStringColumn",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.1.0dev1"
