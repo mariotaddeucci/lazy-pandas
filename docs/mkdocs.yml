@@ -27,7 +27,6 @@ theme:
     - navigation.sections
     - toc.integrate
     - toc.follow
-    - content.action.edit
 plugins:
   #- include-markdown
   - plotly

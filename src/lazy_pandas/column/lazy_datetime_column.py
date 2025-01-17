@@ -51,7 +51,7 @@ class LazyDateTimeColumn:
             # 1  2023-01-15 12:34:56
             # 2  2023-03-31 23:59:59
 
-            df["my_datetime_column"].dt.date()
+            df["my_datetime_column"].dt.date
             # Expected output (LazyColumn in lazy mode):
             # [2023-01-01, 2023-01-15, 2023-03-31, ...]
             ```
@@ -75,7 +75,7 @@ class LazyDateTimeColumn:
             # 1  2024-05-10 15:30:00
             # 2  2025-12-31 23:59:59
 
-            df["my_datetime_column"].dt.year()
+            df["my_datetime_column"].dt.year
             # [2023, 2024, 2025, ...]
             ```
         """
@@ -100,7 +100,7 @@ class LazyDateTimeColumn:
             # 3  2023-07-10 10:10:10  # Q3
             # 4  2023-10-25 11:11:11  # Q4
 
-            df["my_datetime_column"].dt.quarter()
+            df["my_datetime_column"].dt.quarter
             # [1, 1, 2, 3, 4]
             ```
         """
@@ -123,7 +123,7 @@ class LazyDateTimeColumn:
             # 1  2023-02-15 12:34:56
             # 2  2023-12-31 23:59:59
 
-            df["my_datetime_column"].dt.month()
+            df["my_datetime_column"].dt.month
             # [1, 2, 12, ...]
             ```
         """
@@ -146,7 +146,7 @@ class LazyDateTimeColumn:
             # 1  2023-01-15 12:34:56  # day=15
             # 2  2023-12-31 23:59:59  # day=31
 
-            df["my_datetime_column"].dt.day()
+            df["my_datetime_column"].dt.day
             # [1, 15, 31, ...]
             ```
         """
@@ -169,7 +169,7 @@ class LazyDateTimeColumn:
             # 1  2023-01-15 12:34:56
             # 2  2023-02-01 00:00:00  # start of February
 
-            df["my_datetime_column"].dt.is_month_start()
+            df["my_datetime_column"].dt.is_month_start
             # [True, False, True, ...]
             ```
         """
@@ -197,7 +197,7 @@ class LazyDateTimeColumn:
             # 2  2023-07-01 08:00:00  # start of Q3
             # 3  2023-10-01 23:59:59  # start of Q4
 
-            df["my_datetime_column"].dt.is_quarter_start()
+            df["my_datetime_column"].dt.is_quarter_start
             # [True, True, True, True, ...]
             ```
         """
@@ -224,7 +224,7 @@ class LazyDateTimeColumn:
             # 1  2023-02-15 12:34:56
             # 2  2024-01-01 23:59:59  # start of the next year
 
-            df["my_datetime_column"].dt.is_year_start()
+            df["my_datetime_column"].dt.is_year_start
             # [True, False, True, ...]
             ```
         """
@@ -252,7 +252,7 @@ class LazyDateTimeColumn:
             # 2  2023-02-15 00:00:00
             # 3  2023-02-28 23:59:59  # end of February (non leap year)
 
-            df["my_datetime_column"].dt.is_month_end()
+            df["my_datetime_column"].dt.is_month_end
             # [True, True, False, True, ...]
             ```
         """
@@ -283,7 +283,7 @@ class LazyDateTimeColumn:
             # 2  2023-01-07 23:59:59  # Saturday
             # 3  2023-01-08 08:00:00  # Sunday
 
-            df["my_datetime_column"].dt.weekday()
+            df["my_datetime_column"].dt.weekday
             # [1, 2, 6, 7, ...]
             ```
         """

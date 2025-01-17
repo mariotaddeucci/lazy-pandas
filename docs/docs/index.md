@@ -1,26 +1,18 @@
 ---
 title: Lazy Pandas
 hide:
-  - navigation
-  - toc
+    - navigation
+    - toc
 ---
-
-# Lazy Pandas
-
-Welcome to the **Lazy Pandas** official documentation!
-A library inspired by [pandas](https://pandas.pydata.org/) that focuses on *lazy* processing, enabling high performance and lower memory usage for large datasets.
+Welcome to the Lazy Pandas official documentation! A library that allows you to use the pandas API with DuckDB.
 
 ## What is Lazy Pandas?
 
-Lazy Pandas is built on the concept of delaying DataFrame operations until they are strictly necessary (lazy evaluation). This allows:
-- Operations to be optimized in batches.
-- Memory usage to be minimized during processing.
-- Total runtime to be reduced for complex pipelines.
+LazyPandas is a wrapper arround DuckDB that allows you to use the pandas API to interact with DuckDB. This library is not a pandas replacement, but a way to use the pandas API with DuckDB. Pandas is awesome and adopted by many people, but it is not the best tool for datasets that do not fit in memory. So why not give the power of duckdb to pandas users?
 
 ## Code Comparison
 
 Below is a side-by-side comparison showing how the same operation would look in **Pandas** versus **Lazy Pandas**:
-
 
 === "Lazy Pandas"
 
@@ -40,7 +32,6 @@ Below is a side-by-side comparison showing how the same operation would look in 
         df = df.collect()  # Materialize the lazy DataFrame to a pandas DataFrame
         return df
     ```
-
 
 === "Pandas"
 
@@ -65,8 +56,7 @@ Notice that in traditional **pandas**, operations are executed immediately, whil
 
 ## Memory Usage
 
-Below is a fictitious performance comparison between **pandas** and **Lazy Pandas**, showing a scenario where a large dataset is processed in three stages (reading, aggregation, and complex filtering).
-
+Running the previous code on a 5.7GB CSV file with 55 million rows, we can see the memory usage difference between **Pandas** and **Lazy Pandas**:
 
 <div class="grid cards" markdown>
 ```plotly
@@ -77,5 +67,8 @@ Below is a fictitious performance comparison between **pandas** and **Lazy Panda
 {"file_path": "./assets/profiler/pandas.json"}
 ```
 </div>
+
+In the **Pandas** example, the memory usage spikes to 25.8GB and takes 8 minutes to complete, while in the **Lazy Pandas** example, the memory usage remains constant at 500mb and takes 6 seconds to complete.
+For the test, we used a MacBook Pro M1 with 16GB. The dataset used was the [NYC Taxi Dataset](https://www.kaggle.com/code/debjeetdas/nyc-taxi-fare-eda-prediction-using-linear-reg/input?select=train.csv) available on Kaggle.
 
 

@@ -9,7 +9,7 @@ requires = [
 dependencies = [
     "duckdb",
 ]
-description = "Add your description here"
+description = "The power of duckdb with the ease of pandas"
 dynamic = [
     "version",
 ]
