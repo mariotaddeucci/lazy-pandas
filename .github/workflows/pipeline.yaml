@@ -23,10 +23,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          enable-cache: true
+          python-version: '3.11'
+
+      - name: Setup UV
+        run: make build
 
       - name: Execute Tests
         run: make docs-build
@@ -37,10 +40,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          enable-cache: true
+          python-version: '3.11'
+
+      - name: Setup UV
+        run: make build
 
       - name: Execute Tests
         run: make test-all
@@ -51,10 +57,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          enable-cache: true
+          python-version: '3.11'
+
+      - name: Setup UV
+        run: make build
 
       - name: Execute Static Checks
         run: make lint
@@ -72,10 +81,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          enable-cache: true
+          python-version: '3.11'
+
+      - name: Setup UV
+        run: make build
 
       - name: Build package
         run: make build
