@@ -15,3 +15,5 @@ __all__ = [
     "LazyDateTimeColumn",
     "LazyStringColumn",
 ]
+
+__version__ = "0.1.0dev1"

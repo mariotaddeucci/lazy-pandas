@@ -14,7 +14,7 @@
     },
     "annotations": [
       {
-        "text": "Uso de memória ao longo do tempo (segundos)",
+        "text": "Memory usage over time (seconds)",
         "xref": "paper",
         "yref": "paper",
         "x": 0.5,

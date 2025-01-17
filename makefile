@@ -1,6 +1,9 @@
 UVX = uvx
 MKDOCS_OPTS = --with-requirements requirements.txt
 
+build:
+	uv build
+
 test:
 	$(UVX) hatch test
 

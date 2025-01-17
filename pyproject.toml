@@ -9,7 +9,7 @@ requires = [
 dependencies = [
     "duckdb",
 ]
-description = "Add your description here"
+description = "The power of duckdb with the ease of pandas"
 dynamic = [
     "version",
 ]
@@ -40,7 +40,7 @@ extra-args = [
 run = "pytest{env:HATCH_TEST_ARGS:} {args}"
 
 [tool.hatch.version]
-source = "vcs"
+path = "src/lazy_pandas/__init__.py"
 
 [tool.pytest.ini_options]
 pythonpath = "src"
