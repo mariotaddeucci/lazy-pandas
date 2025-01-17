@@ -14,7 +14,7 @@ pip install lazy-pandas
 
 ## What is Lazy Pandas?
 
-LazyPandas is a wrapper arround DuckDB that allows you to use the pandas API to interact with DuckDB. This library is not a pandas replacement, but a way to use the pandas API with DuckDB. Pandas is awesome and adopted by many people, but it is not the best tool for datasets that do not fit in memory. So why not give the power of duckdb to pandas users?
+LazyPandas is a wrapper around DuckDB that allows you to use the pandas API to interact with DuckDB. This library is not a pandas replacement, but a way to use the pandas API with DuckDB. Pandas is awesome and adopted by many people, but it is not the best tool for datasets that do not fit in memory. So why not give the power of duckdb to pandas users?
 
 ## Code Comparison
 
