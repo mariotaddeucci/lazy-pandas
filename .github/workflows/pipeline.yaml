@@ -29,7 +29,7 @@ jobs:
           python-version: '3.11'
 
       - name: Setup UV
-        run: make build
+        run: pip install uv
 
       - name: Execute Tests
         run: make docs-build
@@ -46,7 +46,7 @@ jobs:
           python-version: '3.11'
 
       - name: Setup UV
-        run: make build
+        run: pip install uv
 
       - name: Execute Tests
         run: make test-all
@@ -63,7 +63,7 @@ jobs:
           python-version: '3.11'
 
       - name: Setup UV
-        run: make build
+        run: pip install uv
 
       - name: Execute Static Checks
         run: make lint
@@ -87,7 +87,7 @@ jobs:
           python-version: '3.11'
 
       - name: Setup UV
-        run: make build
+        run: pip install uv
 
       - name: Build package
         run: make build
