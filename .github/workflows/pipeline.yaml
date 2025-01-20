@@ -68,10 +68,27 @@ jobs:
       - name: Execute Static Checks
         run: make lint
 
+  BuildPackage:
+    name: Static Checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Setup UV
+        run: pip install uv
+
+      - name: Execute Static Checks
+        run: make build
+
   Publish:
     name: Publish
     runs-on: ubuntu-latest
-    needs: [UnitTests, StaticChecks, BuildDocs]
+    needs: [UnitTests, StaticChecks, BuildDocs, BuildPackage]
     environment:
       name: pypi
       url: https://pypi.org/p/gyjd
