@@ -15,7 +15,7 @@
     },
     "annotations": [
       {
-        "text": "Memory usage over time (seconds)",
+        "text": "Pandas Memory Usage per Second",
         "xref": "paper",
         "yref": "paper",
         "x": 0.5,
