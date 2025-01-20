@@ -71,7 +71,7 @@ jobs:
         run: make lint
 
   BuildPackage:
-    name: Static Checks
+    name: Build Package
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
