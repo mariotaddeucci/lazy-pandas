@@ -225,9 +225,9 @@ def test_sample():
 
 def test_describe():
     # Pular teste se o método describe não estiver implementado
-    if not hasattr(LazyFrame, 'describe'):
+    if not hasattr(LazyFrame, "describe"):
         pytest.skip("Método describe não implementado ainda em LazyFrame")
-        
+
     # Create a test dataframe with numeric columns
     rel = duckdb.sql("SELECT 1 AS a, 2 AS b, 3 AS c UNION ALL SELECT 4, 5, 6 UNION ALL SELECT 7, 8, 9")
     df = LazyFrame(rel)
@@ -235,11 +235,11 @@ def test_describe():
     # Test default describe
     desc = df.describe()
     result = desc.collect()
-    
+
     # Verifica se as estatísticas padrão estão presentes
     assert result.index.tolist() == ["count", "mean", "std", "min", "25%", "50%", "75%", "max"]
     assert all(col in result.columns for col in ["a", "b", "c"])
-    
+
     # Verifica alguns valores
     assert result.loc["count", "a"] == 3
     assert result.loc["mean", "b"] == 5.0

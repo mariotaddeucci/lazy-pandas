@@ -1,7 +1,4 @@
 import pandas as pd
-import pytest
-
-from lazy_pandas import LazyFrame
 
 
 def test_head(multi_row_df_pair):

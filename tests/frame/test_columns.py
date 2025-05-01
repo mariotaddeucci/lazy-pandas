@@ -1,9 +1,3 @@
-import pandas as pd
-import pytest
-
-from lazy_pandas import LazyFrame
-
-
 def test_list_columns(simple_df_pair):
     """Testa a listagem de colunas no LazyFrame comparando com pandas"""
     # Verificação da função columns do LazyFrame

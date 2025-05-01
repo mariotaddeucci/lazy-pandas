@@ -264,6 +264,74 @@ class LazyFrame:
 
         return LazyFrame(self._relation.join(right_relation, *on, how=how))
 
+    def sample(self, n: int | None = None, frac: float | None = None, random_state: int | None = None) -> "LazyFrame":
+        """
+        Return a random sample of items from the LazyFrame.
+
+        Args:
+            n (int | None, optional): Number of items to return. Cannot be used with frac.
+                Defaults to None.
+            frac (float | None, optional): Fraction of items to return. Cannot be used with n.
+                Should be between 0 and 1. Defaults to None.
+            random_state (int | None, optional): Seed for the random number generator.
+                Defaults to None.
+
+        Returns:
+            LazyFrame: A new LazyFrame with the sampled rows.
+
+        Raises:
+            ValueError: If both n and frac are specified or if neither is specified.
+                       Also if frac is not between 0 and 1.
+
+        Examples:
+            ```python
+            # Sample 2 rows from the DataFrame
+            df.sample(n=2)
+
+            # Sample 10% of rows from the DataFrame
+            df.sample(frac=0.1)
+
+            # Sample 5 rows with a fixed random seed
+            df.sample(n=5, random_state=42)
+            ```
+        """
+        if (n is None and frac is None) or (n is not None and frac is not None):
+            raise ValueError("Exactly one of n or frac must be specified")
+
+        if frac is not None and (frac <= 0 or frac > 1):
+            raise ValueError("frac must be between 0 and 1")
+
+        # For simplicity, when a fixed random_state is provided, use pandas' built-in implementation
+        # This is a pragmatic solution that ensures reproducibility
+        if random_state is not None:
+            # First materialize the data to pandas
+            df = self._relation.to_df()
+
+            # Use pandas sampling with fixed random_state
+            if n is not None:
+                sampled_df = df.sample(n=n, random_state=random_state)
+            else:
+                sampled_df = df.sample(frac=frac, random_state=random_state)
+
+            # Create a new in-memory DuckDB connection that will live with the relation
+            # Use the same connection for the relation to avoid it being closed
+            import duckdb
+
+            conn = duckdb.connect(":memory:")
+            rel = conn.from_df(sampled_df)
+
+            # Store the connection on the object to prevent it from being garbage collected
+            # This is important to keep the connection alive as long as the relation is used
+            result = LazyFrame(rel)
+            result._conn = conn  # Store the connection to prevent premature closing
+            return result
+        else:
+            # Use standard random sampling when no fixed seed is needed
+            if n is not None:
+                return LazyFrame(self._relation.order("random()").limit(n))
+            else:
+                return LazyFrame(self._relation.filter(f"random() <= {frac}"))
+
     @overload
     def __getitem__(self, key: str) -> LazyColumn: ...
 
@@ -327,54 +395,3 @@ class LazyFrame:
 
     def __str__(self) -> str:
         return str(self._relation)
-
-    def sample(self, n: int | None = None, frac: float | None = None, random_state: int | None = None) -> "LazyFrame":
-        """
-        Return a random sample of items from the LazyFrame.
-
-        Args:
-            n (int | None, optional): Number of items to return. Cannot be used with frac.
-                Defaults to None.
-            frac (float | None, optional): Fraction of items to return. Cannot be used with n.
-                Should be between 0 and 1. Defaults to None.
-            random_state (int | None, optional): Seed for the random number generator.
-                Defaults to None.
-
-        Returns:
-            LazyFrame: A new LazyFrame with the sampled rows.
-
-        Raises:
-            ValueError: If both n and frac are specified or if neither is specified.
-                       Also if frac is not between 0 and 1.
-
-        Examples:
-            ```python
-            # Sample 2 rows from the DataFrame
-            df.sample(n=2)
-
-            # Sample 10% of rows from the DataFrame
-            df.sample(frac=0.1)
-
-            # Sample 5 rows with a fixed random seed
-            df.sample(n=5, random_state=42)
-            ```
-        """
-        if (n is None and frac is None) or (n is not None and frac is not None):
-            raise ValueError("Exactly one of n or frac must be specified")
-
-        if frac is not None and (frac <= 0 or frac > 1):
-            raise ValueError("frac must be between 0 and 1")
-
-        # Handle random_state by incorporating it directly into the query
-        if random_state is not None:
-            # In DuckDB, we can use setseed() function in our expression
-            random_func = f"random({random_state})"
-        else:
-            random_func = "random()"
-
-        if n is not None:
-            # Sample n rows using order by random
-            return LazyFrame(self._relation.order(random_func).limit(n))
-        else:
-            # Sample frac fraction of rows using random filter
-            return LazyFrame(self._relation.filter(f"{random_func} <= {frac}"))

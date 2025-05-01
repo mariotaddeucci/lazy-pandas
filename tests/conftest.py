@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import pytest
 
-import lazy_pandas as lp
 from lazy_pandas import LazyFrame
 
 
@@ -41,8 +40,8 @@ class DataFramePair:
     def copy(self):
         """Retorna uma cópia do par de DataFrames"""
         result = DataFramePair.__new__(DataFramePair)
-        result.lazy_df = self.lazy_df.copy() if hasattr(self, 'lazy_df') else None
-        result.pandas_df = self.pandas_df.copy() if hasattr(self, 'pandas_df') else None
+        result.lazy_df = self.lazy_df.copy() if hasattr(self, "lazy_df") else None
+        result.pandas_df = self.pandas_df.copy() if hasattr(self, "pandas_df") else None
         return result
 
     def assert_equal(self, pandas_result, lazy_result):

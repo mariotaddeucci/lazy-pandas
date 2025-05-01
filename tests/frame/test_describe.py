@@ -7,9 +7,9 @@ from lazy_pandas import LazyFrame
 def test_describe_default(numeric_df_pair):
     """Testa o método describe do LazyFrame com configurações padrão"""
     # Pular teste se o método describe não estiver implementado
-    if not hasattr(LazyFrame, 'describe'):
+    if not hasattr(LazyFrame, "describe"):
         pytest.skip("Método describe não implementado ainda em LazyFrame")
-        
+
     # Executando describe com LazyFrame
     lazy_desc = numeric_df_pair.lazy_df.describe()
     lazy_result = lazy_desc.collect()
@@ -34,9 +34,9 @@ def test_describe_default(numeric_df_pair):
 def test_describe_custom_percentiles(numeric_df_pair):
     """Testa o método describe do LazyFrame com percentis personalizados"""
     # Pular teste se o método describe não estiver implementado
-    if not hasattr(LazyFrame, 'describe'):
+    if not hasattr(LazyFrame, "describe"):
         pytest.skip("Método describe não implementado ainda em LazyFrame")
-        
+
     # Executando describe com percentis personalizados em LazyFrame
     lazy_desc = numeric_df_pair.lazy_df.describe(percentiles=[0.2, 0.8])
     lazy_result = lazy_desc.collect()
@@ -54,9 +54,9 @@ def test_describe_custom_percentiles(numeric_df_pair):
 def test_describe_include(numeric_df_pair):
     """Testa o método describe do LazyFrame com parâmetro include"""
     # Pular teste se o método describe não estiver implementado
-    if not hasattr(LazyFrame, 'describe'):
+    if not hasattr(LazyFrame, "describe"):
         pytest.skip("Método describe não implementado ainda em LazyFrame")
-        
+
     # Executando describe com colunas específicas em LazyFrame
     lazy_desc = numeric_df_pair.lazy_df.describe(include=["a", "c"])
     lazy_result = lazy_desc.collect()
