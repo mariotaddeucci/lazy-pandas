@@ -52,3 +52,28 @@ def test_cast_column(df):
     assert df.collect()["a"].tolist() == [1, 3]
     df["a"] = df["a"].astype(float)
     assert df.collect()["a"].tolist() == [1.0, 3.0]
+
+
+def test_clip(df):
+    # Test with both bounds
+    df["c"] = df["a"].clip(2, 3)
+    df = df.collect()
+    assert df["c"].tolist() == [2, 3]
+
+    # Test with only lower bound
+    df = LazyFrame(duckdb.sql("SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 4"))
+    df["c"] = df["a"].clip(lower=2)
+    df = df.collect()
+    assert df["c"].tolist() == [2, 3]
+
+    # Test with only upper bound
+    df = LazyFrame(duckdb.sql("SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 4"))
+    df["c"] = df["a"].clip(upper=2)
+    df = df.collect()
+    assert df["c"].tolist() == [1, 2]
+
+    # Test with no bounds (should return same values)
+    df = LazyFrame(duckdb.sql("SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 4"))
+    df["c"] = df["a"].clip()
+    df = df.collect()
+    assert df["c"].tolist() == [1, 3]

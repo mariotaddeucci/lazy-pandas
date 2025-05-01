@@ -2,6 +2,7 @@ import uuid
 from typing import TYPE_CHECKING, Literal, Union, overload
 
 import duckdb
+import lazy_pandas as lp
 from duckdb import (
     ColumnExpression,
     ConstantExpression,
@@ -327,3 +328,105 @@ class LazyFrame:
 
     def __str__(self) -> str:
         return str(self._relation)
+
+    def sample(self, n: int | None = None, frac: float | None = None, random_state: int | None = None) -> "LazyFrame":
+        """
+        Return a random sample of items from the LazyFrame.
+
+        Args:
+            n (int | None, optional): Number of items to return. Cannot be used with frac.
+                Defaults to None.
+            frac (float | None, optional): Fraction of items to return. Cannot be used with n.
+                Should be between 0 and 1. Defaults to None.
+            random_state (int | None, optional): Seed for the random number generator.
+                Defaults to None.
+
+        Returns:
+            LazyFrame: A new LazyFrame with the sampled rows.
+
+        Raises:
+            ValueError: If both n and frac are specified or if neither is specified.
+                       Also if frac is not between 0 and 1.
+
+        Examples:
+            ```python
+            # Sample 2 rows from the DataFrame
+            df.sample(n=2)
+
+            # Sample 10% of rows from the DataFrame
+            df.sample(frac=0.1)
+
+            # Sample 5 rows with a fixed random seed
+            df.sample(n=5, random_state=42)
+            ```
+        """
+        if (n is None and frac is None) or (n is not None and frac is not None):
+            raise ValueError("Exactly one of n or frac must be specified")
+
+        if frac is not None and (frac <= 0 or frac > 1):
+            raise ValueError("frac must be between 0 and 1")
+
+        # Handle random_state by incorporating it directly into the query
+        if random_state is not None:
+            # In DuckDB, we can use setseed() function in our expression
+            random_func = f"random({random_state})"
+        else:
+            random_func = "random()"
+
+        if n is not None:
+            # Sample n rows using order by random
+            return LazyFrame(self._relation.order(random_func).limit(n))
+        else:
+            # Sample frac fraction of rows using random filter
+            return LazyFrame(self._relation.filter(f"{random_func} <= {frac}"))
+
+    def describe(self, percentiles: list[float] | None = None, include: list[str] | None = None) -> "LazyFrame":
+        """
+        Generate descriptive statistics for numeric columns.
+
+        Descriptive statistics include those that summarize the central tendency,
+        dispersion and shape of a dataset's distribution, excluding NaN values.
+
+        Args:
+            percentiles (list[float] | None, optional): List of percentiles to include in the output.
+                All should be between 0 and 1. Defaults to [0.25, 0.5, 0.75].
+            include (list[str] | None, optional): List of columns to include. If None, only
+                numeric columns are included. Defaults to None.
+
+        Returns:
+            LazyFrame: A LazyFrame with descriptive statistics.
+
+        Examples:
+            ```python
+            # Get descriptive statistics for all numeric columns
+            df.describe()
+
+            # Get descriptive statistics for specific columns
+            df.describe(include=["age", "income"])
+
+            # Include additional percentiles
+            df.describe(percentiles=[0.1, 0.25, 0.5, 0.75, 0.9])
+            ```
+        """
+
+        if percentiles is None:
+            percentiles = [0.25, 0.5, 0.75]
+        else:
+            # Validate percentiles
+            if not all(0 <= p <= 1 for p in percentiles):
+                raise ValueError("Percentiles must be between 0 and 1")
+
+        # Get columns to include
+        columns = self.columns
+        if include is not None:
+            # Filter columns based on include list
+            columns = [col for col in columns if col in include]
+
+        # First collect to pandas so we can then use pandas' describe
+        pandas_df = self._relation.select(*columns).to_df()
+
+        # Use pandas' describe functionality with our custom percentiles
+        result_df = pandas_df.describe(percentiles=percentiles)
+
+        # Convert back to LazyFrame
+        return lp.from_pandas(result_df)

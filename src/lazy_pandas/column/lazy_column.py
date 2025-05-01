@@ -409,6 +409,58 @@ class LazyColumn:
 
         return LazyColumn(result)
 
+    def clip(self, lower: Any = None, upper: Any = None) -> "LazyColumn":
+        """
+        Trim values at specified thresholds.
+
+        Args:
+            lower (Any, optional): Minimum threshold value. All values below this will be set to this value.
+                If None, no lower threshold will be applied. Defaults to None.
+            upper (Any, optional): Maximum threshold value. All values above this will be set to this value.
+                If None, no upper threshold will be applied. Defaults to None.
+
+        Returns:
+            LazyColumn: A new LazyColumn with values trimmed to specified thresholds.
+
+        Examples:
+            ```python
+            print(df.head())
+            #    col1  my_column_to_test
+            # 0     1                  2
+            # 1     2                  3
+            # 2     3                  5
+            # 3     4                  8
+            # 4     5                 10
+
+            # Clip values between 3 and 7
+            df["my_column_to_test"].clip(3, 7)
+            # [3, 3, 5, 7, 7]
+
+            # Clip only lower values at 4
+            df["my_column_to_test"].clip(lower=4)
+            # [4, 4, 5, 8, 10]
+
+            # Clip only upper values at 6
+            df["my_column_to_test"].clip(upper=6)
+            # [2, 3, 5, 6, 6]
+            ```
+        """
+        if lower is None and upper is None:
+            return self
+
+        if lower is not None and upper is not None:
+            return LazyColumn(
+                self.create_from_function(
+                    "least",
+                    self.create_from_function("greatest", self.expr, _get_expr(lower)).expr,
+                    _get_expr(upper),
+                ).expr
+            )
+        elif lower is not None:
+            return LazyColumn(self.create_from_function("greatest", self.expr, _get_expr(lower)).expr)
+        else:  # upper is not None
+            return LazyColumn(self.create_from_function("least", self.expr, _get_expr(upper)).expr)
+
     @classmethod
     def create_from_function(cls, function: str, *arguments: Expression) -> "LazyColumn":
         return LazyColumn(FunctionExpression(function, *arguments))
