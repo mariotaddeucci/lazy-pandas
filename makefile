@@ -10,6 +10,15 @@ test:
 test-all:
 	$(UVX) hatch test --all
 
+test-cov:
+	$(UVX) hatch test --cov=lazy_pandas --cov-report=term --cov-report=html
+
+test-cov-xml:
+	$(UVX) hatch test --cov=lazy_pandas --cov-report=xml
+
+coverage-report:
+	$(UVX) hatch run python -m http.server -d htmlcov
+
 format:
 	$(UVX) ruff check --fix
 	$(UVX) ssort

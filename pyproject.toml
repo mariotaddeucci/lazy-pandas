@@ -31,6 +31,7 @@ dependencies = [
     "pyarrow",
     "pyiceberg[sql-sqlite]",
     "pytest >=8.3.3,<9",
+    "pytest-cov >=4.1.0,<5",
 ]
 extra-args = [
     "-vv",
@@ -46,6 +47,21 @@ path = "src/lazy_pandas/__init__.py"
 pythonpath = "src"
 testpaths = [
     "tests",
+]
+addopts = "--cov=lazy_pandas --cov-report=term --cov-report=html"
+
+[tool.coverage.run]
+source = ["lazy_pandas"]
+omit = ["*/tests/*", "*/conftest.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "pass",
+    "if TYPE_CHECKING:",
 ]
 
 [tool.ruff]
