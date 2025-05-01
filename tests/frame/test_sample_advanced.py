@@ -10,11 +10,9 @@ from lazy_pandas import LazyFrame
 def sample_df():
     """Fixture que cria um DataFrame com dados para testes de sample"""
     # Criamos um DataFrame grande o suficiente para testar amostragem
-    data = pd.DataFrame({
-        'id': range(1, 101),
-        'value': np.random.randn(100),
-        'group': np.random.choice(['A', 'B', 'C'], 100)
-    })
+    data = pd.DataFrame(
+        {"id": range(1, 101), "value": np.random.randn(100), "group": np.random.choice(["A", "B", "C"], 100)}
+    )
     lazy_frame = LazyFrame(data)
     return DataFramePair(lazy_df=lazy_frame, pandas_df=data)
 
@@ -25,7 +23,7 @@ def test_sample_n_parameter(sample_df):
     for n in [5, 10, 20]:
         result = sample_df.lazy_df.sample(n=n).collect()
         assert len(result) == n
-        
+
     # Verificando validação de n > número de linhas
     # Alguns motores limitam ao número de linhas disponíveis
     big_n = sample_df.lazy_df.sample(n=200).collect()
@@ -49,15 +47,15 @@ def test_sample_random_state(sample_df):
     # Amostras com mesmo random_state devem ser idênticas
     sample1 = sample_df.lazy_df.sample(n=10, random_state=42).collect()
     sample2 = sample_df.lazy_df.sample(n=10, random_state=42).collect()
-    
+
     # Verificamos se as duas amostras têm as mesmas linhas (mesma ordem)
     pd.testing.assert_frame_equal(sample1, sample2)
-    
+
     # Amostras com random_state diferente geralmente resultam em conteúdo diferente
     # Neste caso, verificamos apenas se o comportamento é consistente
     # (não verificamos se os índices são diferentes pois depende da implementação)
     sample3 = sample_df.lazy_df.sample(n=10, random_state=24).collect()
-    
+
     # Verificamos se as amostras são reproduzíveis pelo menos
     sample4 = sample_df.lazy_df.sample(n=10, random_state=24).collect()
     pd.testing.assert_frame_equal(sample3, sample4)
@@ -68,22 +66,17 @@ def test_sample_error_cases(sample_df):
     # Nem n nem frac especificados deve gerar erro
     with pytest.raises((ValueError, TypeError)):
         sample_df.lazy_df.sample().collect()
-    
+
     # Ambos n e frac especificados deve gerar erro
     with pytest.raises((ValueError, TypeError)):
         sample_df.lazy_df.sample(n=10, frac=0.1).collect()
-    
+
     # frac negativo deve gerar erro
     with pytest.raises((ValueError)):
         sample_df.lazy_df.sample(frac=-0.1).collect()
-    
-    # frac maior que 1 deve gerar erro (em alguns motores)
-    try:
-        with pytest.raises((ValueError)):
-            sample_df.lazy_df.sample(frac=1.5).collect()
-    except:
-        # Se a implementação não validar isso, o teste passa
-        pass
+
+    with pytest.raises((ValueError)):
+        sample_df.lazy_df.sample(frac=1.5).collect()
 
 
 def test_sample_with_replacement(sample_df):
@@ -92,10 +85,10 @@ def test_sample_with_replacement(sample_df):
         # Este teste só funcionará se a implementação suportar replace=True
         # Testamos com um n maior que o tamanho original, só possível com reposição
         result = sample_df.lazy_df.sample(n=150, replace=True).collect()
-        
+
         # Se chegamos aqui, replace=True é suportado
         assert len(result) == 150
-        
+
         # Com replace=False (padrão) e n > tamanho, deve limitar ao tamanho original
         result_no_replace = sample_df.lazy_df.sample(n=150, replace=False).collect()
         assert len(result_no_replace) <= 100

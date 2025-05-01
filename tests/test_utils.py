@@ -23,6 +23,7 @@ def test_to_column_expr_with_expression():
     # Teste com uma expressão existente
     # Criamos uma expressão diretamente com o módulo duckdb
     from duckdb import ColumnExpression
+
     expr = ColumnExpression("existing")
     result = to_column_expr(expr)
     assert result is expr  # Deve retornar a mesma instância
@@ -39,6 +40,7 @@ def test_get_expr_with_expression():
     """Testa a função get_expr com expressão."""
     # Teste com uma expressão existente
     from duckdb import ColumnExpression
+
     expr = ColumnExpression("column")
     result = get_expr(expr)
     assert result is expr  # Deve retornar a mesma instância
@@ -73,6 +75,7 @@ def test_invoke_function_basic():
     """Testa a função invoke_function com argumentos simples."""
     # Testamos a função com argumentos que o DuckDB aceita
     from duckdb import ColumnExpression
+
     col_expr = ColumnExpression("col1")
     result = invoke_function("abs", col_expr)
     assert "abs" in str(result).lower()
