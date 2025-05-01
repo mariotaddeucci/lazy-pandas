@@ -1,11 +1,18 @@
 [build-system]
 build-backend = "hatchling.build"
-requires = ["hatch-vcs", "hatchling"]
+requires = [
+    "hatch-vcs",
+    "hatchling",
+]
 
 [project]
-dependencies = ["duckdb"]
+dependencies = [
+    "duckdb",
+]
 description = "The power of duckdb with the ease of pandas"
-dynamic = ["version"]
+dynamic = [
+    "version",
+]
 name = "lazy_pandas"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -13,8 +20,29 @@ requires-python = ">=3.10"
 [tool.codespell]
 skip = ".git,.tox,./venv,./docs/site,./tests/assets/*"
 
+[tool.coverage.report]
+exclude_lines = [
+    "def __repr__",
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+    "pass",
+    "pragma: no cover",
+    "raise NotImplementedError",
+]
+
+[tool.coverage.run]
+omit = [
+    "*/conftest.py",
+    "*/tests/*",
+]
+source = [
+    "lazy_pandas",
+]
+
 [tool.hatch.build]
-exclude = ["/tests"]
+exclude = [
+    "/tests",
+]
 
 [tool.hatch.envs.hatch-test]
 dependencies = [
@@ -24,7 +52,9 @@ dependencies = [
     "pytest >=8.3.3,<9",
     "pytest-cov >=4.1.0,<5",
 ]
-extra-args = ["-vv"]
+extra-args = [
+    "-vv",
+]
 
 [tool.hatch.envs.hatch-test.scripts]
 run = "pytest{env:HATCH_TEST_ARGS:} {args}"
@@ -33,26 +63,16 @@ run = "pytest{env:HATCH_TEST_ARGS:} {args}"
 path = "src/lazy_pandas/__init__.py"
 
 [tool.pytest.ini_options]
-pythonpath = "src"
-testpaths = ["tests"]
 addopts = "--cov=lazy_pandas --cov-report=term --cov-report=html"
-
-[tool.coverage.run]
-source = ["lazy_pandas"]
-omit = ["*/tests/*", "*/conftest.py"]
-
-[tool.coverage.report]
-exclude_lines = [
-    "pragma: no cover",
-    "def __repr__",
-    "raise NotImplementedError",
-    "if __name__ == .__main__.:",
-    "pass",
-    "if TYPE_CHECKING:",
+pythonpath = "src"
+testpaths = [
+    "tests",
 ]
 
 [tool.ruff]
 line-length = 120
 
 [tool.ruff.lint]
-extend-unsafe-fixes = ["UP"]
+extend-unsafe-fixes = [
+    "UP",
+]
