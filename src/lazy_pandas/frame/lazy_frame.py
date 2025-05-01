@@ -2,7 +2,6 @@ import uuid
 from typing import TYPE_CHECKING, Literal, Union, overload
 
 import duckdb
-import lazy_pandas as lp
 from duckdb import (
     ColumnExpression,
     ConstantExpression,
@@ -379,54 +378,3 @@ class LazyFrame:
         else:
             # Sample frac fraction of rows using random filter
             return LazyFrame(self._relation.filter(f"{random_func} <= {frac}"))
-
-    def describe(self, percentiles: list[float] | None = None, include: list[str] | None = None) -> "LazyFrame":
-        """
-        Generate descriptive statistics for numeric columns.
-
-        Descriptive statistics include those that summarize the central tendency,
-        dispersion and shape of a dataset's distribution, excluding NaN values.
-
-        Args:
-            percentiles (list[float] | None, optional): List of percentiles to include in the output.
-                All should be between 0 and 1. Defaults to [0.25, 0.5, 0.75].
-            include (list[str] | None, optional): List of columns to include. If None, only
-                numeric columns are included. Defaults to None.
-
-        Returns:
-            LazyFrame: A LazyFrame with descriptive statistics.
-
-        Examples:
-            ```python
-            # Get descriptive statistics for all numeric columns
-            df.describe()
-
-            # Get descriptive statistics for specific columns
-            df.describe(include=["age", "income"])
-
-            # Include additional percentiles
-            df.describe(percentiles=[0.1, 0.25, 0.5, 0.75, 0.9])
-            ```
-        """
-
-        if percentiles is None:
-            percentiles = [0.25, 0.5, 0.75]
-        else:
-            # Validate percentiles
-            if not all(0 <= p <= 1 for p in percentiles):
-                raise ValueError("Percentiles must be between 0 and 1")
-
-        # Get columns to include
-        columns = self.columns
-        if include is not None:
-            # Filter columns based on include list
-            columns = [col for col in columns if col in include]
-
-        # First collect to pandas so we can then use pandas' describe
-        pandas_df = self._relation.select(*columns).to_df()
-
-        # Use pandas' describe functionality with our custom percentiles
-        result_df = pandas_df.describe(percentiles=percentiles)
-
-        # Convert back to LazyFrame
-        return lp.from_pandas(result_df)
