@@ -1,10 +1,10 @@
 def test_list_columns(simple_df_pair):
-    """Testa a listagem de colunas no LazyFrame comparando com pandas"""
-    # Verificação da função columns do LazyFrame
+    """Tests the listing of columns in LazyFrame compared to pandas"""
+    # Verification of the columns function in LazyFrame
     assert simple_df_pair.lazy_df.columns == ["a", "b"]
-    # Verificação do tipo dos nomes das colunas
+    # Verification of column names type
     for col_name in simple_df_pair.lazy_df.columns:
         assert isinstance(col_name, str)
 
-    # Comparação com pandas
+    # Comparison with pandas
     assert simple_df_pair.lazy_df.columns == simple_df_pair.pandas_df.columns.tolist()

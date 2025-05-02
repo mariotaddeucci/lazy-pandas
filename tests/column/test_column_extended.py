@@ -5,15 +5,15 @@ from conftest import DataFramePair
 
 @pytest.fixture
 def numeric_column_df():
-    """Fixture que cria um DataFrame com colunas numéricas para testes de operações"""
+    """Fixture that creates a DataFrame with numeric columns for operation tests"""
     return DataFramePair(
         query="SELECT 1 AS a, 2 AS b, 3 AS c, NULL AS d UNION ALL SELECT 4, 5, 6, 7 UNION ALL SELECT -1, -2, -3, -4"
     )
 
 
 def test_comparison_operators(numeric_column_df):
-    """Testa todos os operadores de comparação da LazyColumn"""
-    # Aplicando operadores em LazyFrame
+    """Tests all comparison operators of LazyColumn"""
+    # Applying operators in LazyFrame
     numeric_column_df.lazy_df["lt"] = numeric_column_df.lazy_df["a"] < 2
     numeric_column_df.lazy_df["le"] = numeric_column_df.lazy_df["a"] <= 1
     numeric_column_df.lazy_df["gt"] = numeric_column_df.lazy_df["a"] > 1
@@ -23,7 +23,7 @@ def test_comparison_operators(numeric_column_df):
 
     result = numeric_column_df.lazy_df.collect()
 
-    # Verificações
+    # Verifications
     assert result["lt"].tolist() == [True, False, True]
     assert result["le"].tolist() == [True, False, True]
     assert result["gt"].tolist() == [False, True, False]
@@ -33,8 +33,8 @@ def test_comparison_operators(numeric_column_df):
 
 
 def test_between(numeric_column_df):
-    """Testa o método between com diferentes opções de inclusividade"""
-    # Aplicando between em LazyFrame com diferentes inclusividades
+    """Tests the between method with different inclusivity options"""
+    # Applying between in LazyFrame with different inclusivity
     numeric_column_df.lazy_df["both"] = numeric_column_df.lazy_df["a"].between(1, 4)
     numeric_column_df.lazy_df["neither"] = numeric_column_df.lazy_df["a"].between(1, 4, inclusive="neither")
     numeric_column_df.lazy_df["left"] = numeric_column_df.lazy_df["a"].between(1, 4, inclusive="left")
@@ -42,92 +42,92 @@ def test_between(numeric_column_df):
 
     result = numeric_column_df.lazy_df.collect()
 
-    # Verificações (ajustadas para o comportamento real da implementação)
-    # Na implementação atual, between sempre inclui todos os valores no intervalo
-    # independentemente do parâmetro 'inclusive'
+    # Verifications (adjusted for the actual implementation behavior)
+    # In the current implementation, between always includes all values in the interval
+    # regardless of the 'inclusive' parameter
     assert result["both"].tolist() == [True, True, True]  # 1 <= x <= 4
-    assert result["neither"].tolist() == [True, True, True]  # Deveria ser 1 < x < 4, mas é 1 <= x <= 4
-    assert result["left"].tolist() == [True, True, True]  # Deveria ser 1 <= x < 4, mas é 1 <= x <= 4
-    assert result["right"].tolist() == [True, True, True]  # Deveria ser 1 < x <= 4, mas é 1 <= x <= 4
+    assert result["neither"].tolist() == [True, True, True]  # Should be 1 < x < 4, but is 1 <= x <= 4
+    assert result["left"].tolist() == [True, True, True]  # Should be 1 <= x < 4, but is 1 <= x <= 4
+    assert result["right"].tolist() == [True, True, True]  # Should be 1 < x <= 4, but is 1 <= x <= 4
 
-    # Teste do caso de erro quando inclusive tem valor inválido
+    # Test error case when inclusive has invalid value
     with pytest.raises(ValueError):
         numeric_column_df.lazy_df["a"].between(1, 4, inclusive="invalid")
 
 
 def test_isnull_isna(numeric_column_df):
-    """Testa os métodos isnull e isna"""
-    # Aplicando isnull e isna em LazyFrame
+    """Tests the isnull and isna methods"""
+    # Applying isnull and isna in LazyFrame
     numeric_column_df.lazy_df["is_null"] = numeric_column_df.lazy_df["d"].isnull()
     numeric_column_df.lazy_df["is_na"] = numeric_column_df.lazy_df["d"].isna()
 
     result = numeric_column_df.lazy_df.collect()
 
-    # Verificações
+    # Verifications
     assert result["is_null"].tolist() == [True, False, False]
     assert result["is_na"].tolist() == [True, False, False]
-    # Verifica se isna é realmente sinônimo de isnull
+    # Verify if isna is really a synonym for isnull
     assert result["is_null"].equals(result["is_na"])
 
 
 def test_notnull_notna(numeric_column_df):
-    """Testa os métodos notnull e notna"""
-    # Aplicando notnull e notna em LazyFrame
+    """Tests the notnull and notna methods"""
+    # Applying notnull and notna in LazyFrame
     numeric_column_df.lazy_df["not_null"] = numeric_column_df.lazy_df["d"].notnull()
     numeric_column_df.lazy_df["not_na"] = numeric_column_df.lazy_df["d"].notna()
 
     result = numeric_column_df.lazy_df.collect()
 
-    # Verificações
+    # Verifications
     assert result["not_null"].tolist() == [False, True, True]
     assert result["not_na"].tolist() == [False, True, True]
-    # Verifica se notna é realmente sinônimo de notnull
+    # Verify if notna is really a synonym for notnull
     assert result["not_null"].equals(result["not_na"])
 
 
 def test_fillna(numeric_column_df):
-    """Testa o método fillna para substituir valores nulos"""
-    # Aplicando fillna em LazyFrame
+    """Tests the fillna method to replace null values"""
+    # Applying fillna in LazyFrame
     numeric_column_df.lazy_df["filled"] = numeric_column_df.lazy_df["d"].fillna(0)
 
     result = numeric_column_df.lazy_df.collect()
 
-    # Verificações
+    # Verifications
     assert result["filled"].tolist() == [0, 7, -4]
 
 
 def test_isin(numeric_column_df):
-    """Testa o método isin para verificar se valores estão em uma lista"""
-    # Aplicando isin em LazyFrame
+    """Tests the isin method to check if values are in a list"""
+    # Applying isin in LazyFrame
     numeric_column_df.lazy_df["in_list1"] = numeric_column_df.lazy_df["a"].isin([1, 4])
     numeric_column_df.lazy_df["in_list2"] = numeric_column_df.lazy_df["a"].isin(1, -1)
 
     result = numeric_column_df.lazy_df.collect()
 
-    # Verificações
+    # Verifications
     assert result["in_list1"].tolist() == [True, True, False]
     assert result["in_list2"].tolist() == [True, False, True]
 
 
 def test_math_operators(numeric_column_df):
-    """Testa operadores matemáticos menos comuns como mod, pow, neg, etc."""
-    # Aplicando operadores em LazyFrame
+    """Tests less common math operators like mod, pow, neg, etc."""
+    # Applying operators in LazyFrame
     numeric_column_df.lazy_df["mod"] = numeric_column_df.lazy_df["a"] % 2
     numeric_column_df.lazy_df["pow"] = numeric_column_df.lazy_df["a"] ** 2
     numeric_column_df.lazy_df["neg"] = -numeric_column_df.lazy_df["a"]
 
     result = numeric_column_df.lazy_df.collect()
 
-    # Verificações (ajustando para comportamento real)
-    # Nota: o módulo de -1 % 2 dá -1 na implementação atual, não 1
+    # Verifications (adjusting for actual behavior)
+    # Note: the modulo of -1 % 2 gives -1 in the current implementation, not 1
     assert result["mod"].tolist() == [1, 0, -1]
     assert result["pow"].tolist() == [1, 16, 1]
     assert result["neg"].tolist() == [-1, -4, 1]
 
 
 def test_binary_operators(numeric_column_df):
-    """Testa operadores binários como and, or, not"""
-    # Aplicando operadores em LazyFrame
+    """Tests binary operators like and, or, not"""
+    # Applying operators in LazyFrame
     numeric_column_df.lazy_df["bool1"] = numeric_column_df.lazy_df["a"] > 0
     numeric_column_df.lazy_df["bool2"] = numeric_column_df.lazy_df["b"] > 0
     numeric_column_df.lazy_df["and"] = numeric_column_df.lazy_df["bool1"] & numeric_column_df.lazy_df["bool2"]
@@ -136,8 +136,8 @@ def test_binary_operators(numeric_column_df):
 
     result = numeric_column_df.lazy_df.collect()
 
-    # Verificações (ajustadas para o comportamento real)
-    # Na implementação atual, se bool1 e bool2 são False, o OR retorna False, não True
+    # Verifications (adjusted for actual behavior)
+    # In the current implementation, if bool1 and bool2 are False, OR returns False, not True
     assert result["and"].tolist() == [True, True, False]
     assert result["or"].tolist() == [True, True, False]
     assert result["not"].tolist() == [False, False, True]

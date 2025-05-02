@@ -11,69 +11,69 @@ from lazy_pandas.utils import (
 
 
 def test_to_column_expr_with_string():
-    """Testa a função to_column_expr com string."""
-    # Teste com uma string
+    """Tests the to_column_expr function with string."""
+    # Test with a string
     result = to_column_expr("column_name")
-    # Verificamos que o resultado contém o nome da coluna (formato pode variar)
+    # We verify that the result contains the column name (format may vary)
     assert "column_name" in str(result)
 
 
 def test_to_column_expr_with_expression():
-    """Testa a função to_column_expr com expressão."""
-    # Teste com uma expressão existente
-    # Criamos uma expressão diretamente com o módulo duckdb
+    """Tests the to_column_expr function with expression."""
+    # Test with an existing expression
+    # We create an expression directly with the duckdb module
     from duckdb import ColumnExpression
 
     expr = ColumnExpression("existing")
     result = to_column_expr(expr)
-    assert result is expr  # Deve retornar a mesma instância
+    assert result is expr  # Should return the same instance
 
 
 def test_to_column_expr_with_invalid_type():
-    """Testa a função to_column_expr com tipo inválido."""
-    # Teste com tipo não suportado
+    """Tests the to_column_expr function with invalid type."""
+    # Test with unsupported type
     with pytest.raises(NotImplementedError):
         to_column_expr(123)
 
 
 def test_get_expr_with_expression():
-    """Testa a função get_expr com expressão."""
-    # Teste com uma expressão existente
+    """Tests the get_expr function with expression."""
+    # Test with an existing expression
     from duckdb import ColumnExpression
 
     expr = ColumnExpression("column")
     result = get_expr(expr)
-    assert result is expr  # Deve retornar a mesma instância
+    assert result is expr  # Should return the same instance
 
 
 def test_get_expr_with_constant():
-    """Testa a função get_expr com valor constante."""
-    # Teste com valor constante (deve criar uma ConstantExpression)
+    """Tests the get_expr function with constant value."""
+    # Test with constant value (should create a ConstantExpression)
     result = get_expr(42)
     assert "42" in str(result)
 
-    # Teste com string (que não é uma expressão)
+    # Test with string (which is not an expression)
     result = get_expr("value")
     assert "value" in str(result)
 
 
 def test_func_op_doc():
-    """Testa se a documentação é preservada na função func_op."""
-    # Verificamos se a documentação foi preservada
-    neg_op = func_op("__neg__", "Negação")
-    assert neg_op.__doc__ == "Negação"
+    """Tests if documentation is preserved in the func_op function."""
+    # We verify if the documentation was preserved
+    neg_op = func_op("__neg__", "Negation")
+    assert neg_op.__doc__ == "Negation"
 
 
 def test_bin_op_doc():
-    """Testa se a documentação é preservada na função bin_op."""
-    # Verificamos se a documentação foi preservada
-    add_op = bin_op("__add__", "Adição")
-    assert add_op.__doc__ == "Adição"
+    """Tests if documentation is preserved in the bin_op function."""
+    # We verify if the documentation was preserved
+    add_op = bin_op("__add__", "Addition")
+    assert add_op.__doc__ == "Addition"
 
 
 def test_invoke_function_basic():
-    """Testa a função invoke_function com argumentos simples."""
-    # Testamos a função com argumentos que o DuckDB aceita
+    """Tests the invoke_function with simple arguments."""
+    # We test the function with arguments that DuckDB accepts
     from duckdb import ColumnExpression
 
     col_expr = ColumnExpression("col1")
@@ -83,8 +83,8 @@ def test_invoke_function_basic():
 
 
 def test_invoke_function_over_columns_strings():
-    """Testa a função invoke_function_over_columns com strings."""
-    # Testamos a função com nomes de colunas (strings)
+    """Tests the invoke_function_over_columns with strings."""
+    # We test the function with column names (strings)
     result = invoke_function_over_columns("sum", "col1", "col2")
     assert "sum" in str(result).lower()
     assert "col1" in str(result)

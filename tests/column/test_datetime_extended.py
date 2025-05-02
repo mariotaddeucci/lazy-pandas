@@ -6,49 +6,49 @@ from conftest import DataFramePair
 
 @pytest.fixture
 def datetime_extended_df():
-    """Fixture que cria um DataFrame com uma variedade de datas para testes mais abrangentes"""
+    """Fixture that creates a DataFrame with a variety of dates for more comprehensive tests"""
     return DataFramePair(
         query="""
         SELECT cast('2023-01-01' as datetime) AS dt_time
-        UNION ALL SELECT cast('2023-12-31 00:00:00' as datetime)  -- fim de ano sem parte de tempo
-        UNION ALL SELECT cast('2024-02-29 12:30:45' as datetime)  -- ano bissexto
-        UNION ALL SELECT cast('2023-03-31 00:00:00' as datetime)  -- fim do mês
-        UNION ALL SELECT NULL                                    -- valor nulo
+        UNION ALL SELECT cast('2023-12-31 00:00:00' as datetime)  -- year end without time part
+        UNION ALL SELECT cast('2024-02-29 12:30:45' as datetime)  -- leap year
+        UNION ALL SELECT cast('2023-03-31 00:00:00' as datetime)  -- month end
+        UNION ALL SELECT NULL                                    -- null value
     """
     )
 
 
 def test_dt_date_parts(datetime_extended_df):
-    """Testa diversos componentes de data/hora simultaneamente"""
-    # Aplicamos várias operações de extração de componentes de data
+    """Tests various date/time components simultaneously"""
+    # Apply various date component extraction operations
     df = datetime_extended_df.lazy_df
 
-    # Ano
+    # Year
     df["year"] = df["dt_time"].dt.year
-    # Mês
+    # Month
     df["month"] = df["dt_time"].dt.month
-    # Dia
+    # Day
     df["day"] = df["dt_time"].dt.day
-    # Hora
+    # Hour
     df["hour"] = df["dt_time"].dt.hour
 
-    # Coletamos o resultado
+    # Collect the result
     result = df.collect()
 
-    # Verificações de valores específicos para cada linha
-    # Primeira linha: 2023-01-01 00:00:00
+    # Specific value checks for each row
+    # First row: 2023-01-01 00:00:00
     assert result.iloc[0]["year"] == 2023
     assert result.iloc[0]["month"] == 1
     assert result.iloc[0]["day"] == 1
     assert result.iloc[0]["hour"] == 0
 
-    # Segunda linha: 2023-12-31 00:00:00
+    # Second row: 2023-12-31 00:00:00
     assert result.iloc[1]["year"] == 2023
     assert result.iloc[1]["month"] == 12
     assert result.iloc[1]["day"] == 31
     assert result.iloc[1]["hour"] == 0
 
-    # Terceira linha: 2024-02-29 12:30:45 (ano bissexto)
+    # Third row: 2024-02-29 12:30:45 (leap year)
     assert result.iloc[2]["year"] == 2024
     assert result.iloc[2]["month"] == 2
     assert result.iloc[2]["day"] == 29
@@ -56,53 +56,53 @@ def test_dt_date_parts(datetime_extended_df):
 
 
 def test_dt_is_special_days(datetime_extended_df):
-    """Testa métodos de verificação de dias especiais (início/fim de período)"""
+    """Tests methods for verifying special days (beginning/end of period)"""
     df = datetime_extended_df.lazy_df
 
-    # Verificando dias especiais
+    # Checking special days
     df["is_month_start"] = df["dt_time"].dt.is_month_start
     df["is_month_end"] = df["dt_time"].dt.is_month_end
     df["is_quarter_start"] = df["dt_time"].dt.is_quarter_start
     df["is_year_start"] = df["dt_time"].dt.is_year_start
     df["is_year_end"] = df["dt_time"].dt.is_year_end
 
-    # Coletamos o resultado
+    # Collect the result
     result = df.collect()
 
-    # Verificações de primeiro dia do mês (01/01/2023)
+    # Checks for first day of month (01/01/2023)
     assert result.iloc[0]["is_month_start"] is True
     assert result.iloc[0]["is_quarter_start"] is True
     assert result.iloc[0]["is_year_start"] is True
 
-    # Verificações de último dia do mês/ano (31/12/2023)
-    # Agora sem a parte de tempo (00:00:00), deve funcionar corretamente
+    # Checks for last day of month/year (31/12/2023)
+    # Now without the time part (00:00:00), should work correctly
     assert result.iloc[1]["is_month_end"] is True
     assert result.iloc[1]["is_year_end"] is True
 
-    # Verificações de último dia do mês (31/03/2023)
+    # Checks for last day of month (31/03/2023)
     assert result.iloc[3]["is_month_end"] is True
 
-    # Verificação com valores nulos
+    # Check with null values
     assert pd.isna(result.iloc[4]["is_month_start"])
 
 
 def test_dt_weekday(datetime_extended_df):
-    """Testa método de dia da semana"""
+    """Tests weekday method"""
     df = datetime_extended_df.lazy_df
 
-    # Extraindo dia da semana
+    # Extracting weekday
     df["weekday"] = df["dt_time"].dt.weekday()
 
-    # Coletamos o resultado
+    # Collect the result
     result = df.collect()
 
-    # Na implementação atual, o dia da semana é 0-indexado
-    # (0 = domingo, 1 = segunda, ..., 6 = sábado), como no pandas padrão
-    # Verificações para 01/01/2023 (deve ser domingo, dia 0)
-    assert result.iloc[0]["weekday"] == 0  # domingo = 0
+    # In the current implementation, weekday is 0-indexed
+    # (0 = Sunday, 1 = Monday, ..., 6 = Saturday), as in standard pandas
+    # Checks for 01/01/2023 (should be Sunday, day 0)
+    assert result.iloc[0]["weekday"] == 0  # Sunday = 0
 
-    # Verificações para 31/12/2023 (deve ser domingo)
-    assert result.iloc[1]["weekday"] == 0  # domingo = 0
+    # Checks for 31/12/2023 (should be Sunday)
+    assert result.iloc[1]["weekday"] == 0  # Sunday = 0
 
-    # Verificações para 29/02/2024 (deve ser quinta)
-    assert result.iloc[2]["weekday"] == 4  # quinta = 4
+    # Checks for 29/02/2024 (should be Thursday)
+    assert result.iloc[2]["weekday"] == 4  # Thursday = 4

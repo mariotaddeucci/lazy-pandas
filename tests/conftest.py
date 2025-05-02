@@ -24,20 +24,20 @@ def skip_on_contribution_error(func):
 
 class DataFramePair:
     """
-    Classe utilitária para testar LazyFrame vs pandas DataFrame
+    Utility class for testing LazyFrame vs pandas DataFrame
 
-    Facilita a execução dos mesmos testes em LazyFrame e pandas DataFrame,
-    permitindo comparar os resultados para garantir equivalência.
+    Facilitates running the same tests on LazyFrame and pandas DataFrame,
+    allowing comparison of results to ensure equivalence.
     """
 
     def __init__(self, query=None, pandas_df=None, lazy_df=None):
         """
-        Inicializa um par de DataFrames (LazyFrame e pandas) para testes
+        Initializes a pair of DataFrames (LazyFrame and pandas) for testing
 
         Args:
-            query: Consulta SQL para criar os dataframes
-            pandas_df: DataFrame pandas já existente para usar como base
-            lazy_df: LazyFrame já existente para usar como base
+            query: SQL query to create the dataframes
+            pandas_df: Existing pandas DataFrame to use as base
+            lazy_df: Existing LazyFrame to use as base
         """
         if query:
             self.rel = duckdb.sql(query)
@@ -45,16 +45,16 @@ class DataFramePair:
             self.pandas_df = self.lazy_df.collect()
         elif pandas_df is not None:
             self.pandas_df = pandas_df
-            # Converter pandas para DuckDB e depois para LazyFrame
+            # Convert pandas to DuckDB and then to LazyFrame
             self.lazy_df = LazyFrame(duckdb.from_df(pandas_df))
         elif lazy_df is not None:
             self.lazy_df = lazy_df
             self.pandas_df = lazy_df.collect()
         else:
-            raise ValueError("Deve fornecer query, pandas_df ou lazy_df")
+            raise ValueError("Must provide query, pandas_df or lazy_df")
 
     def copy(self):
-        """Retorna uma cópia do par de DataFrames"""
+        """Returns a copy of the DataFrame pair"""
         result = DataFramePair.__new__(DataFramePair)
         result.lazy_df = self.lazy_df.copy() if hasattr(self, "lazy_df") else None
         result.pandas_df = self.pandas_df.copy() if hasattr(self, "pandas_df") else None
@@ -62,7 +62,7 @@ class DataFramePair:
 
     def assert_equal(self, pandas_result, lazy_result):
         """
-        Verifica se os resultados de pandas e lazy_pandas são equivalentes.
+        Verifies if the results from pandas and lazy_pandas are equivalent.
         """
         if isinstance(pandas_result, pd.DataFrame) and isinstance(lazy_result, pd.DataFrame):
             pd.testing.assert_frame_equal(pandas_result, lazy_result, check_dtype=False)
@@ -83,19 +83,19 @@ class DataFramePair:
 
 @pytest.fixture
 def int_column_df():
-    """Fixture que retorna um DataFrame com colunas de inteiros para testes"""
+    """Fixture that returns a DataFrame with integer columns for testing"""
     return DataFramePair(query="SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 4")
 
 
 @pytest.fixture
 def multi_row_df():
-    """Fixture que retorna um DataFrame com múltiplas linhas para testes"""
+    """Fixture that returns a DataFrame with multiple rows for testing"""
     return DataFramePair(query="SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 4 UNION ALL SELECT 5, 6")
 
 
 @pytest.fixture
 def datetime_df():
-    """Fixture que retorna um DataFrame com colunas datetime para testes"""
+    """Fixture that returns a DataFrame with datetime columns for testing"""
     return DataFramePair(
         query="""
         SELECT cast('2023-05-01' as datetime) AS dt_time
@@ -107,19 +107,19 @@ def datetime_df():
 
 @pytest.fixture
 def simple_df_pair():
-    """Fixture que cria um par simples DataFrame/LazyFrame"""
+    """Fixture that creates a simple DataFrame/LazyFrame pair"""
     return DataFramePair(query="SELECT 1 AS a, 2 AS b")
 
 
 @pytest.fixture
 def multi_row_df_pair():
-    """Fixture que cria um par DataFrame/LazyFrame com múltiplas linhas"""
+    """Fixture that creates a DataFrame/LazyFrame pair with multiple rows"""
     return DataFramePair(query="SELECT 1 AS a, 2 AS b UNION ALL SELECT 3, 4")
 
 
 @pytest.fixture
 def numeric_df_pair():
-    """Fixture que cria um par DataFrame/LazyFrame com dados numéricos"""
+    """Fixture that creates a DataFrame/LazyFrame pair with numeric data"""
     return DataFramePair(
         query="""
         SELECT 1 AS a, 2 AS b, 3 AS c
@@ -131,11 +131,11 @@ def numeric_df_pair():
 
 @pytest.fixture
 def duplicate_df_pair():
-    """Fixture que cria um par DataFrame/LazyFrame com linhas duplicadas"""
+    """Fixture that creates a DataFrame/LazyFrame pair with duplicate rows"""
     return DataFramePair(query="SELECT 1 AS a, 2 AS b UNION ALL SELECT 1, 2")
 
 
 @pytest.fixture
 def partial_duplicate_df_pair():
-    """Fixture que cria um par DataFrame/LazyFrame com duplicação parcial"""
+    """Fixture that creates a DataFrame/LazyFrame pair with partial duplication"""
     return DataFramePair(query="SELECT 1 AS a, 2 AS b UNION ALL SELECT 2, 2")
