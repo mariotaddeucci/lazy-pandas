@@ -28,13 +28,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Setup UV
         run: pip install uv
 
-      - name: Execute Tests
-        run: make docs-build
+      - name: Execute Docs Build
+        run: uv run task docs-build
 
   UnitTests:
     name: Unit Tests
@@ -45,13 +45,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Setup UV
         run: pip install uv
 
       - name: Execute Tests
-        run: make test-all
+        run: uv run task test
 
   StaticChecks:
     name: Static Checks
@@ -62,13 +62,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Setup UV
         run: pip install uv
 
       - name: Execute Static Checks
-        run: make lint
+        run: uv run task lint
 
   BuildPackage:
     name: Build Package
@@ -79,13 +79,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Setup UV
         run: pip install uv
 
-      - name: Execute Static Checks
-        run: make build
+      - name: Execute Build
+        run: uv run task build
 
   Publish:
     name: Publish
@@ -103,13 +103,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Setup UV
         run: pip install uv
 
       - name: Build package
-        run: make build
+        run: uv run task build
 
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

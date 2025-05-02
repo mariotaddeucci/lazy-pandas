@@ -1,18 +1,30 @@
 [build-system]
 build-backend = "hatchling.build"
-requires = [
-    "hatch-vcs",
-    "hatchling",
+requires = ["hatch-vcs", "hatchling"]
+
+[dependency-groups]
+dev = [
+    "codespell",
+    "mkdocs",
+    "mkdocs-gen-files",
+    "mkdocs-material[imaging]",
+    "mkdocs-plotly-plugin",
+    "mkdocstrings-python",
+    "pandas",
+    "pyarrow",
+    "pyiceberg[sql-sqlite]",
+    "pyprojectsort",
+    "pytest-cov>=4.1.0,<5",
+    "pytest>=8.3.3,<9",
+    "ruff",
+    "ssort",
+    "taskipy>=1.14.1",
 ]
 
 [project]
-dependencies = [
-    "duckdb",
-]
+dependencies = ["duckdb"]
 description = "The power of duckdb with the ease of pandas"
-dynamic = [
-    "version",
-]
+dynamic = ["version"]
 name = "lazy_pandas"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -31,48 +43,29 @@ exclude_lines = [
 ]
 
 [tool.coverage.run]
-omit = [
-    "*/conftest.py",
-    "*/tests/*",
-]
-source = [
-    "lazy_pandas",
-]
+omit = ["*/conftest.py", "*/tests/*"]
+source = ["lazy_pandas"]
 
 [tool.hatch.build]
-exclude = [
-    "/tests",
-]
-
-[tool.hatch.envs.hatch-test]
-dependencies = [
-    "pandas",
-    "pyarrow",
-    "pyiceberg[sql-sqlite]",
-    "pytest >=8.3.3,<9",
-    "pytest-cov >=4.1.0,<5",
-]
-extra-args = [
-    "-vv",
-]
-
-[tool.hatch.envs.hatch-test.scripts]
-run = "pytest{env:HATCH_TEST_ARGS:} {args}"
+exclude = ["/tests"]
 
 [tool.hatch.version]
 path = "src/lazy_pandas/__init__.py"
 
 [tool.pytest.ini_options]
-addopts = "--cov=lazy_pandas --cov-report=term --cov-report=html"
+addopts = "-vv"
 pythonpath = "src"
-testpaths = [
-    "tests",
-]
+testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 120
 
 [tool.ruff.lint]
-extend-unsafe-fixes = [
-    "UP",
-]
+extend-unsafe-fixes = ["UP"]
+
+[tool.taskipy.tasks]
+build = "uv build"
+docs-build = "cd docs && mkdocs build"
+format = "ruff check --fix && ruff format && ssort && pyprojectsort"
+lint = "ruff check && ruff format && ssort --check --check && codespell && pyprojectsort --check"
+test = "pytest"
