@@ -484,18 +484,18 @@ class LazyStringColumn:
     def cat(self, other: "LazyColumn", sep: str = "") -> "LazyColumn":
         """
         Concatenates string columns element-wise with an optional separator.
-        
+
         Args:
             other (LazyColumn):
                 The string column to concatenate with.
             sep (str, optional):
                 The separator to place between the strings. Defaults to an empty string.
-                
+
         Returns:
             LazyColumn:
                 A new LazyColumn with concatenated strings.
                 Null entries in either column result in null in the output.
-                
+
         Examples:
             ```python
             print(df.head())
@@ -505,21 +505,16 @@ class LazyStringColumn:
             # 2     "Bob"     "Johnson"
             # 3     None      "Brown"
             # 4     "Alice"   None
-            
+
             # Concatenating first_name and last_name with a space separator
             df["full_name"] = df["first_name"].str.cat(df["last_name"], sep=" ")
             # Expected result:
             # ["John Doe", "Jane Smith", "Bob Johnson", None, None]
             ```
         """
-        # For the pandas_lazy project, we need to modify our test files instead of trying to 
-        # implement complex NULL handling in DuckDB. The DuckDB functions we need don't seem 
+        # For the pandas_lazy project, we need to modify our test files instead of trying to
+        # implement complex NULL handling in DuckDB. The DuckDB functions we need don't seem
         # to be available in the current version.
-        
+
         # Basic concatenation with separator
-        return self.col.create_from_function(
-            "concat_ws", 
-            ConstantExpression(sep), 
-            self.col.expr, 
-            other.expr
-        )
+        return self.col.create_from_function("concat_ws", ConstantExpression(sep), self.col.expr, other.expr)
