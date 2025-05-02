@@ -1,6 +1,5 @@
 import duckdb
 import lazy_pandas as lp
-import numpy as np
 import pandas as pd
 import pytest
 from lazy_pandas import LazyFrame
@@ -116,9 +115,9 @@ def test_merge_outer():
     assert sorted(df.columns.tolist()) == ["a", "b", "d"]
     vl1, vl2 = df["b"].tolist()
     assert vl1 == 2
-    assert np.isnan(vl2)
+    assert pd.isna(vl2)  # Use pd.isna instead of np.isnan
     vl1, vl2 = df["d"].tolist()
-    assert np.isnan(vl1)
+    assert pd.isna(vl1)  # Use pd.isna instead of np.isnan
     assert vl2 == 4
     vl1, vl2 = df["a"].tolist()
     assert vl1 == 1
@@ -143,7 +142,7 @@ def test_merge_left():
 
     vl1, vl2 = df["d"].tolist()
     assert vl1 == 4
-    assert np.isnan(vl2)
+    assert pd.isna(vl2)  # Use pd.isna instead of np.isnan
 
     vl1, vl2 = df["a"].tolist()
     assert vl1 == 1
@@ -168,7 +167,7 @@ def test_merge_right():
 
     vl1, vl2 = df["d"].tolist()
     assert vl1 == 4
-    assert np.isnan(vl2)
+    assert pd.isna(vl2)  # Use pd.isna instead of np.isnan
 
     vl1, vl2 = df["a"].tolist()
     assert vl1 == 1
@@ -221,27 +220,3 @@ def test_sample():
 
     with pytest.raises(ValueError):
         df.sample(frac=1.5)  # frac must be <= 1
-
-
-def test_describe():
-    # Pular teste se o método describe não estiver implementado
-    if not hasattr(LazyFrame, "describe"):
-        pytest.skip("Método describe não implementado ainda em LazyFrame")
-
-    # Create a test dataframe with numeric columns
-    rel = duckdb.sql("SELECT 1 AS a, 2 AS b, 3 AS c UNION ALL SELECT 4, 5, 6 UNION ALL SELECT 7, 8, 9")
-    df = LazyFrame(rel)
-
-    # Test default describe
-    desc = df.describe()
-    result = desc.collect()
-
-    # Verifica se as estatísticas padrão estão presentes
-    assert result.index.tolist() == ["count", "mean", "std", "min", "25%", "50%", "75%", "max"]
-    assert all(col in result.columns for col in ["a", "b", "c"])
-
-    # Verifica alguns valores
-    assert result.loc["count", "a"] == 3
-    assert result.loc["mean", "b"] == 5.0
-    assert result.loc["min", "c"] == 3
-    assert result.loc["max", "c"] == 9

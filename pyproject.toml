@@ -1,6 +1,9 @@
 [build-system]
 build-backend = "hatchling.build"
-requires = ["hatch-vcs", "hatchling"]
+requires = [
+    "hatch-vcs",
+    "hatchling",
+]
 
 [dependency-groups]
 dev = [
@@ -22,9 +25,13 @@ dev = [
 ]
 
 [project]
-dependencies = ["duckdb"]
+dependencies = [
+    "duckdb",
+]
 description = "The power of duckdb with the ease of pandas"
-dynamic = ["version"]
+dynamic = [
+    "version",
+]
 name = "lazy_pandas"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -43,11 +50,18 @@ exclude_lines = [
 ]
 
 [tool.coverage.run]
-omit = ["*/conftest.py", "*/tests/*"]
-source = ["lazy_pandas"]
+omit = [
+    "*/conftest.py",
+    "*/tests/*",
+]
+source = [
+    "lazy_pandas",
+]
 
 [tool.hatch.build]
-exclude = ["/tests"]
+exclude = [
+    "/tests",
+]
 
 [tool.hatch.version]
 path = "src/lazy_pandas/__init__.py"
@@ -55,13 +69,17 @@ path = "src/lazy_pandas/__init__.py"
 [tool.pytest.ini_options]
 addopts = "-vv"
 pythonpath = "src"
-testpaths = ["tests"]
+testpaths = [
+    "tests",
+]
 
 [tool.ruff]
 line-length = 120
 
 [tool.ruff.lint]
-extend-unsafe-fixes = ["UP"]
+extend-unsafe-fixes = [
+    "UP",
+]
 
 [tool.taskipy.tasks]
 build = "uv build"

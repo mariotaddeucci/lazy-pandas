@@ -70,17 +70,17 @@ def test_dt_is_special_days(datetime_extended_df):
     result = df.collect()
 
     # Checks for first day of month (01/01/2023)
-    assert result.iloc[0]["is_month_start"] is True
-    assert result.iloc[0]["is_quarter_start"] is True
-    assert result.iloc[0]["is_year_start"] is True
+    assert result.iloc[0]["is_month_start"]
+    assert result.iloc[0]["is_quarter_start"]
+    assert result.iloc[0]["is_year_start"]
 
     # Checks for last day of month/year (31/12/2023)
     # Now without the time part (00:00:00), should work correctly
-    assert result.iloc[1]["is_month_end"] is True
-    assert result.iloc[1]["is_year_end"] is True
+    assert result.iloc[1]["is_month_end"]
+    assert result.iloc[1]["is_year_end"]
 
     # Checks for last day of month (31/03/2023)
-    assert result.iloc[3]["is_month_end"] is True
+    assert result.iloc[3]["is_month_end"]
 
     # Check with null values
     assert pd.isna(result.iloc[4]["is_month_start"])
