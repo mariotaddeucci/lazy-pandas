@@ -13,7 +13,7 @@ from duckdb import (
 from duckdb.typing import DuckDBPyType
 
 from lazy_pandas.column.lazy_column import LazyColumn
-from lazy_pandas.exceptions import LazyPandasUnsupporttedOperation
+from lazy_pandas.exceptions import ContributionAcceptedError
 from lazy_pandas.frame.lazy_groupped_frame import LazyGrouppedFrame
 
 if TYPE_CHECKING:
@@ -349,7 +349,7 @@ class LazyFrame:
             LazyColumn or LazyFrame: The selected column or a LazyFrame with the selected columns.
 
         Raises:
-            LazyPandasUnsupporttedOperation: If an unsupported operation is attempted.
+            ContributionAcceptedError: If an unsupported operation is attempted.
         """
         if isinstance(key, list):
             return LazyFrame(self._relation.select(*key))
@@ -360,7 +360,7 @@ class LazyFrame:
         if isinstance(key, LazyColumn):
             return LazyFrame(self._relation.filter(key.expr))
 
-        raise LazyPandasUnsupporttedOperation(
+        raise ContributionAcceptedError(
             f"LazyPandas does not support all pandas operations, use collect() to get a pandas DataFrame and then perform the operation {key}"
         )
 

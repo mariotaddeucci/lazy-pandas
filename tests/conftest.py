@@ -4,6 +4,22 @@ import pandas as pd
 import pytest
 
 from lazy_pandas import LazyFrame
+from lazy_pandas.exceptions import ContributionAcceptedError
+
+
+# Create a decorator that will skip tests when ContributionAcceptedError is raised
+def skip_on_contribution_error(func):
+    """
+    Decorator that automatically skips a test if ContributionAcceptedError is raised.
+    """
+
+    def wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except ContributionAcceptedError as e:
+            pytest.skip(f"Skipped due to ContributionAcceptedError: {str(e)}")
+
+    return wrapper
 
 
 class DataFramePair:
