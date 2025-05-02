@@ -83,37 +83,52 @@ def test_string_advanced_methods(string_column_df):
     assert result["ends_d"].tolist() == [False, True, False]
 
 
-def test_string_new_methods(string_column_df):
-    """Tests the newly added string methods: repeat, capitalize, slice, and is* methods"""
+def test_string_repeat_method(string_column_df):
+    """Tests the string repeat method"""
     # Testing repeat
     string_column_df.lazy_df["repeat"] = string_column_df.lazy_df["text"].str.repeat(2)
+    
+    result = string_column_df.lazy_df.collect()
+    
+    # Verifications for repeat
+    assert result["repeat"].tolist() == ["HelloHello", "WorldWorld", "TestTest"]
 
+
+def test_string_capitalize_method(string_column_df):
+    """Tests the string capitalize method"""
     # Testing capitalize
     string_column_df.lazy_df["capitalized"] = string_column_df.lazy_df["text"].str.capitalize()
+    
+    result = string_column_df.lazy_df.collect()
+    
+    # Verifications for capitalize
+    # Note: Our implementation converts to lowercase after capitalizing the first letter
+    assert result["capitalized"].tolist() == ["Hello", "World", "Test"]
 
+
+def test_string_slice_method(string_column_df):
+    """Tests the string slice method with different parameters"""
     # Testing slice with different parameters
     string_column_df.lazy_df["slice_1_3"] = string_column_df.lazy_df["text"].str.slice(1, 3)
     string_column_df.lazy_df["slice_start"] = string_column_df.lazy_df["text"].str.slice(2)
+    
+    result = string_column_df.lazy_df.collect()
+    
+    # Verifications for slice
+    assert result["slice_1_3"].tolist() == ["el", "or", "es"]
+    assert result["slice_start"].tolist() == ["llo", "rld", "st"]
 
+
+def test_string_is_methods(string_column_df):
+    """Tests the string is* methods (isalpha, isalnum, isdigit, isnumeric)"""
     # Testing isalpha, isalnum, isdigit, isnumeric on mixed column
     string_column_df.lazy_df["is_alpha"] = string_column_df.lazy_df["mixed"].str.isalpha()
     string_column_df.lazy_df["is_alnum"] = string_column_df.lazy_df["mixed"].str.isalnum()
     string_column_df.lazy_df["is_digit"] = string_column_df.lazy_df["mixed"].str.isdigit()
     string_column_df.lazy_df["is_numeric"] = string_column_df.lazy_df["mixed"].str.isnumeric()
-
+    
     result = string_column_df.lazy_df.collect()
-
-    # Verifications for repeat
-    assert result["repeat"].tolist() == ["HelloHello", "WorldWorld", "TestTest"]
-
-    # Verifications for capitalize
-    # Note: Our implementation converts to lowercase after capitalizing the first letter
-    assert result["capitalized"].tolist() == ["Hello", "World", "Test"]
-
-    # Verifications for slice
-    assert result["slice_1_3"].tolist() == ["el", "or", "es"]
-    assert result["slice_start"].tolist() == ["llo", "rld", "st"]
-
+    
     # Verifications for is* methods
     # mixed column values: ['xyz123', '456', 'FOO']
     assert result["is_alpha"].tolist() == [False, False, True]  # Only 'FOO' is all alphabetic
