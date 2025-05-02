@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Literal, Optional
 
 from duckdb import ConstantExpression
 
@@ -449,7 +449,7 @@ class LazyStringColumn:
             # ["abc--", "1234-", None, "hello", "x----"]
             ```
         """
-        return self.pad(width, side="left", fillchar=fillchar)
+        return self.pad(width, side="right", fillchar=fillchar)
 
     def rjust(self, width: int, fillchar: str = " ") -> "LazyColumn":
         """
@@ -479,7 +479,7 @@ class LazyStringColumn:
             # ["**abc", "*1234", None, "*hello", "****x"]
             ```
         """
-        return self.pad(width, side="right", fillchar=fillchar)
+        return self.pad(width, side="left", fillchar=fillchar)
 
     def cat(self, other: "LazyColumn", sep: str = "") -> "LazyColumn":
         """
@@ -518,3 +518,226 @@ class LazyStringColumn:
 
         # Basic concatenation with separator
         return self.col.create_from_function("concat_ws", ConstantExpression(sep), self.col.expr, other.expr)
+
+    def repeat(self, repeats: int) -> "LazyColumn":
+        """
+        Repeats each string in the column by the specified number of times.
+
+        Args:
+            repeats (int):
+                Number of times to repeat each string.
+
+        Returns:
+            LazyColumn:
+                A new LazyColumn with each string repeated `repeats` times.
+
+        Examples:
+            ```python
+            print(df.head())
+            #    col1 my_string_column
+            # 0     1         "abc"
+            # 1     2         "x"
+            # 2     3         None
+            # 3     4         ""
+
+            df["my_string_column"].str.repeat(3)
+            # ["abcabcabc", "xxx", None, ""]
+            ```
+        """
+        return self.col.create_from_function("repeat", self.col.expr, ConstantExpression(repeats))
+
+    def capitalize(self) -> "LazyColumn":
+        """
+        Capitalizes the first character of each string and converts the rest to lowercase.
+
+        Returns:
+            LazyColumn:
+                A new LazyColumn with capitalized strings.
+
+        Examples:
+            ```python
+            print(df.head())
+            #    col1 my_string_column
+            # 0     1         "hello"
+            # 1     2         "WORLD"
+            # 2     3         "123abc"
+            # 3     4         None
+            # 4     5         "abc DEF"
+
+            df["my_string_column"].str.capitalize()
+            # ["Hello", "World", "123abc", None, "Abc def"]
+            ```
+        """
+        # This is a multistep operation: convert first char to upper and rest to lower
+        # First we get the first character and convert it to uppercase
+        first_char = self.col.create_from_function(
+            "upper",
+            self.col.create_from_function(
+                "substring", self.col.expr, ConstantExpression(1), ConstantExpression(1)
+            ).expr,
+        )
+
+        # Then we get the rest of the string and convert it to lowercase
+        rest_of_string = self.col.create_from_function(
+            "lower", self.col.create_from_function("substring", self.col.expr, ConstantExpression(2)).expr
+        )
+
+        # Finally we concatenate the two parts
+        return self.col.create_from_function("concat", first_char.expr, rest_of_string.expr)
+
+    def slice(self, start: Optional[int] = None, stop: Optional[int] = None) -> "LazyColumn":
+        """
+        Slices substrings from each string in the column.
+
+        Args:
+            start (int, optional):
+                The start position for the slice. If None, defaults to 0.
+            stop (int, optional):
+                The end position for the slice. If None, slices to the end of the string.
+
+        Returns:
+            LazyColumn:
+                A new LazyColumn with sliced strings.
+
+        Examples:
+            ```python
+            print(df.head())
+            #    col1 my_string_column
+            # 0     1         "Hello"
+            # 1     2         "World"
+            # 2     3         "Test123"
+            # 3     4         None
+            # 4     5         "abc"
+
+            df["my_string_column"].str.slice(1, 3)
+            # ["el", "or", "es", None, "bc"]
+            ```
+        """
+        # Default values
+        start_pos = 1 if start is None else start + 1  # Convert to 1-based indexing
+        if start_pos <= 0:
+            start_pos = 1
+
+        if stop is None:
+            # If stop is None, extract from start to end
+            return self.col.create_from_function("substring", self.col.expr, ConstantExpression(start_pos))
+        else:
+            # Calculate length based on start and stop
+            length = stop - (start or 0)
+            if length <= 0:
+                # Return empty string if length would be negative or zero
+                return self.col.create_from_function(
+                    "regexp_replace", self.col.expr, ConstantExpression(".*"), ConstantExpression("")
+                )
+
+            return self.col.create_from_function(
+                "substring", self.col.expr, ConstantExpression(start_pos), ConstantExpression(length)
+            )
+
+    def isalnum(self) -> "LazyColumn":
+        """
+        Checks if all characters in each string are alphanumeric (letters and numbers).
+
+        Returns:
+            LazyColumn:
+                A new LazyColumn of boolean values indicating whether each string
+                contains only alphanumeric characters.
+
+        Examples:
+            ```python
+            print(df.head())
+            #    col1 my_string_column
+            # 0     1         "Hello123"
+            # 1     2         "Test!"
+            # 2     3         "123"
+            # 3     4         ""
+            # 4     5         None
+
+            df["my_string_column"].str.isalnum()
+            # [True, False, True, False, None]
+            ```
+        """
+        # Using regexp to check if string contains only alphanumeric characters
+        return self.col.create_from_function("regexp_matches", self.col.expr, ConstantExpression("^[a-zA-Z0-9]+$"))
+
+    def isalpha(self) -> "LazyColumn":
+        """
+        Checks if all characters in each string are alphabetic (letters only).
+
+        Returns:
+            LazyColumn:
+                A new LazyColumn of boolean values indicating whether each string
+                contains only alphabetic characters.
+
+        Examples:
+            ```python
+            print(df.head())
+            #    col1 my_string_column
+            # 0     1         "Hello"
+            # 1     2         "Test123"
+            # 2     3         "ABC"
+            # 3     4         ""
+            # 4     5         None
+
+            df["my_string_column"].str.isalpha()
+            # [True, False, True, False, None]
+            ```
+        """
+        # Using regexp to check if string contains only alphabetic characters
+        return self.col.create_from_function("regexp_matches", self.col.expr, ConstantExpression("^[a-zA-Z]+$"))
+
+    def isdigit(self) -> "LazyColumn":
+        """
+        Checks if all characters in each string are digits.
+
+        Returns:
+            LazyColumn:
+                A new LazyColumn of boolean values indicating whether each string
+                contains only digit characters.
+
+        Examples:
+            ```python
+            print(df.head())
+            #    col1 my_string_column
+            # 0     1         "123"
+            # 1     2         "Test123"
+            # 2     3         "456"
+            # 3     4         ""
+            # 4     5         None
+
+            df["my_string_column"].str.isdigit()
+            # [True, False, True, False, None]
+            ```
+        """
+        # Using regexp to check if string contains only digits
+        return self.col.create_from_function("regexp_matches", self.col.expr, ConstantExpression("^[0-9]+$"))
+
+    def isnumeric(self) -> "LazyColumn":
+        """
+        Checks if all characters in each string are numeric.
+
+        This is similar to isdigit() but includes other number-like Unicode characters.
+        For simplicity in this implementation, we're making it equivalent to isdigit().
+
+        Returns:
+            LazyColumn:
+                A new LazyColumn of boolean values indicating whether each string
+                contains only numeric characters.
+
+        Examples:
+            ```python
+            print(df.head())
+            #    col1 my_string_column
+            # 0     1         "123"
+            # 1     2         "Test123"
+            # 2     3         "456"
+            # 3     4         ""
+            # 4     5         None
+
+            df["my_string_column"].str.isnumeric()
+            # [True, False, True, False, None]
+            ```
+        """
+        # In this simplified implementation, we're treating it the same as isdigit
+        # A more complete implementation would handle additional Unicode numeric characters
+        return self.isdigit()

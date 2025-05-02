@@ -37,10 +37,7 @@ def test_string_pad_methods(string_column_df):
     string_column_df.lazy_df["lpad"] = string_column_df.lazy_df["text"].str.pad(10, side="left", fillchar="*")
     string_column_df.lazy_df["rpad"] = string_column_df.lazy_df["text"].str.pad(10, side="right", fillchar="#")
 
-    # Using ljust and rjust - adjusting calls to reflect the correct behavior
-    # The current implementation has inverted behavior:
-    # - ljust adds to the left (should be to the right)
-    # - rjust adds to the right (should be to the left)
+    # Using ljust and rjust - correctly matching their intended behavior
     string_column_df.lazy_df["ljust"] = string_column_df.lazy_df["text"].str.ljust(10, "-")
     string_column_df.lazy_df["rjust"] = string_column_df.lazy_df["text"].str.rjust(10, "+")
 
@@ -53,14 +50,13 @@ def test_string_pad_methods(string_column_df):
     assert result["lpad"].tolist() == ["*****Hello", "*****World", "******Test"]
     assert result["rpad"].tolist() == ["Hello#####", "World#####", "Test######"]
 
-    # Verifications for ljust and rjust (adjusted for actual behavior)
-    # In the current implementation, ljust adds characters to the left, not right
-    assert result["ljust"].tolist() == ["-----Hello", "-----World", "------Test"]
-    # In the current implementation, rjust adds characters to the right, not left
-    assert result["rjust"].tolist() == ["Hello+++++", "World+++++", "Test++++++"]
+    # Verifications for ljust and rjust (now fixed to match correct behavior)
+    # ljust adds characters to the right (left-justified text)
+    assert result["ljust"].tolist() == ["Hello-----", "World-----", "Test------"]
+    # rjust adds characters to the left (right-justified text)
+    assert result["rjust"].tolist() == ["+++++Hello", "+++++World", "++++++Test"]
 
-    # Verifications for zfill (adjusting for actual behavior)
-    # The zfill method adds 5 zeros for 5-character strings and 6 zeros for 4-character strings
+    # Verifications for zfill
     assert result["zfill"].tolist() == ["00000Hello", "00000World", "000000Test"]
 
     # Test for side="both" (not implemented)
@@ -85,3 +81,42 @@ def test_string_advanced_methods(string_column_df):
     assert result["contains_e"].tolist() == [True, False, True]
     assert result["starts_t"].tolist() == [False, False, True]
     assert result["ends_d"].tolist() == [False, True, False]
+
+
+def test_string_new_methods(string_column_df):
+    """Tests the newly added string methods: repeat, capitalize, slice, and is* methods"""
+    # Testing repeat
+    string_column_df.lazy_df["repeat"] = string_column_df.lazy_df["text"].str.repeat(2)
+
+    # Testing capitalize
+    string_column_df.lazy_df["capitalized"] = string_column_df.lazy_df["text"].str.capitalize()
+
+    # Testing slice with different parameters
+    string_column_df.lazy_df["slice_1_3"] = string_column_df.lazy_df["text"].str.slice(1, 3)
+    string_column_df.lazy_df["slice_start"] = string_column_df.lazy_df["text"].str.slice(2)
+
+    # Testing isalpha, isalnum, isdigit, isnumeric on mixed column
+    string_column_df.lazy_df["is_alpha"] = string_column_df.lazy_df["mixed"].str.isalpha()
+    string_column_df.lazy_df["is_alnum"] = string_column_df.lazy_df["mixed"].str.isalnum()
+    string_column_df.lazy_df["is_digit"] = string_column_df.lazy_df["mixed"].str.isdigit()
+    string_column_df.lazy_df["is_numeric"] = string_column_df.lazy_df["mixed"].str.isnumeric()
+
+    result = string_column_df.lazy_df.collect()
+
+    # Verifications for repeat
+    assert result["repeat"].tolist() == ["HelloHello", "WorldWorld", "TestTest"]
+
+    # Verifications for capitalize
+    # Note: Our implementation converts to lowercase after capitalizing the first letter
+    assert result["capitalized"].tolist() == ["Hello", "World", "Test"]
+
+    # Verifications for slice
+    assert result["slice_1_3"].tolist() == ["el", "or", "es"]
+    assert result["slice_start"].tolist() == ["llo", "rld", "st"]
+
+    # Verifications for is* methods
+    # mixed column values: ['xyz123', '456', 'FOO']
+    assert result["is_alpha"].tolist() == [False, False, True]  # Only 'FOO' is all alphabetic
+    assert result["is_alnum"].tolist() == [True, True, True]  # All are alphanumeric
+    assert result["is_digit"].tolist() == [False, True, False]  # Only '456' is all digits
+    assert result["is_numeric"].tolist() == [False, True, False]  # Same as isdigit in our implementation
