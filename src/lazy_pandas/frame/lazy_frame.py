@@ -28,6 +28,9 @@ ColumnOrName = Union["LazyColumn", str]
 
 
 class LazyFrame:
+    _relation: DuckDBPyRelation
+    _conn: Union[duckdb.DuckDBPyConnection, None]  # Declare class attribute
+
     def __init__(self, relation: DuckDBPyRelation):
         """
         Initialize a LazyFrame with a DuckDB relation.
@@ -36,6 +39,7 @@ class LazyFrame:
             relation (DuckDBPyRelation): The underlying DuckDB relation.
         """
         self._relation = relation
+        self._conn = None  # Initialize instance attribute
 
     def collect(self) -> "pd.DataFrame":
         """
@@ -136,10 +140,10 @@ class LazyFrame:
         return rel is None
 
     @overload
-    def sort_values(self, by: str | list[str], inplace: Literal[False] = ...) -> "LazyFrame": ...
+    def sort_values(self, by: str | list[str], *, inplace: Literal[False] = False) -> "LazyFrame": ...
 
     @overload
-    def sort_values(self, by: str | list[str], inplace: Literal[True] = ...) -> None: ...
+    def sort_values(self, by: str | list[str], *, inplace: Literal[True]) -> None: ...
 
     def sort_values(self, by: str | list[str], inplace: bool = False) -> Union["LazyFrame", None]:
         """
@@ -162,10 +166,10 @@ class LazyFrame:
             return LazyFrame(rel)
 
     @overload
-    def drop_duplicates(self, subset: str | list[str] | None = ..., inplace: Literal[False] = ...) -> "LazyFrame": ...
+    def drop_duplicates(self, subset: str | list[str] | None = None, *, inplace: Literal[False] = False) -> "LazyFrame": ...
 
     @overload
-    def drop_duplicates(self, subset: str | list[str] | None = ..., inplace: Literal[True] = ...) -> None: ...
+    def drop_duplicates(self, subset: str | list[str] | None = None, *, inplace: Literal[True]) -> None: ...
 
     def drop_duplicates(self, subset: str | list[str] | None = None, inplace: bool = False) -> Union["LazyFrame", None]:
         """
@@ -195,14 +199,17 @@ class LazyFrame:
         else:
             return LazyFrame(rel)
 
-    def astype(self, dtype: str | type | dict[str, str | DuckDBPyType]) -> "LazyFrame":
-        if isinstance(dtype, str | DuckDBPyType):
-            dtype = {col: dtype for col in self.columns}
+    def astype(self, dtype: Union[str, type, dict[str, Union[str, DuckDBPyType]]]) -> "LazyFrame":
+        map_to_apply: dict[str, Union[str, type, DuckDBPyType]]
+        if isinstance(dtype, dict):
+            # Ensure keys are str and values are type specifiers
+            map_to_apply = {str(k): v for k, v in dtype.items()}
+        else:  # dtype is str, type, or DuckDBPyType (if not str/type already)
+            map_to_apply = {col: dtype for col in self.columns}
 
         curr = self
-        for col, col_dtype in dtype.items():
-            curr[col] = curr[col].astype(col_dtype)
-
+        for col, new_type in map_to_apply.items():
+            curr[col] = curr[col].astype(new_type)
         return curr
 
     def explode(self, column: str | list[str]) -> "LazyFrame":

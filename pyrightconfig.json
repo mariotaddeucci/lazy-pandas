@@ -1,0 +1,6 @@
+{
+  "include": ["src/lazy_pandas"],
+  "pythonVersion": "3.10",
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false
+}
