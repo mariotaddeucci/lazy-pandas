@@ -17,6 +17,7 @@ dev = [
     "pyarrow",
     "pyiceberg[sql-sqlite]",
     "pyprojectsort",
+    "pyright",
     "pytest-cov>=4.1.0,<5",
     "pytest>=8.3.3,<9",
     "ruff",
@@ -85,5 +86,5 @@ extend-unsafe-fixes = [
 build = "uv build"
 docs-build = "cd docs && mkdocs build"
 format = "ruff check --fix && ruff format && ssort && pyprojectsort"
-lint = "ruff check && ruff format && ssort --check --check && codespell && pyprojectsort --check"
+lint = "pyright && ruff check && ruff format && ssort --check --check && codespell && pyprojectsort --check"
 test = "pytest"
