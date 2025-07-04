@@ -3,6 +3,7 @@ from lazy_pandas.column.lazy_datetime_column import LazyDateTimeColumn
 from lazy_pandas.column.lazy_string_column import LazyStringColumn
 from lazy_pandas.frame.lazy_frame import LazyFrame
 from lazy_pandas.general import from_pandas, read_csv, read_delta, read_iceberg, read_parquet
+from lazy_pandas import testing
 
 __all__ = [
     "LazyFrame",
@@ -14,6 +15,7 @@ __all__ = [
     "read_iceberg",
     "LazyDateTimeColumn",
     "LazyStringColumn",
+    "testing",
 ]
 
 __version__ = "0.1.0"
