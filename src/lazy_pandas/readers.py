@@ -294,7 +294,6 @@ def read_delta(path: str, *, conn: duckdb.DuckDBPyConnection | None = None) -> L
     Example:
     ```python
     import lazy_pandas as lp
-    from datetime import date
     df = lp.read_delta('s3://bucket/path_to_delta_table')
     df.head()
     ```
