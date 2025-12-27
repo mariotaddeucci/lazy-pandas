@@ -17,6 +17,7 @@ dev = [
     "pyarrow",
     "pyiceberg[sql-sqlite]",
     "pyprojectsort",
+    "pyrefly>=0.46.1",
     "pytest-cov>=4.1.0,<5",
     "pytest>=8.3.3,<9",
     "ruff",
